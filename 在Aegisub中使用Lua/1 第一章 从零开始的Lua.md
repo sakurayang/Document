@@ -1,7 +1,6 @@
-vnote_backup_file_826537664 D:/git/Document/在Aegisub中使用Lua/第一章 从零开始的Lua.md
 # 第一章 从零开始的Lua
 > 本章主要简单介绍Lua是什么，Lua的基本数据类型，Lua的基本语法
-> 本章共 字 预计用时 min
+> 本章共 字 预计用时30min
 
 ---
 
@@ -255,13 +254,97 @@ print(type(plus)) -->function
 
 ---
 ## 3. Lua的基本语法
+> 本章主要介绍在Lua中基本的一些语法规则
+> 很简单的，相信我
 
+---
 ### 1. 标识命名规定
+标识符，即用于标识不同的变量与函数的字符组合
+在Lua中，你可以使用`a-z A-Z`以及下划线(`_`)开头加数字来作为标识符
+**不允许**使用纯数字以及数字开头的标识符
+**不建议**使用下划线加大写字母(如`_A`)来作为标识符
+Lua是**大小写敏感**的，也就是说`Apple`和`apple`是不同的两个标识符
+以下这些为系统保留的，**不允许**作为标识符
+```
+and       break     do        else      elseif    end
+false     for       function  goto      if        in
+local     nil       not       or        repeat    return
+then      true      until     while
+```
+以下这些**字符**不能出现在标识符中，因为是运算符
+```
++     -     *     /     %     ^     #
+&     ~     |     <<    >>    //
+==    ~=    <=    >=    <     >     =
+(     )     {     }     [     ]     ::
+;     :     ,     .     ..    ...
+```
+以下这些为允许的标识符的例子
+```
+And
+fubiki 
+SihaSiha 
+_HomoLive 
+_114514 
+timetable1
+```
+以下这些为**不允许**的标识符的例子
+```Text
+1551
+114514inm
+```
+- **建议**使用`小驼峰命名法`作为函数标识符，如`getPicture` `countAppleNumber`
+- **建议**使用`小写字母下划线命名法`作为一般变量标识符，如`picture_url` `picture_url_number`
+- **建议**使用`大写字母下划线命名法`作为全局变量标识符，如`PICTURE_WIDTH` `FILE_PATH`
+- **不建议**使用`the` `of`等连词，如`the_apple` `width_of_picture`
 
+---
 ### 2. 注释
+Lua中严格来说只有单行注释，以两个“减号”`--`开头的行为注释
+你可以以`[[ ]]`包裹多行代码，并在其前面加上`--`令其成为多行注释
+前面说过，用`[[ ]]`包裹的字符，忽略一切换行，作为一行，所以在开头加上`--`可以启用多行注释
+**建议**使用`--[[ --]]`来包裹多行注释，这种注释可以只做一处修改来取消注释
+```Lua
+--[[
+function plus(a,b)
+    if (type(a)==type(b)) then
+        if (type(a)=='number') then
+            c = a + b
+        elseif (type(a)=='string') then
+            c = a..b
+        end
+    else
+        c = string.format('%s%s',a,b)
+    end
+    return c    
+end
+--]]
+```
+需要取消注释，只需要在最前面加上一个`-`
+```Lua
+---[[
+function plus(a,b)
+    if (type(a)==type(b)) then
+        if (type(a)=='number') then
+            c = a + b
+        elseif (type(a)=='string') then
+            c = a..b
+        end
+    else
+        c = string.format('%s%s',a,b)
+    end
+    return c    
+end
+--]]
+```
+发生了什么呢？
+很简单
+`[[...........]]`之间无论多少换行，都是一行，前面的`--`把这一行注释掉了
+那么我在前面加上一个`-`那么就会把`-[[`注释掉令其重新变成多行，而最后添加的`--]]`是一个注释行，把多行注释变成了两个单行注释和在其之间的多行代码
 
+---
 ### 3. 变量
-
+Lua中的变量默认为`全局变量`
 ### 4. 语句
 
 ### 5. 表达式
