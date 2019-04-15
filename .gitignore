@@ -1,3 +1,7 @@
 /_v_recycle_bin/*
 *.json
 *.vswp
+*node_modules/*
+*.bak
+/How_to_use_Lua_in_Aegisub/node_modules/*
+/How_to_use_Lua_in_Aegisub/_book/*
