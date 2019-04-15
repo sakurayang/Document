@@ -28,6 +28,7 @@
 ## 2.准备
 - [ ] Aegisub
 
+
 - [ ] [Lua本体](http://gerardyang.hk.ufileos.com/LuaDist.tar.xz)
 
   > 解压出来的两个文件请放在在一起，你可以把它添加进PATH，也可以每次都用控制台手动进入
