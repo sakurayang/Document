@@ -11,15 +11,21 @@
 
 ## 1.说明
 - 本教程采用UTF-8编码
-- 本教程遵守CC0共享协议
-- 本项目遵守Mozilla Public License
+
+- 本教程遵守CC BY-SA共享协议<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+
+    本作品采用[知识共享署名-相同方式共享 3.0 未本地化版本许可协议](http://creativecommons.org/licenses/by-sa/3.0/)进行许可。
+
 - 本项目无法遵守996 License，因为用爱发电哪有什么上班和下班的，有爱就够了
+
 - 本教程使用Markdown格式书写，并且在一定程度上使用Github Markdown拓展
+
 - 本教程在一定程度上参考以下公开文档
     - [Lua官方文档](http://www.lua.org/manual/5.3/)
     - [Lua非官方中文文档](http://www.runoob.com/manual/lua53doc/)
     - [笨鸟教程Lua部分](http://www.runoob.com/lua/)
     - [Aegisub官方文档](http://docs.aegisub.org/3.2/Main_Page/)
+    
 - 本教程中的语法规定如下
     - `<value>`表示一个必须参数
     - `[value]`表示一个可选参数
@@ -61,9 +67,8 @@ Gerardyang
 
 20190414
 
-本文遵守CC0共享协议
-
-本文遵守Mozilla Public License
-
 本文无法遵守996 Lincese
 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+
+本作品采用[知识共享署名-相同方式共享 3.0 未本地化版本许可协议](http://creativecommons.org/licenses/by-sa/3.0/)进行许可。

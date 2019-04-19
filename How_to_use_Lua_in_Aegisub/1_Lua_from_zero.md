@@ -450,7 +450,18 @@ a = b + c; (print or io.write)('done')
 
 所以建议在语句后面加上`;`来结束语句，这是一个好习惯，以免出现想不到的错误
 
-语句块通常指的是多条语句，而一个语句块可以被显式地定界为单条语句
+语句块通常指的是多条语句
+
+```lua
+function a(a)
+    print(a);
+    print(string.format("%s%s%s",a,a,a));
+end
+```
+
+
+
+而一个语句块可以被显式地定界为单条语句
 
 ```lua
 do local a = 1 end
@@ -475,6 +486,26 @@ g ,h[g] = g+1, 123
 Lua总是在表达式完成运算后，再做赋值操作
 
 所以上面例子中的最后一句，`h[2]=123`而不会影响到`h[3]`
+
+所以你可以使用`x,y=y,x`这样的语句来交换x和y的值
+
+#### 1.3.4.3 控制结构
+
+控制结构是指`if` `while` `repeat`以及`for`，在lua中，`for`有两种形式。
+
+```lua
+if exp then
+    --some code
+elseif exp then
+    --some code
+else
+    --some code
+end
+```
+
+
+
+
 
 ### 1.3.5 表达式
 
@@ -507,8 +538,8 @@ Gerardyang
 
 20190414
 
-本文遵守CC0共享协议
-
-本文遵守Mozilla Public License开源协议
-
 本文无法遵守996 License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+
+本作品采用[知识共享署名-相同方式共享 3.0 未本地化版本许可协议](http://creativecommons.org/licenses/by-sa/3.0/)进行许可。

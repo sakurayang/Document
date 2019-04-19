@@ -1,7 +1,13 @@
-/_v_recycle_bin/*
-*.json
+*/book.json
 *.vswp
-*node_modules/*
+/node_modules/*
+/_book/*
 *.bak
+book.json
+*/_book/*
+/docs/.gitignore
+.gitbook.yaml
 /How_to_use_Lua_in_Aegisub/node_modules/*
 /How_to_use_Lua_in_Aegisub/_book/*
+/Vidoe_Compression/_book/*
+/Vidoe_Compression/node_modules/*
