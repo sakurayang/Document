@@ -1,6 +1,8 @@
 # 专有名词补充
 
 > 本章主要介绍一些专业术语，专有名词
+>
+> 请用ctrl+f搜索关键词
 
 ---
 
@@ -24,7 +26,28 @@
 
 > 视频解编码器是指能编码或解码视频数字数据信息流的设备或计算机程序
 
-- x264
+- `FFmpeg`是一个免费开源的软件集，可以进行音频及视频的录制，转码，串流(直播)的功能。[^ffmpeg]其包含以下这些主要的函数库。
+
+  | 函数库名称                                       | 用途                                                         |
+  | :----------------------------------------------- | :----------------------------------------------------------- |
+  | libswresample[^libswresample]                    | 音频重采样                                                   |
+  | libavresample[^libavresample]                    | 音频重采样，来自libav分支，和上一个类似                      |
+  | libavcodec[^libavcodec]                          | 用于音视频解编码，所有的编码器从头构建，以确保最高效率       |
+  | libavformat*(Lavf)*[^libavformat][^libavformat2] | 用于音视频封装以及解封装                                     |
+  | libavutil[^libavutil]                            | 这是一个通用的辅助函数库，用于封装各部分都需要用到的函数，其包含了各种加解密算法以及压缩与解压缩算法 |
+  | libpostproc[^libpostproc]                        | 用于老的h263视频后处理                                       |
+  | libswscale[^libswscale]                          | 用于视频以及图像缩放，像素长宽比的调整                       |
+  | libavfilter[^libavfilter]                        | 用于加载音视频滤镜                                           |
+
+  以及以下这些命令行工具，他们的用法会在进阶中讲到
+
+  | 工具名            | 用途                                                         |
+  | ----------------- | ------------------------------------------------------------ |
+  | ffmpeg[^ffmpeg2]  | 用于转换音视频的格式，同时能够从视频采集设备采集视频并实时编码 |
+  | ffplay[^ffplay]   | 一个简单的多媒体播放器，以及ffmpeg的函数库                   |
+  | ffprobe[^ffprobe] | 用于分析多媒体信息                                           |
+
+- `x264`
 
 ---
 
@@ -50,7 +73,7 @@
 ### 音频编码格式
 
 - `WAV(Waveform Audio File Format)`是一个由微软及IBM开发的无压缩数字音频编码格式。[^wav]注意，**无压缩≠无损**。就像你把棉被塞到仓库里面，如果棉被本来就是坏的那拿出来还是坏的。
-- `ALAC(Apple Lossless Audio Codec)`是一个由Apple^®^开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]
+- `ALAC(Apple Lossless Audio Codec)`是一个由苹果公司开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]
 - `FLAC(Free Lossless Audio Codec)`是一个免费开源的无损压缩数字音频编码格式。[^flac]
 - `FDKAAC(Fraunhofer FDK AAC Codec Library for Android)`是一个在安卓上的免费开源AAC解编码工具库。[^fdkaac]
 - `AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式])`是指杜比数字编码(Dolby Digital 或称AC-3)[^ac3]。
@@ -81,6 +104,22 @@
 ---
 
 ##脚注
+
+[^ffmpeg]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): **FFmpeg** is a [free software](https://www.wikiwand.com/en/Free_software) project consisting of a vast software suite of [libraries](https://www.wikiwand.com/en/Library_(computing)) and [programs](https://www.wikiwand.com/en/Computer_program) for handling video, audio, and other [multimedia](https://www.wikiwand.com/en/Multimedia) files and streams.
+[^ffmpeg2]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *ffmpeg* is a command-line tool that converts audio or video  formats. It can also capture and encode in real-time from various  hardware and software sources such as a TV capture card.
+[^ffplay]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *ffplay* is a simple media player utilizing [SDL](https://www.wikiwand.com/en/Simple_DirectMedia_Layer) and the FFmpeg libraries.
+[^ffprobe]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *ffprobe* is a command-line tool to display media information (text, [CSV](https://www.wikiwand.com/en/Comma-separated_values), [XML](https://www.wikiwand.com/en/XML), [JSON](https://www.wikiwand.com/en/JSON)), see also [Mediainfo](https://www.wikiwand.com/en/Mediainfo).
+[^libswresample]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *ibswresample* is a library containing audio [resampling](https://www.wikiwand.com/en/Resampling_(audio)) routines.
+[^libavresample]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libavresample* is a library containing audio resampling routines from the [Libav](https://www.wikiwand.com/en/Libav) project, similar to *libswresample* from *ffmpeg*.
+[^libavcodec]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libavcodec*is a library containing all of the native FFmpeg audio/video encoders and decoders. Most codecs were developed from scratch to ensure best performance and high code reusability.
+[^libavformat]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libavformat* (Lavf)is a library containing demuxers and muxers for audio/video container formats.
+[^libavformat2]: ["FFmpeg: Lavf: I/O and Muxing/Demuxing Library"](https://www.ffmpeg.org/doxygen/2.2/group__libavf.html). *ffmpeg.org*. Retrieved 21 October 2016.
+[^libavutil]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libavutil* is a helper library containing routines common to different parts of FFmpeg. This library includes hash functions ([Adler-32](https://www.wikiwand.com/en/Adler-32), [CRC](https://www.wikiwand.com/en/Cyclic_redundancy_check), [MD5](https://www.wikiwand.com/en/MD5), [RIPEMD](https://www.wikiwand.com/en/RIPEMD), [SHA-1](https://www.wikiwand.com/en/SHA-1). [SHA-2](https://www.wikiwand.com/en/SHA-2), [MurmurHash](https://www.wikiwand.com/en/MurmurHash)3, [HMAC](https://www.wikiwand.com/en/Hash-based_message_authentication_code) MD-5, HMAC SHA-1 and HMAC SHA-2), ciphers ([DES](https://www.wikiwand.com/en/Data_Encryption_Standard), [RC4](https://www.wikiwand.com/en/RC4), [AES](https://www.wikiwand.com/en/Advanced_Encryption_Standard), AES-CTR, [TEA](https://www.wikiwand.com/en/Tiny_Encryption_Algorithm), [XTEA](https://www.wikiwand.com/en/XTEA), [Blowfish](https://www.wikiwand.com/en/Blowfish_(cipher)), [CAST-128](https://www.wikiwand.com/en/CAST-128), [Twofish](https://www.wikiwand.com/en/Twofish) and [Camellia](https://www.wikiwand.com/en/Camellia_(cipher))), [LZO](https://www.wikiwand.com/en/Lempel–Ziv–Oberhumer) decompressor  and [Base64](https://www.wikiwand.com/en/Base64) encoder/decoder.
+[^libpostproc]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libpostproc* is a library containing older h263 based [video postprocessing](https://www.wikiwand.com/en/Video_postprocessing) routines.
+[^libswscale]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libswscale* is a library containing video [image scaling](https://www.wikiwand.com/en/Image_scaling) and [colorspace](https://www.wikiwand.com/en/Color_space)/pixelformat conversion routines.
+[^libavfilter]: [Wiki-FFmpeg](https://www.wikiwand.com/en/FFmpeg): *libavfilter* is the  substitute for vhook which allows the video/audio to be modified or  examined between the decoder and the encoder. Filters have been ported  from many projects including [MPlayer](https://www.wikiwand.com/en/MPlayer) and [avisynth](https://www.wikiwand.com/en/Avisynth)
+
+
 
 [^encoder]: [Wiki-Encoder](https://www.wikiwand.com/en/Encoder): An **encoder** is a device, circuit, transducer, software program, algorithm or person that [converts](https://www.wikiwand.com/en/Encoding) information from one format or [code](https://www.wikiwand.com/en/Code) to another, for the purpose of standardization, speed or compression.
 [^decoder]: [Wiki-Decoder](https://www.wikiwand.com/en/Video_decoder): A **video decoder** is an [electronic circuit](https://www.wikiwand.com/en/Electronic_circuit), often contained within a single [integrated circuit](https://www.wikiwand.com/en/Integrated_circuit) chip, that converts base-band [analog video](https://www.wikiwand.com/en/Analog_video) signals to digital components video.

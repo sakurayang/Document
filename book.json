@@ -1,0 +1,12 @@
+{
+	"title": "后期教学文档",
+	"author": "Gerardyang",
+	"language": "zh-hans",
+    "plugins": ["toc2","todo"],
+    "pluginsConfig": {
+        "toc2": {
+            "addClass": true,
+            "className": "toc"
+        }
+    }
+}

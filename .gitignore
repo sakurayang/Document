@@ -1,9 +1,7 @@
-*/book.json
 *.vswp
 /node_modules/*
 /_book/*
 *.bak
-book.json
 */_book/*
 /docs/.gitignore
 .gitbook.yaml
