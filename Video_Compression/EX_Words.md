@@ -47,15 +47,13 @@
   | ffplay[^ffplay]   | 一个简单的多媒体播放器，以及ffmpeg的函数库                   |
   | ffprobe[^ffprobe] | 用于分析多媒体信息                                           |
 
-- `x264`是一个由VideoLAN开发的用于将视频流编码为`H.264/MPEG-4 AVC`格式的免费开源的软件函数库以及命令行工具[^x264]。*ffmpeg使用x264来解码H.264编码格式的多媒体流*
+- `x264`是一个由VideoLAN开发的用于将视频流编码为`H.264/MPEG-4 AVC`格式的免费开源的软件函数库以及命令行工具[^x264]。*ffmpeg使用x264来解码H.264编码格式的多媒体流*。
 
-- `x265`是一个由MulticoreWare开发的用于将视频流编码为`H.265/HEVC`格式的基于`x264`修改的免费开源的软件函数库以及命令行工具[^x265]。*ffmpeg以及[UHDcode](https://www.wikiwand.com/en/MulticoreWare)使用x265来解码H.265编码格式的多媒体流*
-
-- `libopenjpeg`用于解编码[Motion JPEG 2000](https://www.wikiwand.com/en/Motion_JPEG_2000) 编码格式的视频。[^codec]
+- `x265`是一个由MulticoreWare开发的用于将视频流编码为`H.265/HEVC`格式的基于`x264`修改的免费开源的软件函数库以及命令行工具[^x265]。*ffmpeg以及[UHDcode](https://www.wikiwand.com/en/MulticoreWare)使用x265来解码H.265编码格式的多媒体流*。
 
 - `QuickTime`是一种由苹果公司开发的可拓展的多媒体框架，能够处理各种格式的数字音视频，图像，全景图像以及交互式媒体。[^QT]
 
-- `libaom`由Alliance for Open Media开发并用于解编码AV1编码格式[^codec]
+- `libaom`由Alliance for Open Media开发并用于解编码AV1编码格式[^codec]。
 
 - `libvpx`由Google开发并用于解编码VP9编码格式[^codec]
 
@@ -96,34 +94,54 @@
 
 ### 视频编码格式
 
-- `H.264/AVC`
-- `H.265/HEVC`
-- 
+- `H.264/AVC`通常以`.264`为后缀名
+- `H.265/HEVC`通常以`.265`为后缀名
+- `RealMedia`
+- `vp8/vp9`通常被封装于`webm`容器中
+- `av1`通常被封装于`webm`容器中
+- `quicktime`通常以`.mov` `.qt`为后缀名
+- `MPEG-TS`通常以`.mts` `.m2ts`为后缀名
 
 ### 音频编码格式
 
-- `WAV(Waveform Audio File Format)`是一个由微软及IBM开发的无压缩数字音频编码格式。[^wav]注意，**无压缩≠无损**。就像你把棉被塞到仓库里面，如果棉被本来就是坏的那拿出来还是坏的。
-- `AAC(Advance Audio Codec)`被分为很多种分支
-  - `ALAC(Apple Lossless Audio Codec)`是一个由苹果公司开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]
-  - 
-- `FLAC(Free Lossless Audio Codec)`是一个免费开源的无损压缩数字音频编码格式。[^flac]
-- `AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式])`是指杜比数字编码(Dolby Digital 或称AC-3)[^ac3]。
-- `MP3(formally MPEG-1 Audio Layer III, MPEG-2 Audio Layer III)`是一种有损压缩数字音频编码格式。[^mp3]
+- `WAV(Waveform Audio File Format)`是一个由微软及IBM开发的无压缩数字音频编码格式。注意，**无压缩≠无损**。就像你把棉被塞到仓库里面，如果棉被本来就是坏的那拿出来还是坏的。通常以`.wav`为后缀名
+- `ALAC(Apple Lossless Audio Codec)`是一个由苹果公司开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]通常以`.alac`为后缀名
+- `Monkey's Audio(APE)`通常以`.ape`为后缀名
+- `AAC(Advance Audio Codec)`通常以`.aac`为后缀名
+  - `AAC(MPEG-2 Part 7)`
+  - `AAC(MPEG-4 Part3 shubpart4)`
+    - `HE-AAC`
+    - `AAC-LD(AAC-Low Delay)`
+- `Opus`通常以`.opus`为后缀名，通常被封装在`webm`容器中
+- `Vorbis(ogg)`通常以`.ogg`为后缀名
+- `WMA(Windows Media Audio)`通常以`.wma`为后缀名
+- `PCM(Pulse-code modulation)`即脉冲编码调变。以数字信息记录模拟信号，这样的到的音频信号会清楚且能用于分时多工系统(如现代的公共电话)，但是体积较大。通常以`.pcm`为后缀名
+- `FLAC(Free Lossless Audio Codec)`是一个免费开源的无损压缩数字音频编码格式。通常以`.flac`为后缀名
+- `AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式])`是指杜比数字编码(Dolby Digital 或称AC-3)。通常被封装在`VOB`或`MPEG-TS`容器中
+- `MP3(formally MPEG-1 Audio Layer III, MPEG-2 Audio Layer III)`是一种有损压缩数字音频编码格式。通常以`.mp3`为后缀名
 
 ---
 
 ## 封装格式
 
+[这里](https://www.wikiwand.com/en/Comparison_of_video_container_formats)有一份视频容器表
+
 封装格式，你可以理解为文件后缀名，就是那些`.mp4` `.avi`的东西
 
-形象点就是不同的行李箱装不同的东西以及装东西的方式不同
+形象点就是不同的行李箱能装的东西不同以及装东西的方式不同
 
-### 视频封装格式
+| 容器      | 后缀      | 描述                                                         |
+| --------- | --------- | ------------------------------------------------------------ |
+| MPEG-4    | .mp4      |                                                              |
+| flv       | .flv/.f4v |                                                              |
+| avi       | .avi      |                                                              |
+|           | .mkv      |                                                              |
+|           | .webm     |                                                              |
+| RealMedia | .rm/.rmvb | rm被用于早期的网络传输，后来推出了支持可变码率的rmvb再后来由于技术落后被淘汰 |
+|           | .cue      |                                                              |
+|           | .vob      |                                                              |
 
-- `MP4`
-- `Motion JPEG 2000`是一种封装了JPEG 2000图像的序列以及音频的封装格式，其基于MP4/QuickTime封装格式[^MJ2]
 
-### 音频封装容器
 
 
 
@@ -131,11 +149,133 @@
 
 ## 视频名词
 
+> 理解难度从上往下递增
+
+- `profile`即配置文件，其针对不同的应用程序定义了不同的配置，这些被声明为配置文件代码(`profile_idc`)和在编码器种应用的一系列约束。这允许解码器识别解码该特定流的要求。一般来说有以下这些[^profile]
+
+  > constraint 约束
+  >
+  > Progressive 渐进
+  >
+  > Predictive 前向预测性
+
+  ​	*对非可适性视频编码而言有以下这些标准*
+
+  - Constrained Baseline Profile (CBP, 66 with constraint set 1)
+
+    ​	主要被用于低开销的应用场景，这种等级的profile通常被用于视频会议以及一些手机应用。他是BP MP HP之间的共有特征子集
+
+  - Baseline Profile (BP, 66, 基线)
+
+    ​	主要被用于需要额外数据以保持数据传输鲁棒性[^鲁棒性]的低开销应用场景，有时候在一些视频会议和手机应用中使用。该等级的配置在CBP的基础上增加了三个功能以保证传输稳定(或是用于其他目的例如低延迟多点的视频流合成)。自从2009年CBP被定义以来，该配置文件的重要性逐渐消失，所有CBP流也被视为BP流，所以共享相同的标识码(66)
+
+  - Extended Profile (XP, 88, 额外)
+
+    ​	被用于视频流文件，这个配置文件有相对较高的压缩能力以及一些额外的功能来确保对数据丢失和服务器媒体流切换的鲁棒性
+
+  - Main Profile (MP, 77, 主要)
+
+    ​	被用于使用DVB标准中定义的MPEG-4格式的标清数字电视广播。然而它并不用于高清电视广播，因为在2004年针对高清电视广播开发HiP之后，该配置文件的重要性已经消失。
+
+  - High Profile (HiP, 100, 高)
+
+  - Progressive High Profile (PHiP, 100 with constraint set 4)
+
+  - Constrained High Profile (100 with constraint set 4 and 5)
+
+  - High 10 Profile (Hi10P, 110)
+
+  - High 4:2:2 Profile (Hi422P, 122)
+
+  - High 4:4:4 Predictive Profile (Hi444PP, 244)
+
+  - High 10 Intra Profile (110 with constraint set 3)
+
+  - High 4:2:2 Intra Profile (122 with constraint set 3)
+
+  - High 4:4:4 Intra Profile (244 with constraint set 3)
+
+  - CAVLC 4:4:4 Intra Profile (44)
+
+- `level`
+
+- `NTSC`
+
+- `PAL`
+
+- `逐行扫描`
+
+- `隔行扫描`
+
+- `四比三下位变换`
+
+- `DVR`
+
+- `CBR`
+
+- `VBR`
+
+- `ABR`
+
+- `2pass`
+
+- `前向预测(Context-based)`
+
+- `B帧 I帧 P帧`
+
+- `运动补偿`
+
+- `宏块`
+
+- `熵编码(entropy encoding)`在信息学上来说是一种不依赖媒介具体特征的接近无损的数据压缩方式，熵编码通常与其他编码方式结合使用。[^entropyEnc]一种主要类型的熵编码方式是在输入的时候创建并分配一个唯一的无首位代码(prefix-free code)
+
+- `前缀码(Prefix code)`是一种编码系统，通常为长度可变的，在其中的每一个前缀码都具备前置性质(prefix property)。也就是说，该编码是独立唯一且不能被其他编码所作为前置部分的，举个例子，编码集合`{1,32,75}`具备前置性质，但`{1,3,7,32,75}`不具备，因为`3`和`7`可以分别作为`32`与`75`的前置编码。这种被叫做无首位编码(PFC, prefix-free codes)。
+
+  每一个前置码都是解码结果唯一的：给定完整准确的序列，接收方可以识别每个单词而不需要编码与单词之间做特殊标记。但是有解码结果唯一的代码不是前缀码; 例如，将前缀码进行逆转操作`(45->54)`仍然是解码结果唯一的（它是后缀代码），但它不一定是前缀代码。
+
+  霍夫曼编码是该编码系统中的一种算法。[^prefixcode]
+
+- `算术编码(Arithmetic Coding)`是一种无损数据压缩方式，同时也是一种熵编码的算法。[^算术编码]这个是一个完整的算法，可以单独开一章，这里就简单的说一下。算术编码是不同于其他熵编码的编码算法，其他的熵编码方法通常是把输入的消息分割为符号，然后对每个符号进行编码，而算术编码是直接把整个输入的消息编码为一个数，一个满足（0.0 ≤ *n* < 1.0）的小数n。举个简单的例子
+
+  以`wiki`这一个字符串为例，一共有四个字符，使用二进制区间表示(00,01,10,11)
+
+  - w: 25% [0,0.25) ==>[0.00,0.01)
+  - i: 50% [0.25,0.75) ==>[0.01,0.11)
+  - k: 25% [0.75,1) ==>[0.11,1.00)
+
+  那么序列`ww`出现的区间是`[0,0.01*0.01)`，`wi`出现的区间是`[0.0001,0.01*0.11+0.0001)`，`wk`出现的区间是`[0.0011,0.01)`。依此类推，可以算出，`wik`出现的区间是`[0.00101，0.0011)`，`wiki`出现的区间是`[0.001011,0.0010101)`，我们使用`0.001011`作为其编码，可以轻易地逆向。
+
+  下图采用自[维基百科](https://www.wikiwand.com/en/Arithmetic_coding)
+
+  ![img](images/640px-Arithmetic_coding_visualisation_circle.svg.png)
+
+- `CABAC(Context-based Adaptive Binary Arithmetic Coding)`[^cabbc]，即前文参考性自适应二元算术编码，是一种基于算术编码的在HEVC以及AVC编码中使用的熵编码方式。其分为三部分`Binarizer(二值化算法)` `Context Modeler(上下文模型)` `Arithmetic Coding Engine(算术编码引擎)` 。他首先将所有非二进制符号转换为二进制，编码器遍历每个比特来选择使用哪个概率模型，然后根据上下文信息来优化概率估计。最后用算术编码来压缩数据。[^cabbc]通常比CAVLC性能更佳。但不支持Baseline以及Extended profiles。
+
+- `CAVLC(Context-based Adaptive Variable-Length code)`，适应性可变长度编码法，又被称为`UVLC`。是h.264的演算法机制，其对传统的霍夫曼编码进行了改进，因此在压缩效率上取得了相当大的进步。其支持所有的H.264 peofile。过程解释有点复杂（[^cavlc]
+
+- `可视性视频编码(Scalable Video Coding, SVC)`是传统H.264编码的延伸，是H.264视频压缩标准附录G的名称，可以提升更大的编码弹性，并且有时间(帧速率)可适性(Temporal Scalability),空间(图片大小)可适性（Spatial Scalability）及信噪比/质量/品质可适性（SNR Scalability）[^ensvc][^cnsvc]三大特性，使得视频传输能在不同的网络带宽中使用。
+
 ## 音频名词
 
 
 
+## 其他名词
 
+- `ISO(International Organization for Standardization)`即国际化标准组织。其制定了一系列标准，包括但不限于电影播放，视频播放，文字，食品。
+
+  ![1555759999551](images/1555759999551.png)
+
+  这里的ISO表示的是遵循着`ISO/IEC 14496`标准
+
+- `IEC(International Electrotechnical Commission)`国际电工协会，主要负责电气工程以及电子工程的国际标准制定
+
+- `ITU-T(ITU Telecommunication Standardization Sector)`即国际电信联盟电信标准化部门。其制定了一系列用于远程通讯传输的多媒体标准，其中包括`ITU-T H.264`等
+
+- `ITU-R(ITU Radiocommunication Sector)`国际电信联盟无线电通信部门
+
+- [^鲁棒性]:`鲁棒性(robustness)`，是指控制系统在一定(结构，大小)的**参数扰动下**，仍能够维持其他某些性能的特性，也就是系统的健壮性。鲁棒控制方法适用于稳定性和可靠性作为首要目标的应用，同时过程的动态特征已知，且不确定因素的变化范围可以预估。**鲁棒性不同于稳定性**，稳定性是指控制系统在使它偏离平衡状态的**扰动消失之后** ，返回原来平衡状态的能力。举个例子，鲁棒性就像你种菜(物理)的时候，不会因为某一天浇水多了抑或少了，某一天出太阳了或下雨了而长不出来。稳定性就你给弹簧一个压力，你放手之后弹簧能回到原来的状态
+
+- 
 
 ---
 
@@ -170,5 +310,14 @@
 [^itunes]:[Wiki-iTunes](https://www.wikiwand.com/en/ITunes): **iTunes** ([/ˈaɪtjuːnz/](https://www.wikiwand.com/en/Help:IPA/English))is a [media player](https://www.wikiwand.com/en/Media_player_(software)), media library, [Internet radio](https://www.wikiwand.com/en/Internet_radio) broadcaster, and [mobile device](https://www.wikiwand.com/en/Mobile_device) management application developed by [Apple Inc.](https://www.wikiwand.com/en/Apple_Inc.)  iTunes supports [WAV](https://www.wikiwand.com/en/WAV), [AIFF](https://www.wikiwand.com/en/AIFF), [Apple Lossless](https://www.wikiwand.com/en/Apple_Lossless), [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding), and [MP3](https://www.wikiwand.com/en/MP3) audio formats.
 [^libvorbis]: [Wiki-Vorbis](https://www.wikiwand.com/en/Vorbis): **Vorbis** is a [free and open-source software](https://www.wikiwand.com/en/Free_and_open-source_software) project headed by the [Xiph.Org Foundation](https://www.wikiwand.com/en/Xiph.Org_Foundation). The project produces an [audio coding format](https://www.wikiwand.com/en/Audio_coding_format) and software reference encoder/decoder ([codec](https://www.wikiwand.com/en/Codec)) for [lossy](https://www.wikiwand.com/en/Lossy_compression)[audio compression](https://www.wikiwand.com/en/Audio_compression_(data)). Vorbis is most commonly used in conjunction with the [Ogg](https://www.wikiwand.com/en/Ogg)[container format](https://www.wikiwand.com/en/Digital_container_format)and it is therefore often referred to as **Ogg Vorbis**. 
 
-
-
+[^pcm]: [Wiki-PCM](https://www.wikiwand.com/en/Pulse-code_modulation): **Pulse-code modulation** (**PCM**) is a method used to [digitally](https://www.wikiwand.com/en/Digital_signal_(signal_processing)) represent sampled [analog signals](https://www.wikiwand.com/en/Analog_signal).
+[^rm]: [Wiki-RealMedia](https://www.wikiwand.com/en/RealMedia): **RealMedia** is a proprietary [multimedia](https://www.wikiwand.com/en/Multimedia)[container format](https://www.wikiwand.com/en/Container_format_(digital)) created by [RealNetworks](https://www.wikiwand.com/en/RealNetworks).
+[^iec]: [Wiki-IEC](https://www.wikiwand.com/en/International_Electrotechnical_Commission): The **International Electrotechnical Commission[3]** (**IEC**; in [French](https://www.wikiwand.com/en/French_language): *Commission électrotechnique internationale*) is an international [standards organization](https://www.wikiwand.com/en/Standards_organization)[[4\]](https://www.wikiwand.com/en/International_Electrotechnical_Commission#citenote4)[[5\]](https://www.wikiwand.com/en/International_Electrotechnical_Commission#citenote5) that prepares and publishes International Standards for all [electrical](https://www.wikiwand.com/en/Electrical), [electronic](https://www.wikiwand.com/en/Electronics) and related technologies – collectively known as "[electrotechnology](https://www.wikiwand.com/en/Electrotechnics)". 
+[^cabbc]: [Wiki-CABBC](https://www.wikiwand.com/en/Context-adaptive_binary_arithmetic_coding)
+[^entropyEnc]: [Wiki-EntropyEncoding](https://www.wikiwand.com/en/Entropy_encoding): In [information theory](https://www.wikiwand.com/en/Information_theory) an  **entropy encoding** is a [lossless data compression](https://www.wikiwand.com/en/Lossless_compression) scheme that is independent of the specific characteristics of the medium. 
+[^prefixcode]:[Wiki-prefixcode](https://www.wikiwand.com/en/Prefix_code): A **prefix code** is a type of [code](https://www.wikiwand.com/en/Code) system (typically a [variable-length code](https://www.wikiwand.com/en/Variable-length_code)) distinguished by its possession of the "prefix property", which requires that there is no whole [code word](https://www.wikiwand.com/en/Code_word) in the system that is a [prefix](https://www.wikiwand.com/en/Prefix_(computer_science)) (initial segment) of any other code word in the system.A prefix code is a [uniquely decodable code](https://www.wikiwand.com/en/Uniquely_decodable_code)
+[^算术编码]: [Wiki-ArithmeticCoding](https://www.wikiwand.com/en/Arithmetic_coding)
+[^cavlc]: [Wiki-CAVLC](https://www.wikiwand.com/en/Context-adaptive_variable-length_coding)
+[^profile]: [Wiki-H.264-Profile](https://www.wikiwand.com/en/H.264/MPEG-4_AVC#Profiles)
+[^ensvc]: [Wiki-ensvc](https://www.wikiwand.com/en/Scalable_Video_Coding): **Scalable Video Coding:** (**SVC**) is the name for the Annex G extension of the [H.264/MPEG-4 AVC](https://www.wikiwand.com/en/H.264/MPEG-4_AVC) video compression standard.  
+[^cnsvc]: [Wiki-cnsvc](https://www.wikiwand.com/zh-hans/%E5%8F%AF%E9%81%A9%E6%80%A7%E8%A6%96%E8%A8%8A%E7%B7%A8%E7%A2%BC): **可适性视讯编码（Scalable Video Coding, SVC）**是传统[H.264/MPEG-4 AVC](https://www.wikiwand.com/zh-hans/H.264/MPEG-4_AVC)编码的延伸，可提升更大的编码弹性，并具有**时间可适性**（Temporal Scalability）、**空间可适性**（Spatial Scalability）及**讯杂比可适性**（SNR Scalability）三大特性，使视讯传输更能适应在异质的网路频宽
