@@ -29,24 +29,24 @@
 - `FFmpeg`是一个免费开源的软件集，可以进行音频及视频的录制，转码，串流(直播)的功能。[^ffmpeg]其包含以下这些主要的函数库。
 
 
-  | 函数库名称 | 用途|
-  | :--------- | :------------------------- |
-  | libswresample[^libswresample]| 音频重采样|
-  | libavresample[^libavresample]                    | 音频重采样，来自libav分支，和上一个类似                      |
-  | libavcodec[^libavcodec]                          | 用于音视频解编码，所有的编码器从头构建，以确保最高效率       |
-  | libavformat*(Lavf)*[^libavformat][^libavformat2] | 用于音视频封装以及解封装                                     |
-  | libavutil[^libavutil]                            | 这是一个通用的辅助函数库，用于封装各部分都需要用到的函数，其包含了各种加解密算法以及压缩与解压缩算法 |
-  | libpostproc[^libpostproc]                        | 用于老的h.263视频后处理                                      |
-  | libswscale[^libswscale]                          | 用于视频以及图像缩放，像素长宽比的调整                       |
-  | libavfilter[^libavfilter]                        | 用于加载音视频滤镜                                           |
+| 函数库名称 | 用途|
+| :--------- | :------------------------- |
+| libswresample[^libswresample]| 音频重采样|
+| libavresample[^libavresample]                    | 音频重采样，来自libav分支，和上一个类似                      |
+| libavcodec[^libavcodec]                          | 用于音视频解编码，所有的编码器从头构建，以确保最高效率       |
+| libavformat*(Lavf)*[^libavformat][^libavformat2] | 用于音视频封装以及解封装                                     |
+| libavutil[^libavutil]                            | 这是一个通用的辅助函数库，用于封装各部分都需要用到的函数，其包含了各种加解密算法以及压缩与解压缩算法 |
+| libpostproc[^libpostproc]                        | 用于老的h.263视频后处理                                      |
+| libswscale[^libswscale]                          | 用于视频以及图像缩放，像素长宽比的调整                       |
+| libavfilter[^libavfilter]                        | 用于加载音视频滤镜                                           |
 
   以及以下这些命令行工具，他们的用法会在进阶中讲到
 
-  | 工具名            | 用途                                                         |
-  | ----------------- | ------------------------------------------------------------ |
-  | ffmpeg[^ffmpeg2]  | 用于转换音视频的格式，同时能够从视频采集设备采集视频并实时编码 |
-  | ffplay[^ffplay]   | 一个简单的多媒体播放器，以及ffmpeg的函数库                   |
-  | ffprobe[^ffprobe] | 用于分析多媒体信息                                           |
+| 工具名            | 用途                                                         |
+| ----------------- | ------------------------------------------------------------ |
+| ffmpeg[^ffmpeg2]  | 用于转换音视频的格式，同时能够从视频采集设备采集视频并实时编码 |
+| ffplay[^ffplay]   | 一个简单的多媒体播放器，以及ffmpeg的函数库                   |
+| ffprobe[^ffprobe] | 用于分析多媒体信息                                           |
 
 - `x264`是一个由VideoLAN开发的用于将视频流编码为`H.264/MPEG-4 AVC`格式的免费开源的软件函数库以及命令行工具[^x264]。*ffmpeg使用x264来解码H.264编码格式的多媒体流*。
 
@@ -95,13 +95,29 @@
 
 ### 视频编码格式
 
-- `H.264/AVC`通常以`.264`为后缀名
-- `H.265/HEVC`通常以`.265`为后缀名
-- `RealMedia`
-- `vp8/vp9`通常被封装于`webm`容器中
-- `av1`通常被封装于`webm`容器中
-- `quicktime`通常以`.mov` `.qt`为后缀名
-- `MPEG-TS`通常以`.mts` `.m2ts`为后缀名
+- `H.264/MPEG-4 AVC`[^h264]
+
+  **H.264**，又称为**MPEG-4 Part10, Advanced Video Coding(AVC)**。是一种面向宏块，基于运动补偿的视频编码技术，到2014年已经成为高精度录制，压缩与发布最常用的格式之一。H.264/AVC项目的目的是为了创建一个更佳的视频压缩标准，在更低的比特率的情况下依然能够提供良好视频质量的标准。H.264的另外一个目标是提供足够的灵活性，以允许该标准能够应用于各种各样的网络和系统的各应用上，包括低和高比特率，低和高分辨率视频。H.264标准可以被视为由多个不同的应用框架 / 配置文件（profiles）组成的“标准系列”。
+
+  H.264由ITU-T视频编码专家组(ITU-T SG16 Q.6)与ISO/IEC联合工作组(动态图像专家组 Moving Picture Experts Group/MPEG)共同组成的联合视频组(JVT，Joint Video Team)开发。因此因ITU-T H.264标准和ISO/IEC MPEG-4/AVC标准（正式名称是ISO/IEC 14496-10—MPEG-4 Part 10，Advanced Video Coding）有相同的技术内容，故被共同管理
+
+  H.264的命名遵循了ITU-T的命名约定，它是VCEG视频编码标准H.26x线中的一员，MPEG-4 AVC的命名来自ISO/IEC MPEG的命名约定，它是ISO/IEC 14496的第10部分，该协议族被称为MPEG-4。该标准是作为VCEG和MPEG的一部分开发的，此前在ITU-T作为VCEG的项目，叫做H.26L。一些软件的内部标识此标准为AVC1
+
+  其最大的分辨率达到`8192×4320`通常以`.264`为后缀名
+
+- `H.265/HEVC(High Efficiency Video Coding)` 又被称为`H.265/MPEG-H Part2 HEVC` 是一种视频压缩标准，其被视为是H.264的继任者。和H.264为同一专家组开发。其在相同的视频质量下提供更高的压缩率，或者在相同的比特率下有更好的视频质量。H.265正在与IETC开发的AV-1编码竞争标准化。现在被各大压片组所采用。通常以`.265`为后缀名。
+
+- `vp8`是由On2 Technologies开发后由Google放出的开源编译格式，其与H.264相比，需要约213%的体积才能达到同样的质量。通常被封装于`webm`容器中。[^vp8]
+
+- `vp9`是Google开发的与H.265竞争的免费开源编码格式。最大可达8192x4352@120，与HEVC相比更适合用于网络传输，因为几乎所有浏览器都支持解码VP9，而在压缩比上，在相同质量下比H.264少40%~45%的体积，比HEVC少20%的体积。主要被用于Youtube上，通常与Opus音频格式一起被封装于`webm`容器中[^vp9]
+
+- `AV1(AOMedia Video 1)`是由AOMedia开发的免费开源编码格式，是一种基于宏块但也同时加入频率变换格式的编码技术。其主要使用的技术来源于Google下一代视频压缩格式VP10，但同时包含了Mozilla的Daala视频压缩格式以及由Cisco开发的Thor视频压缩格式中的编码技术。Google决定将其并入AOMedia开发标准。到目前为止，在相同质量下比HEVC少20%的体积，比AVC少50%的体积，目前在Youtube上进行小规模测试中，其最大可支持7680x4320@120，通常被封装于`webm`容器中[^AV1]。是HEVC AVS2的竞争对象。
+
+- `AVS(Audio Video coding Standard)`，数码音视频编码技术标准，是由中国开发的视频压缩技术，目前在中央电视台，安徽卫视，湖南卫视上使用。AVS2即第二代，支持分辨率，高动态范围的高效压缩，压缩效率比AVC提升一倍，超过HEVC。AVS2还支持三维视频、多视角和虚拟现实视频的高效编码；立体声、多声道音频的高效有损及无损编码；监控视频的高效编码。但是缺少可用的软件编解码器，普及性低（因为不开源，你又不开源，又不免费，除了国家电视台谁用）。[^AVS]
+
+- `Daala`是一种由Xpih,Mozilla,IETF开发的开源视频编码格式，目前其技术被用于AV-1的开发
+
+- `Thor`是一种由Cisco开发的免费视频编码格式，目前其技术被用于AV-1的开发
 
 ### 音频编码格式
 
@@ -131,16 +147,18 @@
 
 形象点就是不同的行李箱能装的东西不同以及装东西的方式不同
 
-| 容器      | 后缀      | 描述                                                         |
-| --------- | --------- | ------------------------------------------------------------ |
-| MPEG-4    | .mp4      |                                                              |
-| flv       | .flv/.f4v |                                                              |
-| avi       | .avi      |                                                              |
-|           | .mkv      |                                                              |
-|           | .webm     |                                                              |
-| RealMedia | .rm/.rmvb | rm被用于早期的网络传输，后来推出了支持可变码率的rmvb再后来由于技术落后被淘汰 |
-|           | .cue      |                                                              |
-|           | .vob      |                                                              |
+| 容器                         | 后缀      | 描述                                                         | 可封装内容                                                   |
+| ---------------------------- | --------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| MPEG-4 Part 14[^mp4]         | .mp4      | .m4a为仅音频，封装AAC或ALAC <br/>.m4v为仅视频                | 视频：H.265 H.264 MPEG-4 Part 2  <br/>音频：MPEG-4 Part 3 audio objects 如MP3 ALS SLS等 MP2 MP1等也支持 |
+| FlashVideo[^flv]             | .flv/.f4v | flv是一种数码多媒体文件封装格式，广泛用于电影等。目前仍被用于某些使用FlashPlayer的网站上 | 视频：H.264<br/>音频：MP3 AAC                                |
+| Audio Video Interleave[^avi] | .avi      | 是Mircosoft在1992年推出的一种多媒体封装格式，支持多视频流与多音频流，但是由于其索引文件放在尾部，所以不适用于网络传输，已经较少用到 | 视频：MPEG标准的多媒体文件 Flash VP3,4,6 VC1等<br>音频PCM MP3 AAC AC3 FLAC等 |
+|                              | .mkv      |                                                              |                                                              |
+|                              | .webm     |                                                              |                                                              |
+| RealMedia[^rm]               | .rm/.rmvb | rm被用于早期的网络传输，可以提供更加优秀的压缩体积。后来推出了支持可变码率的rmvb。RealMedia HD可以在更高的视觉质量下提供比高效率视频编码更高的压缩率 | 符合MPEG标准的多媒体                                         |
+|                              | .cue      |                                                              |                                                              |
+|                              | .vob      |                                                              |                                                              |
+| QuickTime[^QT]               | .qt/.mov  | 是一种由苹果公司开发的多媒体框架，能够处理数字音视频，动画等格式。其为H.264标准的一个基础，可以使用插件的方式来支持其他解码器(如DivX)。 | 音频：FLAC MIDI MP3等<br/>视频：GIF H.264 H.265 qtmov等      |
+| MPEG-TS[^meeg-ts]            | .ts/.m2ts | 由于TS能支持从任意地方开始播放，也就是说你只有中间一截也能播放，所以是一种被广泛用于蓝光碟，IPTV，DVB，直播等地方的视频容器 | 符合MPEG标准的多媒体，VC-1，AAC等                            |
 
 
 
@@ -151,54 +169,6 @@
 ## 视频名词
 
 > 理解难度从上往下递增
-
-- `profile`即配置文件，其针对不同的应用程序定义了不同的配置，这些被声明为配置文件代码(`profile_idc`)和在编码器种应用的一系列约束。这允许解码器识别解码该特定流的要求。一般来说有以下这些[^profile]
-
-  > constraint 约束
-  >
-  > Progressive 渐进
-  >
-  > Predictive 前向预测性
-
-  ​	*对非可适性视频编码而言有以下这些标准*
-
-  - Constrained Baseline Profile (CBP, 66 with constraint set 1)
-
-    ​	主要被用于低开销的应用场景，这种等级的profile通常被用于视频会议以及一些手机应用。他是BP MP HP之间的共有特征子集
-
-  - Baseline Profile (BP, 66, 基线)
-
-    ​	主要被用于需要额外数据以保持数据传输鲁棒性[^鲁棒性]的低开销应用场景，有时候在一些视频会议和手机应用中使用。该等级的配置在CBP的基础上增加了三个功能以保证传输稳定(或是用于其他目的例如低延迟多点的视频流合成)。自从2009年CBP被定义以来，该配置文件的重要性逐渐消失，所有CBP流也被视为BP流，所以共享相同的标识码(66)
-
-  - Extended Profile (XP, 88, 额外)
-
-    ​	被用于视频流文件，这个配置文件有相对较高的压缩能力以及一些额外的功能来确保对数据丢失和服务器媒体流切换的鲁棒性
-
-  - Main Profile (MP, 77, 主要)
-
-    ​	被用于使用DVB标准中定义的MPEG-4格式的标清数字电视广播。然而它并不用于高清电视广播，因为在2004年针对高清电视广播开发HiP之后，该配置文件的重要性已经消失。
-
-  - High Profile (HiP, 100, 高)
-
-  - Progressive High Profile (PHiP, 100 with constraint set 4)
-
-  - Constrained High Profile (100 with constraint set 4 and 5)
-
-  - High 10 Profile (Hi10P, 110)
-
-  - High 4:2:2 Profile (Hi422P, 122)
-
-  - High 4:4:4 Predictive Profile (Hi444PP, 244)
-
-  - High 10 Intra Profile (110 with constraint set 3)
-
-  - High 4:2:2 Intra Profile (122 with constraint set 3)
-
-  - High 4:4:4 Intra Profile (244 with constraint set 3)
-
-  - CAVLC 4:4:4 Intra Profile (44)
-
-- `level`
 
 - `NTSC`
 
@@ -211,6 +181,149 @@
 - `四比三下位变换`
 
 - `DVR`
+
+- `H.264 profile`即配置文件，其针对不同的应用程序定义了不同的配置，这些被声明为配置文件代码(`profile_idc`)和在编码器种应用的一系列约束。这允许解码器识别解码该特定流的要求。一般来说有以下这些[^profile]
+
+  > constraint 约束
+  >
+  > Progressive 渐进
+  >
+  > Predictive 前向预测性
+
+  *对非可适性视频编码而言，H.264有以下这些标准*
+
+  - Constrained Baseline Profile (CBP, 66 with constraint set 1)
+
+    	主要被用于低开销的应用场景，这种等级的profile通常被用于视频会议以及一些手机应用。他是BP MP HP之间的共有特征子集
+
+  - Baseline Profile (BP, 66, 基线)
+
+    	主要被用于需要额外数据以保持数据传输鲁棒性的低开销应用场景，有时候在一些视频会议和手机应用中使用。该等级的配置在CBP的基础上增加了三个功能以保证传输稳定(或是用于其他目的例如低延迟多点的视频流合成)。自从2009年CBP被定义以来，该配置文件的重要性逐渐消失，所有CBP流也被视为BP流，所以共享相同的标识码(66)
+
+  - Extended Profile (XP, 88, 额外)
+
+    	被用于视频流文件，这个配置文件有相对较高的压缩能力以及一些额外的功能来确保对数据丢失和服务器媒体流切换的鲁棒性
+
+  - Main Profile (MP, 77, 主要)**常用**
+
+    	被用于使用DVB标准中定义的MPEG-4格式的标清数字电视广播。然而它并不用于高清电视广播，因为在2004年针对高清电视广播开发HiP之后，该配置文件的重要性已经消失。
+
+  - High Profile (HiP, 100, 高)**常用**
+
+    	主要用于广播以及储存的配置文件，尤其是高清电视以及蓝光DVD
+
+  - Progressive High Profile (PHiP, 100 with constraint set 4)
+
+    	同上，但不支持字段编码
+
+  - Constrained High Profile (100 with constraint set 4 and 5)
+
+    	同上，但不支持B帧切片
+
+  - High 10 Profile (Hi10P, 110)
+
+    	基于HiP，并支持10bit采样精度
+
+  - High 4:2:2 Profile (Hi422P, 122)
+
+    	主要针对隔行扫描的配置文件，建立在Hi10P之上，增加对4:2:2色度的支持，同时每个解码图像的采样精度最多10bit
+
+  - High 4:4:4 Predictive Profile (Hi444PP, 244)
+
+    	在上一个基础之上建立，支持4:4:4的色度采样，每个采样升到14bit，并且增加对高效快编码的支持以及可以将每个图像编码为三个独立的色彩平面(Y U V)
+
+  > 下面这四个配置文件主要被用于录像以及专业的编辑程序，包含四个额外的仅帧内配置文件。
+
+  - High 10 Intra Profile (110 with constraint set 3)
+  - High 4:2:2 Intra Profile (122 with constraint set 3)
+  - High 4:4:4 Intra Profile (244 with constraint set 3)
+  - CAVLC 4:4:4 Intra Profile (44)
+
+  > 对适应性视频编码( Scalable Video Coding, SVC)而言，包含了五个额外的额外的可适应性配置文件，被定义为与普通配置文件的组合，由标识码中的第二个字标识
+
+  - Scalable Baseline Profile (83)
+
+    	在BP上增加可适应性功能
+
+  - Scalable Constrained Baseline Profile (83 with constraint set 5)
+
+    	主要用于实时通讯
+
+  - Scalable High Profile (86)**常用**
+
+    	主要用于广播以及流媒体传输应用
+
+  - Scalable Constrained High Profile (86 with constraint set 5)
+
+    	对上一个增加了对实时通讯应用的功能
+
+  - Scalable High Intra Profile (86 with constraint set 3)
+
+    	同上，限帧内使用
+
+  wiki上关于各配置文件支持的功能列表
+
+  | 特性                                               | CBP   | BP    | XP    | MP    | ProHiP | HiP   | Hi10P   | Hi422P         | Hi444PP                 |
+  | -------------------------------------------------- | ----- | ----- | ----- | ----- | ------ | ----- | ------- | -------------- | ----------------------- |
+  | 位深度                                             | 8     | 8     | 8     | 8     | 8      | 8     | 8 to 10 | 8 to 10        | 8 to 14                 |
+  | 色度格式                                           | 4:2:0 | 4:2:0 | 4:2:0 | 4:2:0 | 4:2:0  | 4:2:0 | 4:2:0   | 4:2:0<br>4:2:2 | 4:2:0<br>4:2:2<br>4:4:4 |
+  | 可调整宏块排列(Flexible macroblock ordering (FMO)) | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
+  | 任意性排序(Arbitrary slice ordering (ASO))         | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
+  | 冗余切片(Redundant slices (RS))                    | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
+  | 数据分区                                           | No    | No    | Yes   | No    | No     | No    | No      | No             | No                      |
+  | SI 与 SP 切片                                      | No    | No    | Yes   | No    | No     | No    | No      | No             | No                      |
+  | 隔行扫描编码(PicAFF, MBAFF)                        | No    | No    | Yes   | Yes   | No     | Yes   | Yes     | Yes            | Yes                     |
+  | B 切片                                             | No    | No    | Yes   | Yes   | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | CABAC                                              | No    | No    | No    | Yes   | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | 4:0:0 单色度                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | 8×8 vs. 4×4 变化适应性                             | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | 量化缩放矩阵                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | 分离 $C_b$ 以及 $C_r$ QP 控制                      | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | 分离色彩平面吗                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
+  | 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
+
+- `H.264 等级(level)`
+
+  规定了一系列的约束以及告诉解码器所需要的配置等级
+
+  | Level | 最大解码速率(宏块/秒) | 每个宏块的最大帧大小 | 视频编码层的最大比特率(kbits/s) <br/> (Constrained Baseline, <br/>Baseline,<br/>Extended and Main Profiles) | 高解析度@ 最高比特率<br/>(最大储存帧)                        | 最大图片缓存 |
+  | :---: | :-------------------- | :------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------- |
+  |   1   | 1,485                 | 99                   | 64                                                           | 128×96@30.9 (8)<br>176×144@15.0 (4)                          | 396          |
+  |  1b   | 1,485                 | 99                   | 128                                                          | 128×96@30.9 (8)<br/>176×144@15.0 (4)                         | 396          |
+  |  1.1  | 3,000                 | 396                  | 192                                                          | 176×144@30.3 (9) <br/>320×240@10.0 (3)<br/>352×288@7.5 (2)   | 900          |
+  |  1.2  | 6,000                 | 396                  | 384                                                          | 320×240@20.0 (7)<br/>352×288@15.2 (6)                        | 2376         |
+  |  1.3  | 11,880                | 396                  | 768                                                          | 320×240@36.0 (7)<br/>352×288@30.0 (6)                        | 2376         |
+  |   2   | 11,880                | 396                  | 2,000                                                        | 320×240@36.0 (7)<br/>352×288@30.0 (6)                        | 2376         |
+  |  2.1  | 19,800                | 792                  | 4,000                                                        | 352×480@30.0 (7)<br/>352×576@25.0 (6)                        | 4752         |
+  |  2.2  | 20,250                | 1,620                | 4,000                                                        | 352×480@30.7 (12) <br/>352×576@25.6 (10) <br/>720×480@15.0 (6)<br/>720×576@12.5 (5) | 8100         |
+  |   3   | 40,500                | 1,620                | 10,000                                                       | 352×480@61.4 (12) <br/>352×576@51.1 (10) <br/>720×480@30.0 (6)<br/>720×576@25.0 (5) | 8100         |
+  |  3.1  | 108,000               | 3,600                | 14,000                                                       | 720×480@80.0 (13) <br/>720×576@66.7 (11)<br/>1,280×720@30.0 (5) | 18000        |
+  |  3.2  | 216,000               | 5,120                | 20,000                                                       | 1,280×720@60.0 (5)<br/>1,280×1,024@42.2 (4)                  | 20480        |
+  |   4   | 245,760               | 8,192                | 20,000                                                       | 1,280×720@68.3 (9) <br/>1,920×1,080@30.1 (4)<br/>2,048×1,024@30.0 (4) | 32768        |
+  |  4.1  | 245,760               | 8,192                | 50,000                                                       | 1,280×720@68.3 (9) <br/>1,920×1,080@30.1 (4)<br/>2,048×1,024@30.0 (4) | 32768        |
+  |  4.2  | 522,240               | 8,704                | 50,000                                                       | 1,280×720@145.1 (9) <br/>1,920×1,080@64.0 (4)<br/>2,048×1,080@60.0 (4) | 34816        |
+  |   5   | 589,824               | 22,080               | 135,000                                                      | 1,920×1,080@72.3 (13) <br/>2,048×1,024@72.0 (13) <br/>2,048×1,080@67.8 (12) <br/>2,560×1,920@30.7 (5)<br/>3,672×1,536@26.7 (5) | 110400       |
+  |  5.1  | 983,040               | 36,864               | 240,000                                                      | 1,920×1,080@120.5 (16) <br/>2,560×1,920@51.2 (9) <br/>3,840×2,160@31.7 (5) <br/>4,096×2,048@30.0 (5) <br/>4,096×2,160@28.5 (5)<br/>4,096×2,304@26.7 (5) | 184320       |
+  |  5.2  | 2,073,600             | 36,864               | 240,000                                                      | 1,920×1,080@172.0 (16)<br/>2,560×1,920@108.0 (9)<br/>3,840×2,160@66.8 (5) <br/>4,096×2,048@63.3 (5) <br/>4,096×2,160@60.0 (5)<br/>4,096×2,304@56.3 (5) | 184320       |
+  |   6   | 4,177,920             | 139,26               | 240,000                                                      | 3,840×2,160@128.9 (16)<br/>7,680×4,320@32.2 (5)<br/>8,192×4,320@30.2 (5) | 696320       |
+  |  6.1  | 8,35,840              | 139,264              | 480,000                                                      | 3,840×2,160@257.9 (16) 7,680×4,320@64.5 (5)<br/>8,192×4,320@60.4 (5) | 696320       |
+  |  6.2  | 16,711,680            | 139,264              | 800,000                                                      | 3,840×2,160@300.0 (16)<br/>7,680×4,320@128.9 (5)<br/>8,192×4,320@120.9 (5) | 696320       |
+
+- `解码图像缓存器（Decoded picture buffering, DPB）`
+
+    H.264/AVC编码器采用之前已编码的帧画面来提供给其他帧画面进行样本值预测。这可以使得编码器对编码给定帧画面的最佳方式做出有效决策。同时，参考帧(Ref Frames)也来自于这个缓存在解码器中这些帧被储存在DPB中，DPB的最大容量(单位：帧)，如上一个表中的括号，可以按照下面的方式来计算
+
+    $DpbCapacity=\lfloor \frac {最大帧缓存量(Mb/s)} {(帧画面宽度(Mb/s)))*(帧画面高度(Mb/s))})\rfloor $
+
+    其中MaxDpbMbs为上表中最后一列的数字，举个例子，有一个1920(120Mb/s)x1080(68Mb/s)的HDTV的图像，根据Level 4 中所规定的MaxDpb计算
+
+    $\lfloor \frac {32768} {120*68})\rfloor = 4帧$
+
+    注意，正在解码的图像不包括在DPB的计算中
+
+    你可以在mediainfo中看见下图信息
+
+    ![1555891080320](images/1555891080320.png)
 
 - `CBR`
 
@@ -254,7 +367,7 @@
 
 - `CAVLC(Context-based Adaptive Variable-Length code)`，适应性可变长度编码法，又被称为`UVLC`。是h.264的演算法机制，其对传统的霍夫曼编码进行了改进，因此在压缩效率上取得了相当大的进步。其支持所有的H.264 peofile。过程解释有点复杂（[^cavlc]
 
-- `可视性视频编码(Scalable Video Coding, SVC)`是传统H.264编码的延伸，是H.264视频压缩标准附录G的名称，可以提升更大的编码弹性，并且有时间(帧速率)可适性(Temporal Scalability),空间(图片大小)可适性（Spatial Scalability）及信噪比/质量/品质可适性（SNR Scalability）[^ensvc][^cnsvc]三大特性，使得视频传输能在不同的网络带宽中使用。
+- `适应性视频编码(Scalable Video Coding, SVC)`是传统H.264编码的延伸，是H.264视频压缩标准附录G的名称，可以提升更大的编码弹性，并且有时间(帧速率)可适性(Temporal Scalability),空间(图片大小)可适性（Spatial Scalability）及信噪比/质量/品质可适性（SNR Scalability）[^ensvc][^cnsvc]三大特性，使得视频传输能在不同的网络带宽中使用。
 
 ## 音频名词
 
@@ -274,9 +387,9 @@
 
 - `ITU-R(ITU Radiocommunication Sector)`国际电信联盟无线电通信部门
 
-- [^鲁棒性]:`鲁棒性(robustness)`，是指控制系统在一定(结构，大小)的**参数扰动下**，仍能够维持其他某些性能的特性，也就是系统的健壮性。鲁棒控制方法适用于稳定性和可靠性作为首要目标的应用，同时过程的动态特征已知，且不确定因素的变化范围可以预估。**鲁棒性不同于稳定性**，稳定性是指控制系统在使它偏离平衡状态的**扰动消失之后** ，返回原来平衡状态的能力。举个例子，鲁棒性就像你种菜(物理)的时候，不会因为某一天浇水多了抑或少了，某一天出太阳了或下雨了而长不出来。稳定性就你给弹簧一个压力，你放手之后弹簧能回到原来的状态
+- `鲁棒性(robustness)`，是指==控制系统在一定(结构，大小)的**参数扰动下**，仍能够维持其他某些性能的特性==，也就是系统的健壮性。鲁棒控制方法适用于稳定性和可靠性作为首要目标的应用，同时过程的动态特征已知，且不确定因素的变化范围可以预估。**鲁棒性不同于稳定性**，稳定性是指==控制系统在使它偏离平衡状态的**扰动消失之后** ，返回原来平衡状态的能力==。举个例子，鲁棒性就像你种菜(物理)的时候，不会因为某一天浇水多了抑或少了，某一天出太阳了或下雨了而长不出来。稳定性就你给弹簧一个压力，你放手之后弹簧能回到原来的状态
 
-- 
+- `MPEG(Moving Picture Expert Group)`动态图像专家组，制定了一系列有关动态图像的标准，如编码格式，音频，容器，传输方式等等
 
 ---
 
@@ -307,18 +420,37 @@
 [^lame]: [Wiki-Lame](https://www.wikiwand.com/en/LAME): **LAME** is a software [encoder](https://www.wikiwand.com/en/Encoder) that converts audio to the [MP3](https://www.wikiwand.com/en/MP3) file format.
 [^l3enc]: [Wiki-L3enc](https://www.wikiwand.com/en/L3enc): **Fraunhofer l3enc** was the first public software able to encode [PCM](https://www.wikiwand.com/en/Pulse-code_modulation) ([.wav](https://www.wikiwand.com/en/WAV)) files to the [MP3](https://www.wikiwand.com/en/MP3) format. 
 [^fdkaacenc]: [Wiki-FDKAACenc](https://www.wikiwand.com/en/Fraunhofer_FDK_AAC): **Fraunhofer FDK AAC** (Full title **Fraunhofer FDK AAC Codec Library for Android**) is an [open-source](https://www.wikiwand.com/en/Open-source_software)software library for [encoding and decoding](https://www.wikiwand.com/en/Codec)[Advanced Audio Coding](https://www.wikiwand.com/en/Advanced_Audio_Coding) (AAC) format audio
-[^faac]:[Wiki-FAAC](https://www.wikiwand.com/en/FAAC): **FAAC** or **Freeware Advanced Audio Coder** is a software project which includes the [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding)[encoder](https://www.wikiwand.com/en/Encoder)**FAAC** and [decoder](https://www.wikiwand.com/en/Audio_decoder)**FAAD2**. 
-[^itunes]:[Wiki-iTunes](https://www.wikiwand.com/en/ITunes): **iTunes** ([/ˈaɪtjuːnz/](https://www.wikiwand.com/en/Help:IPA/English))is a [media player](https://www.wikiwand.com/en/Media_player_(software)), media library, [Internet radio](https://www.wikiwand.com/en/Internet_radio) broadcaster, and [mobile device](https://www.wikiwand.com/en/Mobile_device) management application developed by [Apple Inc.](https://www.wikiwand.com/en/Apple_Inc.)  iTunes supports [WAV](https://www.wikiwand.com/en/WAV), [AIFF](https://www.wikiwand.com/en/AIFF), [Apple Lossless](https://www.wikiwand.com/en/Apple_Lossless), [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding), and [MP3](https://www.wikiwand.com/en/MP3) audio formats.
+
 [^libvorbis]: [Wiki-Vorbis](https://www.wikiwand.com/en/Vorbis): **Vorbis** is a [free and open-source software](https://www.wikiwand.com/en/Free_and_open-source_software) project headed by the [Xiph.Org Foundation](https://www.wikiwand.com/en/Xiph.Org_Foundation). The project produces an [audio coding format](https://www.wikiwand.com/en/Audio_coding_format) and software reference encoder/decoder ([codec](https://www.wikiwand.com/en/Codec)) for [lossy](https://www.wikiwand.com/en/Lossy_compression)[audio compression](https://www.wikiwand.com/en/Audio_compression_(data)). Vorbis is most commonly used in conjunction with the [Ogg](https://www.wikiwand.com/en/Ogg)[container format](https://www.wikiwand.com/en/Digital_container_format)and it is therefore often referred to as **Ogg Vorbis**. 
 
 [^pcm]: [Wiki-PCM](https://www.wikiwand.com/en/Pulse-code_modulation): **Pulse-code modulation** (**PCM**) is a method used to [digitally](https://www.wikiwand.com/en/Digital_signal_(signal_processing)) represent sampled [analog signals](https://www.wikiwand.com/en/Analog_signal).
 [^rm]: [Wiki-RealMedia](https://www.wikiwand.com/en/RealMedia): **RealMedia** is a proprietary [multimedia](https://www.wikiwand.com/en/Multimedia)[container format](https://www.wikiwand.com/en/Container_format_(digital)) created by [RealNetworks](https://www.wikiwand.com/en/RealNetworks).
-[^iec]: [Wiki-IEC](https://www.wikiwand.com/en/International_Electrotechnical_Commission): The **International Electrotechnical Commission[3]** (**IEC**; in [French](https://www.wikiwand.com/en/French_language): *Commission électrotechnique internationale*) is an international [standards organization](https://www.wikiwand.com/en/Standards_organization)[[4\]](https://www.wikiwand.com/en/International_Electrotechnical_Commission#citenote4)[[5\]](https://www.wikiwand.com/en/International_Electrotechnical_Commission#citenote5) that prepares and publishes International Standards for all [electrical](https://www.wikiwand.com/en/Electrical), [electronic](https://www.wikiwand.com/en/Electronics) and related technologies – collectively known as "[electrotechnology](https://www.wikiwand.com/en/Electrotechnics)". 
+
+[^iec]: [Wiki-IEC](https://www.wikiwand.com/en/International_Electrotechnical_Commission): The **International Electrotechnical Commission** (**IEC**; in [French](https://www.wikiwand.com/en/French_language): *Commission électrotechnique internationale*) is an international [standards organization](https://www.wikiwand.com/en/Standards_organization) that prepares and publishes International Standards for all [electrical](https://www.wikiwand.com/en/Electrical), [electronic](https://www.wikiwand.com/en/Electronics) and related technologies – collectively known as "[electrotechnology](https://www.wikiwand.com/en/Electrotechnics)". 
 [^cabbc]: [Wiki-CABBC](https://www.wikiwand.com/en/Context-adaptive_binary_arithmetic_coding)
 [^entropyEnc]: [Wiki-EntropyEncoding](https://www.wikiwand.com/en/Entropy_encoding): In [information theory](https://www.wikiwand.com/en/Information_theory) an  **entropy encoding** is a [lossless data compression](https://www.wikiwand.com/en/Lossless_compression) scheme that is independent of the specific characteristics of the medium. 
-[^prefixcode]:[Wiki-prefixcode](https://www.wikiwand.com/en/Prefix_code): A **prefix code** is a type of [code](https://www.wikiwand.com/en/Code) system (typically a [variable-length code](https://www.wikiwand.com/en/Variable-length_code)) distinguished by its possession of the "prefix property", which requires that there is no whole [code word](https://www.wikiwand.com/en/Code_word) in the system that is a [prefix](https://www.wikiwand.com/en/Prefix_(computer_science)) (initial segment) of any other code word in the system.A prefix code is a [uniquely decodable code](https://www.wikiwand.com/en/Uniquely_decodable_code)
+[^prefixcode]: [Wiki-prefixcode](https://www.wikiwand.com/en/Prefix_code): A **prefix code** is a type of [code](https://www.wikiwand.com/en/Code) system (typically a [variable-length code](https://www.wikiwand.com/en/Variable-length_code)) distinguished by its possession of the "prefix property", which requires that there is no whole [code word](https://www.wikiwand.com/en/Code_word) in the system that is a [prefix](https://www.wikiwand.com/en/Prefix_(computer_science)) (initial segment) of any other code word in the system.A prefix code is a [uniquely decodable code](https://www.wikiwand.com/en/Uniquely_decodable_code)
 [^算术编码]: [Wiki-ArithmeticCoding](https://www.wikiwand.com/en/Arithmetic_coding)
 [^cavlc]: [Wiki-CAVLC](https://www.wikiwand.com/en/Context-adaptive_variable-length_coding)
 [^profile]: [Wiki-H.264-Profile](https://www.wikiwand.com/en/H.264/MPEG-4_AVC#Profiles)
-[^ensvc]: [Wiki-ensvc](https://www.wikiwand.com/en/Scalable_Video_Coding): **Scalable Video Coding:** (**SVC**) is the name for the Annex G extension of the [H.264/MPEG-4 AVC](https://www.wikiwand.com/en/H.264/MPEG-4_AVC) video compression standard.  
+[^h264]: [Wiki-H.264](https://www.wikiwand.com/en/H.264/MPEG-4_AVCs): **H.264** or **MPEG-4 Part 10, Advanced Video Coding** (**MPEG-4 AVC**) is a block-oriented [motion-compensation](https://www.wikiwand.com/en/Motion_compensation)-based [video compression standard](https://www.wikiwand.com/en/Video_compression_standard). As of 2014, it is one of the most commonly used formats for the recording, compression, and distribution of video content. It supports resolutions up to 8192×4320, including [8K UHD](https://www.wikiwand.com/en/8K_resolution).
+[^ensvc]:  [Wiki-ensvc](https://www.wikiwand.com/en/Scalable_Video_Coding): Scalable Video Coding: (**SVC**) is the name for the Annex G extension of the [H.264/MPEG-4 AVC](https://www.wikiwand.com/en/H.264/MPEG-4_AVC) video compression standard.  
 [^cnsvc]: [Wiki-cnsvc](https://www.wikiwand.com/zh-hans/%E5%8F%AF%E9%81%A9%E6%80%A7%E8%A6%96%E8%A8%8A%E7%B7%A8%E7%A2%BC): **可适性视讯编码（Scalable Video Coding, SVC）**是传统[H.264/MPEG-4 AVC](https://www.wikiwand.com/zh-hans/H.264/MPEG-4_AVC)编码的延伸，可提升更大的编码弹性，并具有**时间可适性**（Temporal Scalability）、**空间可适性**（Spatial Scalability）及**讯杂比可适性**（SNR Scalability）三大特性，使视讯传输更能适应在异质的网路频宽
+
+[^faac]: [Wiki-FAAC](https://www.wikiwand.com/en/FAAC): **FAAC** or **Freeware Advanced Audio Coder** is a software project which includes the [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding)[encoder](https://www.wikiwand.com/en/Encoder)**FAAC** and [decoder](https://www.wikiwand.com/en/Audio_decoder)**FAAD2**. 
+
+[^itunes]: [Wiki-iTunes](https://www.wikiwand.com/en/ITunes): **iTunes** ([/ˈaɪtjuːnz/](https://www.wikiwand.com/en/Help:IPA/English))is a [media player](https://www.wikiwand.com/en/Media_player_(software)), media library, [Internet radio](https://www.wikiwand.com/en/Internet_radio) broadcaster, and [mobile device](https://www.wikiwand.com/en/Mobile_device) management application developed by [Apple Inc.](https://www.wikiwand.com/en/Apple_Inc.)  iTunes supports [WAV](https://www.wikiwand.com/en/WAV), [AIFF](https://www.wikiwand.com/en/AIFF), [Apple Lossless](https://www.wikiwand.com/en/Apple_Lossless), [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding), and [MP3](https://www.wikiwand.com/en/MP3) audio formats.
+[^mp4]: [Wiki-MP4](https://www.wikiwand.com/en/MPEG-4_Part_14): **MPEG-4 Part 14** or **MP4** is a [digital](https://www.wikiwand.com/en/Digital_data)[multimedia](https://www.wikiwand.com/en/Multimedia)[ container format](https://www.wikiwand.com/en/Digital_container_format) most commonly used to store [video](https://www.wikiwand.com/en/Digital_video) and [audio](https://www.wikiwand.com/en/Digital_audio), but it can also be used to store other data such as [subtitles](https://www.wikiwand.com/en/Subtitles) and still images.Like most modern [container formats](https://www.wikiwand.com/en/Container_format_(digital)), it allows [streaming](https://www.wikiwand.com/en/Streaming_media) over the [Internet](https://www.wikiwand.com/en/Internet). The only official [filename extension](https://www.wikiwand.com/en/Filename_extension) for MPEG-4 Part 14 files is **.mp4**. MPEG-4 Part 14 (formally **ISO/IEC 14496-14:2003**) is a standard specified as a part of [MPEG-4](https://www.wikiwand.com/en/MPEG-4). 
+[^vp8]: [Wiki-VP8](https://www.wikiwand.com/en/VP8): **VP8** is an [open](https://www.wikiwand.com/en/Open_format) and [royalty free](https://www.wikiwand.com/en/Royalty_free)[video compression format](https://www.wikiwand.com/en/Video_coding_format) owned by Google and created by [On2 Technologies](https://www.wikiwand.com/en/On2_Technologies) as a successor to [VP7](https://www.wikiwand.com/en/VP7). 
+[^vp9]: [Wiki-VP9](https://www.wikiwand.com/en/VP9):**VP9** is an [open](https://www.wikiwand.com/en/Open_format) and [royalty-free](https://www.wikiwand.com/en/Royalty-free)[video coding format](https://www.wikiwand.com/en/Video_coding_format) developed by [Google](https://www.wikiwand.com/en/Google). VP9 is the successor to [VP8](https://www.wikiwand.com/en/VP8) and competes mainly with MPEG's [High Efficiency Video Coding](https://www.wikiwand.com/en/High_Efficiency_Video_Coding) (HEVC/H.265). At first, VP9 was mainly used on Google's video platform [YouTube](https://www.wikiwand.com/en/YouTube).The emergence of the [Alliance for Open Media](https://www.wikiwand.com/en/Alliance_for_Open_Media), and its support for the ongoing development of the successor [AV1](https://www.wikiwand.com/en/AOMedia_Video_1), of which Google is a part of, led to growing interest in the format. 
+[^AV1]: [Wiki-AV1](https://www.wikiwand.com/en/AV1):**AOMedia Video 1** (**AV1**) is an [open](https://www.wikiwand.com/en/Open_format), [royalty-free](https://www.wikiwand.com/en/Royalty-free)[video coding format](https://www.wikiwand.com/en/Video_coding_format) designed for video transmissions over the Internet. It was developed by the [Alliance for Open Media](https://www.wikiwand.com/en/Alliance_for_Open_Media) (AOMedia), a consortium of firms from the semiconductor industry, [video on demand](https://www.wikiwand.com/en/Video_on_demand)  providers, video content producers, software development companies and  web browser vendors, founded in 2015. The AV1 bitstream specification  includes a reference [video codec](https://www.wikiwand.com/en/Video_codec).It succeeds [VP9](https://www.wikiwand.com/en/VP9). It can have 20% higher [data compression](https://www.wikiwand.com/en/Data_compression) than VP9 or [HEVC](https://www.wikiwand.com/en/High_Efficiency_Video_Coding)/H.265 from the [Moving Picture Experts Group](https://www.wikiwand.com/en/Moving_Picture_Experts_Group) and about 50% higher than the widely used [AVC](https://www.wikiwand.com/en/H.264/MPEG-4_AVC)
+[^AVS]: [Wiki-AVS](https://www.wikiwand.com/zh/AVS): **AVS**（Audio Video coding Standard），即**數位音影片編解碼技術標準**，為中國第二代[信源編碼](https://www.wikiwand.com/zh/信源编码)標準。 
+[^Daala]: [Wiki-Daala](https://www.wikiwand.com/en/Daala): **Daala** is a [video coding format](https://www.wikiwand.com/en/Video_coding_format) under development by the [Xiph.Org Foundation](https://www.wikiwand.com/en/Xiph.Org_Foundation) under the lead of Timothy B. Terriberry mainly sponsored by the [Mozilla Corporation](https://www.wikiwand.com/en/Mozilla_Corporation).Like [Theora](https://www.wikiwand.com/en/Theora) and [Opus](https://www.wikiwand.com/en/Opus_codec), Daala is available free of any royalties and its reference implementation is being developed as [free and open-source software](https://www.wikiwand.com/en/Free_and_open-source_software). 
+[^Thor]: [Wiki-Thor](https://www.wikiwand.com/en/Thor_(video_codec)): **Thor** is a [royalty free](https://www.wikiwand.com/en/Royalty_free)[video codec](https://www.wikiwand.com/en/Video_codec) under development by [Cisco Systems](https://www.wikiwand.com/en/Cisco_Systems). The specifications of Thor were available in various [Internet-Drafts](https://www.wikiwand.com/en/Internet-Draft).
+[^mpeg-ts]: [Wiki-MPEG-TS](https://www.wikiwand.com/en/MPEG_transport_stream): **MPEG transport stream** (**transport stream**, **MPEG-TS**, **MTS** or **TS**) is a standard [digital container format](https://www.wikiwand.com/en/Digital_container_format) for transmission and storage of [audio](https://www.wikiwand.com/en/Digital_audio), [video](https://www.wikiwand.com/en/Digital_video), and [Program and System Information Protocol](https://www.wikiwand.com/en/Program_and_System_Information_Protocol) (PSIP) data. It is used in broadcast systems such as [DVB](https://www.wikiwand.com/en/Digital_Video_Broadcasting), [ATSC](https://www.wikiwand.com/en/ATSC_standards) and [IPTV](https://www.wikiwand.com/en/IPTV). 
+[^flv]: [Wiki-FLV](https://www.wikiwand.com/en/Flash_Video): **Flash Video** is a [container file format](https://www.wikiwand.com/en/Container_format_(digital)) used to deliver [digital video](https://www.wikiwand.com/en/Digital_video) content (e.g., [TV shows](https://www.wikiwand.com/en/TV_show), [movies](https://www.wikiwand.com/en/Movie), etc.) over the [Internet](https://www.wikiwand.com/en/Internet) using [Adobe Flash Player](https://www.wikiwand.com/en/Adobe_Flash_Player) version 6 and newer
+[^avi]: [Wiki-AVI](https://www.wikiwand.com/en/Audio_Video_Interleave): **Audio Video Interleave** (also **Audio Video Interleaved**), known by its initials **AVI**, is a multimedia [container format](https://www.wikiwand.com/en/Container_format_(digital)) introduced by [Microsoft](https://www.wikiwand.com/en/Microsoft) in November 1992 as part of its [Video for Windows](https://www.wikiwand.com/en/Video_for_Windows) software.
+[^mkv]: [Wiki-MKV](https://www.wikiwand.com/en/Matroska): The **Matroska Multimedia Container** is a [free](https://www.wikiwand.com/en/Free_file_format), open-standard [container format](https://www.wikiwand.com/en/Container_format_(digital)), a [file format](https://www.wikiwand.com/en/File_format) that can hold an unlimited number of video, audio, picture, or subtitle tracks in one file.
+[^webm]: [Wiki-WEBM](https://www.wikiwand.com/en/WebM): **WebM** is an audiovisual media file format.It is primarily intended to offer a [royalty-free](https://www.wikiwand.com/en/Royalty-free) alternative to use in the [HTML5 video](https://www.wikiwand.com/en/HTML5_video) and the [HTML5 audio](https://www.wikiwand.com/en/HTML5_audio) elements. 
+
+[^vob]: [Wiki-VOB](https://www.wikiwand.com/en/VOB): **VOB** (***V**ideo **Ob**ject*) is the [container format](https://www.wikiwand.com/en/Container_format_(digital)) in [DVD-Video](https://www.wikiwand.com/en/DVD-Video) media. VOB can contain [digital video](https://www.wikiwand.com/en/Digital_video), [digital audio](https://www.wikiwand.com/en/Digital_audio), [subtitles](https://www.wikiwand.com/en/Subtitle_(captioning)), DVD menus and navigation contents [multiplexed](https://www.wikiwand.com/en/Multiplexed) together into a stream form. Files in VOB format may be encrypted. 

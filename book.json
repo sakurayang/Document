@@ -2,7 +2,7 @@
 	"title": "后期教学文档",
 	"author": "Gerardyang",
 	"language": "zh-hans",
-    "plugins": ["toc2","todo"],
+    "plugins": ["mathjax","toc2","todo","text-highlight"],
     "pluginsConfig": {
         "toc2": {
             "addClass": true,
