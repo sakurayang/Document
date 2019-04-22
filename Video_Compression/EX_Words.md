@@ -279,7 +279,7 @@
   | 8×8 vs. 4×4 变化适应性                             | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
   | 量化缩放矩阵                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
   | 分离 $C_b$ 以及 $C_r$ QP 控制                      | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 分离色彩平面吗                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
+  | 分离色彩平面                                       | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
   | 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 
 - `H.264 等级(level)`
