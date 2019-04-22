@@ -278,7 +278,7 @@
   | 4:0:0 单色度                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
   | 8×8 vs. 4×4 变化适应性                             | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
   | 量化缩放矩阵                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 分离 $C_b$ 以及 $C_r$ QP 控制                      | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+  | 分离 $$C_b$$ 以及 $$C_r$$ QP 控制                  | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
   | 分离色彩平面                                       | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
   | 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 
@@ -313,11 +313,11 @@
 
     H.264/AVC编码器采用之前已编码的帧画面来提供给其他帧画面进行样本值预测。这可以使得编码器对编码给定帧画面的最佳方式做出有效决策。同时，参考帧(Ref Frames)也来自于这个缓存在解码器中这些帧被储存在DPB中，DPB的最大容量(单位：帧)，如上一个表中的括号，可以按照下面的方式来计算
 
-    $DpbCapacity=\lfloor \frac {最大帧缓存量(Mb/s)} {(帧画面宽度(Mb/s)))*(帧画面高度(Mb/s))})\rfloor $
+    $$DpbCapacity=\lfloor \frac {最大帧缓存量(Mb/s)} {(帧画面宽度(Mb/s)))*(帧画面高度(Mb/s))})\rfloor $$
 
     其中MaxDpbMbs为上表中最后一列的数字，举个例子，有一个1920(120Mb/s)x1080(68Mb/s)的HDTV的图像，根据Level 4 中所规定的MaxDpb计算
 
-    $\lfloor \frac {32768} {120*68})\rfloor = 4帧$
+    $$\lfloor \frac {32768} {120*68})\rfloor = 4帧$$
 
     注意，正在解码的图像不包括在DPB的计算中
 
