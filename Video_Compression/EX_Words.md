@@ -123,19 +123,20 @@
 
 - `WAV(Waveform Audio File Format)`是一个由微软及IBM开发的无压缩数字音频编码格式。注意，**无压缩≠无损**。就像你把棉被塞到仓库里面，如果棉被本来就是坏的那拿出来还是坏的。通常以`.wav`为后缀名
 - `ALAC(Apple Lossless Audio Codec)`是一个由苹果公司开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]通常以`.alac`为后缀名
-- `Monkey's Audio(APE)`通常以`.ape`为后缀名
-- `AAC(Advance Audio Codec)`通常以`.aac`为后缀名
-  - `AAC(MPEG-2 Part 7)`
+- `Monkey's Audio(APE)`，是一种由Matthew T. Ashland开发的免费开源编码格式，是常见的无损音讯压缩编码格式，通常以`.ape`为后缀名。
+- `AAC(Advance Audio Codec)`是一种由MPEG开发的免费开源的破坏性音频压缩编码格式。通常以`.m4a`为后缀名[^aac]
+  - `AAC(MPEG-2 Part 7)`使用MPEG-2 Audio Transport Stream容器封装，常见后缀为`.aac`
   - `AAC(MPEG-4 Part3 shubpart4)`
-    - `HE-AAC`
-    - `AAC-LD(AAC-Low Delay)`
-- `Opus`通常以`.opus`为后缀名，通常被封装在`webm`容器中
-- `Vorbis(ogg)`通常以`.ogg`为后缀名
-- `WMA(Windows Media Audio)`通常以`.wma`为后缀名
-- `PCM(Pulse-code modulation)`即脉冲编码调变。以数字信息记录模拟信号，这样的到的音频信号会清楚且能用于分时多工系统(如现代的公共电话)，但是体积较大。通常以`.pcm`为后缀名
-- `FLAC(Free Lossless Audio Codec)`是一个免费开源的无损压缩数字音频编码格式。通常以`.flac`为后缀名
-- `AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式])`是指杜比数字编码(Dolby Digital 或称AC-3)。通常被封装在`VOB`或`MPEG-TS`容器中
-- `MP3(formally MPEG-1 Audio Layer III, MPEG-2 Audio Layer III)`是一种有损压缩数字音频编码格式。通常以`.mp3`为后缀名
+    - `HE-AAC(High-Efficiency AAC)`即高效AAC，适用于低码率的情况下，在低码率的情况下其能取得更好的音质，其宣称在48kbps的音质可以比128kbps的MP3还好
+    - `AAC-LD(AAC-Low Delay)`主要被用于网络传输
+    - `AAC-LC(AAC-Low Complexity)`比较简单，没有了增益控制，但提高了编码效率
+- `Opus`是一种由IETF编码工作组开发的开源免费有损音频编码格式，目标是希望用单一格式包含声音和语音，取代Speex和Vorbis，且适用于网路上低延迟的即时声音传输。比MP3 AAC有更低的延迟和更好的声音压缩率。通常以`.opus`为后缀名，通常被封装在`webm`容器中[^opus]
+- `Vorbis`是一种由Xiph.Org基金会开发的免费开源的有损音频编码，目前Xiph.Org基金会建议使用延迟更低、音质更好的Opus编码来取代Vorbis，通常被封装在`ogg`容器中[^vorbis]
+- `WMA(Windows Media Audio)`由Mircosoft开发的无损音频编码格式,WMA 7之后的WMA支持证书加密，未经许可（即未获得许可证书），即使是非法拷贝到本地，也是无法收听的。由于其有专利版权，所以……嗯……。通常以`.wma`为后缀名[^wma]
+- `PCM(Pulse-code modulation)`即脉冲编码调变。以数字信息记录模拟信号，这样的到的音频信号会清楚且能用于分时多工系统(如现代的公共电话)，但是体积较大。通常以`.pcm`为后缀名[^pcm]
+- `FLAC(Free Lossless Audio Codec)`是一个免费开源的无损压缩数字音频编码格式。通常以`.flac`为后缀名[^flac]
+- `AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式])`是指杜比数字编码(Dolby Digital 或称AC-3)。通常被封装在`VOB`或`MPEG-TS`容器中[^ac3]
+- `MP3(formally MPEG-1 Audio Layer III, MPEG-2 Audio Layer III)`是一种有损压缩数字音频编码格式。通过舍弃对人类听觉不重要的数据通常以降低体积，`.mp3`为后缀名[^mp3]
 
 ---
 
@@ -151,12 +152,11 @@
 | ---------------------------- | --------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | MPEG-4 Part 14[^mp4]         | .mp4      | .m4a为仅音频，封装AAC或ALAC <br/>.m4v为仅视频                | 视频：H.265 H.264 MPEG-4 Part 2  <br/>音频：MPEG-4 Part 3 audio objects 如MP3 ALS SLS等 MP2 MP1等也支持 |
 | FlashVideo[^flv]             | .flv/.f4v | flv是一种数码多媒体文件封装格式，广泛用于电影等。目前仍被用于某些使用FlashPlayer的网站上 | 视频：H.264<br/>音频：MP3 AAC                                |
-| Audio Video Interleave[^avi] | .avi      | 是Mircosoft在1992年推出的一种多媒体封装格式，支持多视频流与多音频流，但是由于其索引文件放在尾部，所以不适用于网络传输，已经较少用到 | 视频：MPEG标准的多媒体文件 Flash VP3,4,6 VC1等<br>音频PCM MP3 AAC AC3 FLAC等 |
-|                              | .mkv      |                                                              |                                                              |
-|                              | .webm     |                                                              |                                                              |
+| Audio Video Interleave[^avi] | .avi      | 是Mircosoft在1992年推出的一种多媒体封装格式，支持多视频流与多音频流，但是由于其索引文件放在尾部，所以不适用于网络传输，已经较少用到 | 几乎所有                                                     |
+| Matroska[^mkv]               | .mkv      | Matroska Multimedia Container是一种开源免费的视频容器，被广泛用于多语言视频传输 | 几乎所有                                                     |
+| WebMedia[^webm]              | .webm     | Webm是由On2 Xiph Matroska Google共同开发的用于HTML5的开源免费视频封装格式，图像文件是WebP，其基于Matroska(MKV)开发而成 | 视频：H.264 H.265 VP8,9 AV1<br>音频: Vorbis OPus aac         |
 | RealMedia[^rm]               | .rm/.rmvb | rm被用于早期的网络传输，可以提供更加优秀的压缩体积。后来推出了支持可变码率的rmvb。RealMedia HD可以在更高的视觉质量下提供比高效率视频编码更高的压缩率 | 符合MPEG标准的多媒体                                         |
-|                              | .cue      |                                                              |                                                              |
-|                              | .vob      |                                                              |                                                              |
+| Video Object[^vob]           | .vob      | vob用于在DVD中封装数字音视频以及字幕文件，常与IFO BUP文件配合使用 | MPEG-PS                                                      |
 | QuickTime[^QT]               | .qt/.mov  | 是一种由苹果公司开发的多媒体框架，能够处理数字音视频，动画等格式。其为H.264标准的一个基础，可以使用插件的方式来支持其他解码器(如DivX)。 | 音频：FLAC MIDI MP3等<br/>视频：GIF H.264 H.265 qtmov等      |
 | MPEG-TS[^meeg-ts]            | .ts/.m2ts | 由于TS能支持从任意地方开始播放，也就是说你只有中间一截也能播放，所以是一种被广泛用于蓝光碟，IPTV，DVB，直播等地方的视频容器 | 符合MPEG标准的多媒体，VC-1，AAC等                            |
 
@@ -168,19 +168,39 @@
 
 ## 视频名词
 
+![](images/20150704142456669.jpg)
+
 > 理解难度从上往下递增
 
-- `NTSC`
+- `帧率(Frame per Second(FPS))`由于视觉暂留尚未研究透彻，目前学术界广泛接受的一个观点是帧率高于10~12帧的时候就会认为是连贯的画面[^fsp]
 
-- `PAL`
+- `逐行扫描(Progressive scan)`1080p中的p就是逐行扫描的意思，顾名思义。[^P]
 
-- `逐行扫描`
+- `隔行扫描(Interlaced scan)`顾名思义[^I]
 
-- `隔行扫描`
+  引用wiki上的图来解释，先扫描的叫上(奇)场，后扫描的叫下(偶)场，在这里就不解释什么交错鬼影，四比三下位变换之类的了。
 
-- `四比三下位变换`
+  ![](https://upload.wikimedia.org/wikipedia/commons/a/ab/Interlace_zoom.gif)
 
-- `DVR`
+- `像素长宽比(Aspect ratio)`用来描述画面的长宽比的。传统电视为4:3（1.33:1）。HDTV为16:9（1.78:1）。35mm胶片为1.37:1。 电脑上的显示屏幕多为1:1，但是数字视频不是。[^video]
+
+- `色彩空间(Color Space)`规定了色彩的显现区域。在视频中常用的为ITU BT.601 ITU BT.709 IEC 619966-2-4 YCbCr YUV。其中各种定义，色彩构成解释起来很复杂，这里只能简单地说一下，展开来说又是一章(吐血.gif)。现在主要使用的为YUV 4:2:0以及BT.709，除了有个别远古视频。[^color]
+
+- <span id="CBR"></span>`CBR(Constant Bit Rate)`即固定码率。在早期的低带宽的情况下适用，因为需要节省带宽，所以强行把高码率压低。CBR也被用于蓝光DVD中，因为那么大空间，不用白不用，所以就把它用CBR调个很高的数值填满就是了。这种编码方式缺乏变化，不太适用于现在的网络传输。[^cbr]
+
+- <span id="VBR"></span>`VBR(Variable bitrate)`即可变码率。在较高带宽的网络下适用，画面变动不大时码率低，画面变动大时码率高。目前被广泛用于媒体流传输服务。[^vbr]
+
+- <span id="ABR"></span>`ABR(Average bitrate)`即平均码率，用于计算文件大小，同时作为一个衡量视频质量的指标
+
+- <span id="CVBR"></span>`CVBR(Constrained Variable Bitrate)`，这个不好翻译。是一种将CBR和VBR结合起来的技术，在一段时间内维持在设定的码率不变，但在变动大的时候可以超过这个设定的码率。[^cvbr]
+
+- <span id="2pass"></span>`2pass`即编码两次，第一次不进行实际压缩，只收集视频的统计信息，第二次根据第一次收集到的信息进行压缩，为压制中比较常用的一种压制方法。在此之上还有3pass
+
+- **tbn** = the **T**ime **B**ase in AVStream that has come from the co**n**tainer(来自视频容器所描述的视频时基)
+
+- **tbc** = the **T**ime **B**ase in AVCodecContext for the **C**odec used for a particular stream(来自视频流的视频编码器所使用的时基)
+
+- **tbr** = tbr is guessed from the video stream and is the value users want to see when they look for the video frame rate(tbr是从视频流本身进行猜测，他是视频的在观看时候的实际帧率)
 
 - `H.264 profile`即配置文件，其针对不同的应用程序定义了不同的配置，这些被声明为配置文件代码(`profile_idc`)和在编码器种应用的一系列约束。这允许解码器识别解码该特定流的要求。一般来说有以下这些[^profile]
 
@@ -198,7 +218,7 @@
 
   - Baseline Profile (BP, 66, 基线)
 
-    	主要被用于需要额外数据以保持数据传输鲁棒性的低开销应用场景，有时候在一些视频会议和手机应用中使用。该等级的配置在CBP的基础上增加了三个功能以保证传输稳定(或是用于其他目的例如低延迟多点的视频流合成)。自从2009年CBP被定义以来，该配置文件的重要性逐渐消失，所有CBP流也被视为BP流，所以共享相同的标识码(66)
+    	主要被用于需要额外数据以保持数据传输[鲁棒性](./#鲁棒性)的低开销应用场景，有时候在一些视频会议和手机应用中使用。该等级的配置在CBP的基础上增加了三个功能以保证传输稳定(或是用于其他目的例如低延迟多点的视频流合成)。自从2009年CBP被定义以来，该配置文件的重要性逐渐消失，所有CBP流也被视为BP流，所以共享相同的标识码(66)
 
   - Extended Profile (XP, 88, 额外)
 
@@ -232,7 +252,7 @@
 
     	在上一个基础之上建立，支持4:4:4的色度采样，每个采样升到14bit，并且增加对高效快编码的支持以及可以将每个图像编码为三个独立的色彩平面(Y U V)
 
-  > 下面这四个配置文件主要被用于录像以及专业的编辑程序，包含四个额外的仅帧内配置文件。
+  > 下面这四个配置文件主要被用于录像以及专业的编辑程序，包含四个额外的仅节点配置文件。
 
   - High 10 Intra Profile (110 with constraint set 3)
   - High 4:2:2 Intra Profile (122 with constraint set 3)
@@ -259,55 +279,55 @@
 
   - Scalable High Intra Profile (86 with constraint set 3)
 
-    	同上，限帧内使用
+    	同上，限节点使用
 
   wiki上关于各配置文件支持的功能列表
 
-  | 特性                                               | CBP   | BP    | XP    | MP    | ProHiP | HiP   | Hi10P   | Hi422P         | Hi444PP                 |
-  | -------------------------------------------------- | ----- | ----- | ----- | ----- | ------ | ----- | ------- | -------------- | ----------------------- |
-  | 位深度                                             | 8     | 8     | 8     | 8     | 8      | 8     | 8 to 10 | 8 to 10        | 8 to 14                 |
-  | 色度格式                                           | 4:2:0 | 4:2:0 | 4:2:0 | 4:2:0 | 4:2:0  | 4:2:0 | 4:2:0   | 4:2:0<br>4:2:2 | 4:2:0<br>4:2:2<br>4:4:4 |
-  | 可调整宏块排列(Flexible macroblock ordering (FMO)) | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
-  | 任意性排序(Arbitrary slice ordering (ASO))         | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
-  | 冗余切片(Redundant slices (RS))                    | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
-  | 数据分区                                           | No    | No    | Yes   | No    | No     | No    | No      | No             | No                      |
-  | SI 与 SP 切片                                      | No    | No    | Yes   | No    | No     | No    | No      | No             | No                      |
-  | 隔行扫描编码(PicAFF, MBAFF)                        | No    | No    | Yes   | Yes   | No     | Yes   | Yes     | Yes            | Yes                     |
-  | B 切片                                             | No    | No    | Yes   | Yes   | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | CABAC                                              | No    | No    | No    | Yes   | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 4:0:0 单色度                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 8×8 vs. 4×4 变化适应性                             | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 量化缩放矩阵                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 分离 $$C_b$$ 以及 $$C_r$$ QP 控制                  | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
-  | 分离色彩平面                                       | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
-  | 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
+| 特性                                               | CBP   | BP    | XP    | MP    | ProHiP | HiP   | Hi10P   | Hi422P         | Hi444PP                 |
+| -------------------------------------------------- | ----- | ----- | ----- | ----- | ------ | ----- | ------- | -------------- | ----------------------- |
+| 位深度                                             | 8     | 8     | 8     | 8     | 8      | 8     | 8 to 10 | 8 to 10        | 8 to 14                 |
+| 色度格式                                           | 4:2:0 | 4:2:0 | 4:2:0 | 4:2:0 | 4:2:0  | 4:2:0 | 4:2:0   | 4:2:0<br>4:2:2 | 4:2:0<br>4:2:2<br>4:4:4 |
+| 可调整宏块排列(Flexible macroblock ordering (FMO)) | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
+| 任意性排序(Arbitrary slice ordering (ASO))         | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
+| 冗余切片(Redundant slices (RS))                    | No    | Yes   | Yes   | No    | No     | No    | No      | No             | No                      |
+| 数据分区                                           | No    | No    | Yes   | No    | No     | No    | No      | No             | No                      |
+| SI 与 SP 切片                                      | No    | No    | Yes   | No    | No     | No    | No      | No             | No                      |
+| 隔行扫描编码(PicAFF, MBAFF)                        | No    | No    | Yes   | Yes   | No     | Yes   | Yes     | Yes            | Yes                     |
+| B 切片                                             | No    | No    | Yes   | Yes   | Yes    | Yes   | Yes     | Yes            | Yes                     |
+| CABAC                                              | No    | No    | No    | Yes   | Yes    | Yes   | Yes     | Yes            | Yes                     |
+| 4:0:0 单色度                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+| 8×8 vs. 4×4 变化适应性                             | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+| 量化缩放矩阵                                       | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+| 分离 $$C_b$$ 以及 $$C_r$$ QP 控制                  | No    | No    | No    | No    | Yes    | Yes   | Yes     | Yes            | Yes                     |
+| 分离色彩平面                                       | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
+| 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 
 - `H.264 等级(level)`
 
   规定了一系列的约束以及告诉解码器所需要的配置等级
 
-  | Level | 最大解码速率(宏块/秒) | 每个宏块的最大帧大小 | 视频编码层的最大比特率(kbits/s) <br/> (Constrained Baseline, <br/>Baseline,<br/>Extended and Main Profiles) | 高解析度@ 最高比特率<br/>(最大储存帧)                        | 最大图片缓存 |
-  | :---: | :-------------------- | :------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------- |
-  |   1   | 1,485                 | 99                   | 64                                                           | 128×96@30.9 (8)<br>176×144@15.0 (4)                          | 396          |
-  |  1b   | 1,485                 | 99                   | 128                                                          | 128×96@30.9 (8)<br/>176×144@15.0 (4)                         | 396          |
-  |  1.1  | 3,000                 | 396                  | 192                                                          | 176×144@30.3 (9) <br/>320×240@10.0 (3)<br/>352×288@7.5 (2)   | 900          |
-  |  1.2  | 6,000                 | 396                  | 384                                                          | 320×240@20.0 (7)<br/>352×288@15.2 (6)                        | 2376         |
-  |  1.3  | 11,880                | 396                  | 768                                                          | 320×240@36.0 (7)<br/>352×288@30.0 (6)                        | 2376         |
-  |   2   | 11,880                | 396                  | 2,000                                                        | 320×240@36.0 (7)<br/>352×288@30.0 (6)                        | 2376         |
-  |  2.1  | 19,800                | 792                  | 4,000                                                        | 352×480@30.0 (7)<br/>352×576@25.0 (6)                        | 4752         |
-  |  2.2  | 20,250                | 1,620                | 4,000                                                        | 352×480@30.7 (12) <br/>352×576@25.6 (10) <br/>720×480@15.0 (6)<br/>720×576@12.5 (5) | 8100         |
-  |   3   | 40,500                | 1,620                | 10,000                                                       | 352×480@61.4 (12) <br/>352×576@51.1 (10) <br/>720×480@30.0 (6)<br/>720×576@25.0 (5) | 8100         |
-  |  3.1  | 108,000               | 3,600                | 14,000                                                       | 720×480@80.0 (13) <br/>720×576@66.7 (11)<br/>1,280×720@30.0 (5) | 18000        |
-  |  3.2  | 216,000               | 5,120                | 20,000                                                       | 1,280×720@60.0 (5)<br/>1,280×1,024@42.2 (4)                  | 20480        |
-  |   4   | 245,760               | 8,192                | 20,000                                                       | 1,280×720@68.3 (9) <br/>1,920×1,080@30.1 (4)<br/>2,048×1,024@30.0 (4) | 32768        |
-  |  4.1  | 245,760               | 8,192                | 50,000                                                       | 1,280×720@68.3 (9) <br/>1,920×1,080@30.1 (4)<br/>2,048×1,024@30.0 (4) | 32768        |
-  |  4.2  | 522,240               | 8,704                | 50,000                                                       | 1,280×720@145.1 (9) <br/>1,920×1,080@64.0 (4)<br/>2,048×1,080@60.0 (4) | 34816        |
-  |   5   | 589,824               | 22,080               | 135,000                                                      | 1,920×1,080@72.3 (13) <br/>2,048×1,024@72.0 (13) <br/>2,048×1,080@67.8 (12) <br/>2,560×1,920@30.7 (5)<br/>3,672×1,536@26.7 (5) | 110400       |
-  |  5.1  | 983,040               | 36,864               | 240,000                                                      | 1,920×1,080@120.5 (16) <br/>2,560×1,920@51.2 (9) <br/>3,840×2,160@31.7 (5) <br/>4,096×2,048@30.0 (5) <br/>4,096×2,160@28.5 (5)<br/>4,096×2,304@26.7 (5) | 184320       |
-  |  5.2  | 2,073,600             | 36,864               | 240,000                                                      | 1,920×1,080@172.0 (16)<br/>2,560×1,920@108.0 (9)<br/>3,840×2,160@66.8 (5) <br/>4,096×2,048@63.3 (5) <br/>4,096×2,160@60.0 (5)<br/>4,096×2,304@56.3 (5) | 184320       |
-  |   6   | 4,177,920             | 139,26               | 240,000                                                      | 3,840×2,160@128.9 (16)<br/>7,680×4,320@32.2 (5)<br/>8,192×4,320@30.2 (5) | 696320       |
-  |  6.1  | 8,35,840              | 139,264              | 480,000                                                      | 3,840×2,160@257.9 (16) 7,680×4,320@64.5 (5)<br/>8,192×4,320@60.4 (5) | 696320       |
-  |  6.2  | 16,711,680            | 139,264              | 800,000                                                      | 3,840×2,160@300.0 (16)<br/>7,680×4,320@128.9 (5)<br/>8,192×4,320@120.9 (5) | 696320       |
+| Level | 最大解码速率(宏块/秒) | 每个宏块的最大帧大小 | 视频编码层的最大比特率(kbits/s) <br/> (Constrained Baseline, <br/>Baseline,<br/>Extended and Main Profiles) | 高解析度@ 最高比特率<br/>(最大储存帧)                        | 最大图片缓存 |
+| :---: | :-------------------- | :------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------- |
+|   1   | 1,485                 | 99                   | 64                                                           | 128×96@30.9 (8)<br>176×144@15.0 (4)                          | 396          |
+|  1b   | 1,485                 | 99                   | 128                                                          | 128×96@30.9 (8)<br/>176×144@15.0 (4)                         | 396          |
+|  1.1  | 3,000                 | 396                  | 192                                                          | 176×144@30.3 (9) <br/>320×240@10.0 (3)<br/>352×288@7.5 (2)   | 900          |
+|  1.2  | 6,000                 | 396                  | 384                                                          | 320×240@20.0 (7)<br/>352×288@15.2 (6)                        | 2376         |
+|  1.3  | 11,880                | 396                  | 768                                                          | 320×240@36.0 (7)<br/>352×288@30.0 (6)                        | 2376         |
+|   2   | 11,880                | 396                  | 2,000                                                        | 320×240@36.0 (7)<br/>352×288@30.0 (6)                        | 2376         |
+|  2.1  | 19,800                | 792                  | 4,000                                                        | 352×480@30.0 (7)<br/>352×576@25.0 (6)                        | 4752         |
+|  2.2  | 20,250                | 1,620                | 4,000                                                        | 352×480@30.7 (12) <br/>352×576@25.6 (10) <br/>720×480@15.0 (6)<br/>720×576@12.5 (5) | 8100         |
+|   3   | 40,500                | 1,620                | 10,000                                                       | 352×480@61.4 (12) <br/>352×576@51.1 (10) <br/>720×480@30.0 (6)<br/>720×576@25.0 (5) | 8100         |
+|  3.1  | 108,000               | 3,600                | 14,000                                                       | 720×480@80.0 (13) <br/>720×576@66.7 (11)<br/>1,280×720@30.0 (5) | 18000        |
+|  3.2  | 216,000               | 5,120                | 20,000                                                       | 1,280×720@60.0 (5)<br/>1,280×1,024@42.2 (4)                  | 20480        |
+|   4   | 245,760               | 8,192                | 20,000                                                       | 1,280×720@68.3 (9) <br/>1,920×1,080@30.1 (4)<br/>2,048×1,024@30.0 (4) | 32768        |
+|  4.1  | 245,760               | 8,192                | 50,000                                                       | 1,280×720@68.3 (9) <br/>1,920×1,080@30.1 (4)<br/>2,048×1,024@30.0 (4) | 32768        |
+|  4.2  | 522,240               | 8,704                | 50,000                                                       | 1,280×720@145.1 (9) <br/>1,920×1,080@64.0 (4)<br/>2,048×1,080@60.0 (4) | 34816        |
+|   5   | 589,824               | 22,080               | 135,000                                                      | 1,920×1,080@72.3 (13) <br/>2,048×1,024@72.0 (13) <br/>2,048×1,080@67.8 (12) <br/>2,560×1,920@30.7 (5)<br/>3,672×1,536@26.7 (5) | 110400       |
+|  5.1  | 983,040               | 36,864               | 240,000                                                      | 1,920×1,080@120.5 (16) <br/>2,560×1,920@51.2 (9) <br/>3,840×2,160@31.7 (5) <br/>4,096×2,048@30.0 (5) <br/>4,096×2,160@28.5 (5)<br/>4,096×2,304@26.7 (5) | 184320       |
+|  5.2  | 2,073,600             | 36,864               | 240,000                                                      | 1,920×1,080@172.0 (16)<br/>2,560×1,920@108.0 (9)<br/>3,840×2,160@66.8 (5) <br/>4,096×2,048@63.3 (5) <br/>4,096×2,160@60.0 (5)<br/>4,096×2,304@56.3 (5) | 184320       |
+|   6   | 4,177,920             | 139,26               | 240,000                                                      | 3,840×2,160@128.9 (16)<br/>7,680×4,320@32.2 (5)<br/>8,192×4,320@30.2 (5) | 696320       |
+|  6.1  | 8,35,840              | 139,264              | 480,000                                                      | 3,840×2,160@257.9 (16) 7,680×4,320@64.5 (5)<br/>8,192×4,320@60.4 (5) | 696320       |
+|  6.2  | 16,711,680            | 139,264              | 800,000                                                      | 3,840×2,160@300.0 (16)<br/>7,680×4,320@128.9 (5)<br/>8,192×4,320@120.9 (5) | 696320       |
 
 - `解码图像缓存器（Decoded picture buffering, DPB）`
 
@@ -325,21 +345,15 @@
 
     ![1555891080320](images/1555891080320.png)
 
-- `CBR`
+- `B帧 I帧 P帧`[^vcpt] **相邻在这里表示在编码关系上相邻，在播放顺序上两帧未必相邻**
 
-- `VBR`
+    - `I帧(I-frames, Intra-coded picture)` 是压缩最弱体积最大的一种帧，但是其解码不需要依靠其他帧，所以被叫做关键帧，快进的时候会用到。通常是一幅完整的图片。
+    - `B帧(B-frames, Bidirectional predicted picture)`是双向预测帧，能够根据前后两帧的数据来进行重建，是压缩最高体积最小的一种帧，但是需要依赖其他帧的信息进行解码。因为只记录相邻前后两帧之间的差异，所以可以节省更多空间
+    - `P帧(P-frames, Predicted Picture)`是后向预测帧，能够根据上一帧的信息来进行解码，压缩能力比I帧强比B帧弱。只记录与前一帧之间的差别。
 
-- `ABR`
+- `运动补偿(Motion compensation)`是一种描述相邻帧差别的方法，具体来说是描述前面一帧（相邻在这里表示在编码关系上的前面，在播放顺序上未必在当前帧前面）的每个小块怎样移动到当前帧中的某个位置去。可被用于去交错以及运动插值。又分为全局运动补偿，分块运动补偿，可变分块运动补偿以及重叠分块运动补偿。[^motion]
 
-- `2pass`
-
-- `前向预测(Context-based)`
-
-- `B帧 I帧 P帧`
-
-- `运动补偿`
-
-- `宏块`
+- `宏块(Macroblock)`是运动预测的基本单位，一张完整的帧画面通常会被切割成几个大区快[^marco]
 
 - `熵编码(entropy encoding)`在信息学上来说是一种不依赖媒介具体特征的接近无损的数据压缩方式，熵编码通常与其他编码方式结合使用。[^entropyEnc]一种主要类型的熵编码方式是在输入的时候创建并分配一个唯一的无首位代码(prefix-free code)
 
@@ -387,7 +401,7 @@
 
 - `ITU-R(ITU Radiocommunication Sector)`国际电信联盟无线电通信部门
 
-- `鲁棒性(robustness)`，是指==控制系统在一定(结构，大小)的**参数扰动下**，仍能够维持其他某些性能的特性==，也就是系统的健壮性。鲁棒控制方法适用于稳定性和可靠性作为首要目标的应用，同时过程的动态特征已知，且不确定因素的变化范围可以预估。**鲁棒性不同于稳定性**，稳定性是指==控制系统在使它偏离平衡状态的**扰动消失之后** ，返回原来平衡状态的能力==。举个例子，鲁棒性就像你种菜(物理)的时候，不会因为某一天浇水多了抑或少了，某一天出太阳了或下雨了而长不出来。稳定性就你给弹簧一个压力，你放手之后弹簧能回到原来的状态
+- <span id="鲁棒性"></span>`鲁棒性(robustness)`，是指==控制系统在一定(结构，大小)的**参数扰动下**，仍能够维持其他某些性能的特性==，也就是系统的健壮性。鲁棒控制方法适用于稳定性和可靠性作为首要目标的应用，同时过程的动态特征已知，且不确定因素的变化范围可以预估。**鲁棒性不同于稳定性**，稳定性是指==控制系统在使它偏离平衡状态的**扰动消失之后** ，返回原来平衡状态的能力==。举个例子，鲁棒性就像你种菜(物理)的时候，不会因为某一天浇水多了抑或少了，某一天出太阳了或下雨了而长不出来。稳定性就你给弹簧一个压力，你放手之后弹簧能回到原来的状态
 
 - `MPEG(Moving Picture Expert Group)`动态图像专家组，制定了一系列有关动态图像的标准，如编码格式，音频，容器，传输方式等等
 
@@ -454,3 +468,35 @@
 [^webm]: [Wiki-WEBM](https://www.wikiwand.com/en/WebM): **WebM** is an audiovisual media file format.It is primarily intended to offer a [royalty-free](https://www.wikiwand.com/en/Royalty-free) alternative to use in the [HTML5 video](https://www.wikiwand.com/en/HTML5_video) and the [HTML5 audio](https://www.wikiwand.com/en/HTML5_audio) elements. 
 
 [^vob]: [Wiki-VOB](https://www.wikiwand.com/en/VOB): **VOB** (***V**ideo **Ob**ject*) is the [container format](https://www.wikiwand.com/en/Container_format_(digital)) in [DVD-Video](https://www.wikiwand.com/en/DVD-Video) media. VOB can contain [digital video](https://www.wikiwand.com/en/Digital_video), [digital audio](https://www.wikiwand.com/en/Digital_audio), [subtitles](https://www.wikiwand.com/en/Subtitle_(captioning)), DVD menus and navigation contents [multiplexed](https://www.wikiwand.com/en/Multiplexed) together into a stream form. Files in VOB format may be encrypted. 
+[^fps]: [Wiki-fps](https://www.wikiwand.com/en/Frame_rate): **Frame rate** (expressed in **frames per second** or **fps**) is the [frequency](https://www.wikiwand.com/en/Frequency) (rate) at which consecutive [images](https://www.wikiwand.com/en/Image) called [frames](https://www.wikiwand.com/en/Film_frame) appear on a display. The term applies equally to [film](https://www.wikiwand.com/en/Film) and [video cameras](https://www.wikiwand.com/en/Video_camera), [computer graphics](https://www.wikiwand.com/en/Computer_graphics), and [motion capture](https://www.wikiwand.com/en/Motion_capture) systems. Frame rate may also be called  the **frame frequency**, and be expressed in [hertz](https://www.wikiwand.com/en/Hertz). 
+[^P]: [Wiki-Progressive scanning](https://www.wikiwand.com/en/Progressive_scan): **Progressive scanning** (alternatively referred to as **noninterlaced scanning**) is a format of displaying, storing, or transmitting [moving images](https://www.wikiwand.com/en/Moving_image) in which all the lines of each [frame](https://www.wikiwand.com/en/Film_frame) are drawn in sequence. 
+[^I]: [wiki-Interlaced video](https://www.wikiwand.com/en/Interlaced_video): **Interlaced video** (also known as **Interlaced scan**) is a technique for doubling the perceived frame rate of a video display without consuming extra [bandwidth](https://www.wikiwand.com/en/Bandwidth_(signal_processing)). The interlaced signal contains two [fields](https://www.wikiwand.com/en/Field_(video)) of a video frame captured at two different times. This enhances motion perception to the viewer, and reduces [flicker](https://www.wikiwand.com/en/Flicker_(screen)) by taking advantage of the [phi phenomenon](https://www.wikiwand.com/en/Phi_phenomenon). 
+[^video]: [Wiki-Video](https://www.wikiwand.com/en/Video)
+[^color]: [Wiki-ColorSpace](https://www.wikiwand.com/en/Color_space)
+[^cbr]: [Wiki-cbr](https://www.wikiwand.com/en/Constant_bitrate): **Constant bitrate** (**CBR**) is a term used in [telecommunications](https://www.wikiwand.com/en/Telecommunications), relating to the [quality of service](https://www.wikiwand.com/en/Quality_of_service). Compare with [variable bitrate](https://www.wikiwand.com/en/Variable_bitrate).
+[^vbr]: [Wiki-VBR](https://www.wikiwand.com/en/Variable_bitrate): **Variable bitrate** (**VBR**) is a term used in [telecommunications](https://www.wikiwand.com/en/Telecommunications) and [computing](https://www.wikiwand.com/en/Computing) that relates to the [bitrate](https://www.wikiwand.com/en/Bitrate) used in sound or video encoding.  
+[^abr]: [Wiki-ABR](https://www.wikiwand.com/en/Average_bitrate): **Average bitrate** (**ABR**) refers to the average amount of data  transferred per unit of time, usually measured per second, commonly for  digital music or video. 
+[^cvbr]: [Wiki-VBR](https://www.wikiwand.com/en/Variable_bitrate#Average_bitrate): Some encoders also allow the user to specify a maximum allowed bitrate or maximum quality value.  This is sometimes called **Constrained Variable Bitrate** (**CVBR**), and is typically applied to ABR algorithms. 
+[^vcpt]: [Wiki-VideoCompPicType](https://www.wikiwand.com/en/Video_compression_picture_types): In the field of [video compression](https://www.wikiwand.com/en/Video_compression) a [video frame](https://www.wikiwand.com/en/Video_frame) is compressed using different [algorithms](https://www.wikiwand.com/en/Algorithm) with different advantages and disadvantages, centered mainly around amount of [data compression](https://www.wikiwand.com/en/Data_compression).  These different algorithms for video frames are called **picture types** or **frame types**.  The three major picture types used in the different video algorithms are **I**, **P** and **B**.  
+[^motion]: [Wiki-MotionCompensation](https://www.wikiwand.com/en/Motion_compensation): **Motion compensation** is an algorithmic technique used to predict a  frame in a video, given the previous and/or future frames by accounting  for motion of the camera and/or objects in the video.
+[^marco]: [Wiki-MarcoBlock](https://www.wikiwand.com/en/Macroblock): **Macroblock** is a processing unit in [image](https://www.wikiwand.com/en/Image_compression) and [video compression](https://www.wikiwand.com/en/Video_compression) formats based on linear block transforms, such as the [discrete cosine transform](https://www.wikiwand.com/en/Discrete_cosine_transform) (DCT)
+[^ape]: [Wiki-APE](https://www.wikiwand.com/en/Monkey%27s_Audio): **Monkey's Audio** is an algorithm and [file format](https://www.wikiwand.com/en/File_format) for [lossless](https://www.wikiwand.com/en/Lossless_data_compression)[audio data compression](https://www.wikiwand.com/en/Audio_data_compression). [Lossless data compression](https://www.wikiwand.com/en/Lossless_data_compression) does not discard data during the process of encoding, unlike [lossy compression](https://www.wikiwand.com/en/Lossy_compression) methods such as [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding), [MP3](https://www.wikiwand.com/en/MP3), [Vorbis](https://www.wikiwand.com/en/Vorbis) and [Musepack](https://www.wikiwand.com/en/Musepack). 
+[^aac]: [Wiki-AAC](https://www.wikiwand.com/zh-hans/%E9%80%B2%E9%9A%8E%E9%9F%B3%E8%A8%8A%E7%B7%A8%E7%A2%BC): **进阶音讯编码**（英语：**A**dvanced **A**udio **C**oding，AAC），出现于1997年，为一种基于[MPEG-2](https://www.wikiwand.com/zh-hans/MPEG-2)的[有损](https://www.wikiwand.com/zh-hans/破壞性資料壓縮)[数位音讯](https://www.wikiwand.com/zh-hans/數位音訊)[压缩](https://www.wikiwand.com/zh-hans/資料壓縮)的专利音讯编码标准，由[Fraunhofer IIS](https://www.wikiwand.com/zh-hans/弗劳恩霍夫协会)、[杜比实验室](https://www.wikiwand.com/zh-hans/杜比實驗室)、[AT&T](https://www.wikiwand.com/zh-hans/AT%26T)、[Sony](https://www.wikiwand.com/zh-hans/Sony)、[Nokia](https://www.wikiwand.com/zh-hans/Nokia)等公司共同开发。2000年，[MPEG-4](https://www.wikiwand.com/zh-hans/MPEG-4)标准在原本的基础上加上了PNS（Perceptual Noise Substitution）等技术，并提供了多种扩展工具。
+[^mp3]: [Wiki-MP3](https://www.wikiwand.com/zh-hans/MP3): **动态图像专家组-1**或**动态图像专家组-2****音频层III**（英语：**MPEG-1** or **MPEG-2 Audio Layer III**），常简称为**MP3**，是当今流行的一种[数字音频](https://www.wikiwand.com/zh-hans/数字音频)编码和[有损压缩](https://www.wikiwand.com/zh-hans/有損數據壓縮)格式，它被设计来大幅降低音频数据量，通过舍弃[PCM](https://www.wikiwand.com/zh-hans/脉冲编码调制)音讯资料中对人类听觉不重要的部分，达成压缩成较小档案的目的。
+[^vorbis]: [Wiki-Vorbis](https://www.wikiwand.com/en/Vorbis): **Vorbis** is a [free and open-source software](https://www.wikiwand.com/en/Free_and_open-source_software) project headed by the [Xiph.Org Foundation](https://www.wikiwand.com/en/Xiph.Org_Foundation). The project produces an [audio coding format](https://www.wikiwand.com/en/Audio_coding_format) and software reference encoder/decoder ([codec](https://www.wikiwand.com/en/Codec)) for [lossy](https://www.wikiwand.com/en/Lossy_compression)[audio compression](https://www.wikiwand.com/en/Audio_compression_(data)). 
+[^opus]: [Wiki-Opus](https://www.wikiwand.com/en/Opus_(audio_format)): **Opus** is a [lossy](https://www.wikiwand.com/en/Lossy_audio_compression)[audio coding format](https://www.wikiwand.com/en/Audio_coding_format) developed by the [Xiph.Org Foundation](https://www.wikiwand.com/en/Xiph.Org_Foundation) and standardized by the [Internet Engineering Task Force](https://www.wikiwand.com/en/Internet_Engineering_Task_Force), designed to efficiently code speech and general audio in a single format, while remaining [low-latency](https://www.wikiwand.com/en/Latency_(audio)) enough for real-time interactive communication and low-complexity enough for low-end embedded processors.[[4\]](https://www.wikiwand.com/en/Opus_(audio_format)#citenotehomepage4)[[5\]](https://www.wikiwand.com/en/Opus_(audio_format)#citenotearsrole5) Opus replaces both [Vorbis](https://www.wikiwand.com/en/Vorbis) and [Speex](https://www.wikiwand.com/en/Speex)  for new applications, and several blind listening tests have ranked it  higher-quality than any other standard audio format at any given bitrate  until [transparency](https://www.wikiwand.com/en/Transparency_(data_compression)) is reached, including [MP3](https://www.wikiwand.com/en/MP3), [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding), and [HE-AAC](https://www.wikiwand.com/en/High-Efficiency_Advanced_Audio_Coding).
+[^wma]: [Wiki-WMA](https://www.wikiwand.com/zh-hans/Windows_Media_Audio): **WMA**（**Windows Media Audio**）是[微软](https://www.wikiwand.com/zh-hans/微软)公司开发的一系列[音频编解码器](https://www.wikiwand.com/zh-hans/音频编解码器)，也指相应的[数位](https://www.wikiwand.com/zh-hans/數位)[音频](https://www.wikiwand.com/zh-hans/音频)编码格式。WMA包括四种不同的编解码器：（1） *WMA*，原始的WMA编解码器，作为[MP3](https://www.wikiwand.com/zh-hans/MP3)和[RealAudio](https://www.wikiwand.com/zh-hans/RealAudio)编解码器的竞争者；（2） *WMA Pro*，支持更多声道和更高质量的音频；（3） *WMA Lossless*，[无损](https://www.wikiwand.com/zh-hans/无损压缩)编解码器；（4）*WMA Voice*，用于储存语音，使用的是低码率压缩。一些使用Windows Media Audio编码格式编码其所有内容的纯音频[ASF](https://www.wikiwand.com/zh-hans/ASF)文件也使用WMA作为扩展名。 
+[^ac3]: [Wiki-DTS](https://www.wikiwand.com/en/DTS_(sound_system)): DTS and Dolby Digital (AC-3), DTS's chief competitor in the [cinema theatre](https://www.wikiwand.com/en/Movie_theater)  and home theatre markets, are often compared because of their  similarity in product goals, though Dolby believed that the surround  channels should be diffused and DTS said they should be directional.
+[^flac]: [Wiki-FLAC]:(https://www.wikiwand.com/en/flac): **FLAC** ([/flæk/](https://www.wikiwand.com/en/Help:IPA/English); **Free Lossless Audio Codec**) is an [audio coding format](https://www.wikiwand.com/en/Audio_coding_format) for [lossless compression](https://www.wikiwand.com/en/Lossless_compression) of [digital audio](https://www.wikiwand.com/en/Digital_audio), and is also the name of the free software project producing the FLAC tools, the reference software package that includes a [codec](https://www.wikiwand.com/en/Codec) implementation. 
+
+---
+
+最后修改
+
+Gerardyang
+
+20190423
+
+本文无法遵守996 License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
