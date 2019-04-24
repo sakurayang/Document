@@ -10,15 +10,15 @@
 
 从广义上来说，编码是信息从一种形式或格式**转换为**另一种形式或格式的过程。解码，是编码的逆向。*加密也算是一种编码。*
 
-**在这里我们主要解释数字音视频方面的解编码。**
+==在这里我们主要解释数字音视频方面的解编码。==
 
-`编码器(Encoder)`是一个电子元件、芯片、传感器、软件、算法或是将信息从一种格式或代码转换成另一种格式或代码的人。其主要目的是为了标准化、速度、压缩或加密。[^encoder]
+**编码器(Encoder)**是一个电子元件、芯片、传感器、软件、算法或是将信息从一种格式或代码转换成另一种格式或代码的人。其主要目的是为了标准化、速度、压缩或加密。[^encoder]
 
-`解码器(Decoder)`是一个电子元件，经常被用在单片机里面。用于将模拟信号视频转换成数字信号视频，其通常允许对视频特性的可编程控控制，如色温 锐度 亮度等。[^decoder]**解码器是编码器的反函数。**
+**解码器(Decoder)**是一个电子元件，经常被用在单片机里面。用于将模拟信号视频转换成数字信号视频，其通常允许对视频特性的可编程控控制，如色温 锐度 亮度等。[^decoder]**解码器是编码器的反函数。**
 
 *最常见的一个例子就是声卡与显卡*
 
-**在这里提及的所有解编码器都是软件解编码器。**
+==在这里提及的所有解编码器都是软件解编码器。==
 
 [这里](https://www.wikiwand.com/en/List_of_codecs)有一份解编码器列表
 
@@ -26,7 +26,7 @@
 
 > 视频解编码器是指能编码或解码视频数字数据信息流的设备或计算机程序
 
-- `FFmpeg`是一个免费开源的软件集，可以进行音频及视频的录制，转码，串流(直播)的功能。[^ffmpeg]其包含以下这些主要的函数库。
+- <span id="ffmpeg"></span>**FFmpeg**是一个免费开源的软件集，可以进行音频及视频的录制，转码，串流(直播)的功能。[^ffmpeg]其包含以下这些主要的函数库。
 
 
 | 函数库名称 | 用途|
@@ -48,95 +48,95 @@
 | ffplay[^ffplay]   | 一个简单的多媒体播放器，以及ffmpeg的函数库                   |
 | ffprobe[^ffprobe] | 用于分析多媒体信息                                           |
 
-- `x264`是一个由VideoLAN开发的用于将视频流编码为`H.264/MPEG-4 AVC`格式的免费开源的软件函数库以及命令行工具[^x264]。*ffmpeg使用x264来解码H.264编码格式的多媒体流*。
+- <span id="x264"></span>**x264**是一个由VideoLAN开发的用于将视频流编码为**H.264/MPEG-4 AVC**格式的免费开源的软件函数库以及命令行工具[^x264]。*ffmpeg使用x264来解码H.264编码格式的多媒体流*。
 
-- `x265`是一个由MulticoreWare开发的用于将视频流编码为`H.265/HEVC`格式的基于`x264`修改的免费开源的软件函数库以及命令行工具[^x265]。*ffmpeg以及[UHDcode](https://www.wikiwand.com/en/MulticoreWare)使用x265来解码H.265编码格式的多媒体流*。
+- <span id="x265"></span>>**x265**是一个由MulticoreWare开发的用于将视频流编码为**H.265/HEVC**格式的基于**x264**修改的免费开源的软件函数库以及命令行工具[^x265]。*ffmpeg以及[UHDcode](https://www.wikiwand.com/en/MulticoreWare)使用x265来解码H.265编码格式的多媒体流*。
 
-- `QuickTime`是一种由苹果公司开发的可拓展的多媒体框架，能够处理各种格式的数字音视频，图像，全景图像以及交互式媒体。[^QT]
+- <span id="qt"></span>**QuickTime**是一种由苹果公司开发的可拓展的多媒体框架，能够处理各种格式的数字音视频，图像，全景图像以及交互式媒体。[^QT]
 
-- `libaom`由Alliance for Open Media开发并用于解编码AV1编码格式[^codec]。
+- **libaom**由Alliance for Open Media开发并用于解编码AV1编码格式[^codec]。
 
-- `libvpx`由Google开发并用于解编码VP9编码格式[^codec]
+- **libvpx**由Google开发并用于解编码VP9编码格式[^codec]
 
-- `EVE for VP9`由twoorioles开发并用于解编码VP9编码格式[^evevp9]
+- **EVE** for VP9由twoorioles开发并用于解编码VP9编码格式[^evevp9]
 
-- `DivX`是一个用于解编码`H.264/MPEG-4 AVC`的商业软件[^divx]
+- **DivX**是一个用于解编码**H.264/MPEG-4 AVC**的商业编码器，以其能将长时间的视频压缩成较小体积而质量较高而闻名[^divx]
 
-- `Xvid`同上，是一个开源软件[^xvid]
+- <span id='xvid'></span>**Xvid**同上，但是是一个开源软件，是由一群原OpenDivX开发者在OpenDivX于2001年7月停止开发后自行开发的[^xvid]
 
 ---
 
-### 音频编解码器
+### 音频解编码器
 
 > 音频编解码器是指能编码或解码音频数字数据信息流的设备或计算机程序
 
-- `ffmpeg`[^ffmpeg]
+- **ffmpeg**[^ffmpeg]
 
-- `NeroAAC(Nero AAC Codec)`是一个用于解编码AAC格式(Advance Audio Coding)的免费工具集 [^neroaac]
-- `QAAC(Quicktime AAC/ALAC Codec)`是一个基于Apple编码方式用于编码AAC以及ALAC的命令行工具[^qaac]，需要iTunes或者QuickTime的支持。
-- `Fraunhofer FDK AAC(Fraunhofer FDK AAC Codec Library for Android)`是一个基于安卓系统开源并用于在安卓系统上解编码AAC编码格式音频的函数库。[^fdkaacenc]
-- `faac（Freeware Advanced Audio Coder）`是一个包含了用于编码AAC的FAAC以及用于解码的FAAD2的软件[^faac]
-- `iTunes`是一个由苹果公司开发的多媒体播放器，多媒体库，网络，以及手机管理的软件。能够支持多种常见编码格式的播放。[^itunes]
-- `Lame(LAME Ain't an MP3 Encoder)`是一个用于将音频转换为MP3编码格式的开源免费软件[^lame]
-- `L3enc(raunhofer l3enc)`是第一个能将PCM(.wav)编码格式转换为MP3的软件，早期的安卓系统曾采用[^l3enc]
-- `libopus`用于解编码Opus编码格式的音频[^codec]
-- `libvobis`用于解编码viobs(.ogg)格式[^libvorbis]
-- `WME(Windows Media Encoder)`不解释（
+- <span id="nero"></span>**NeroAAC(Nero AAC Codec)**是一个用于解编码AAC格式(Advance Audio Coding)的免费工具集 [^neroaac]
+- <span id="qaac"></span>**QAAC(Quicktime AAC/ALAC Codec)**是一个基于Apple编码方式用于编码AAC以及ALAC的命令行工具[^qaac]，需要iTunes或者QuickTime的支持。
+- <span id='fdk'></span>**Fraunhofer FDK AAC(Fraunhofer FDK AAC Codec Library for Android)**是一个基于安卓系统开源并用于在安卓系统上解编码FDKAAC编码格式音频的函数库。[^fdkaacenc]
+- **faac（Freeware Advanced Audio Coder）**是一个包含了用于编码AAC的FAAC以及用于解码的FAAD2的软件[^faac]
+- **iTunes**是一个由苹果公司开发的多媒体播放器，多媒体库，网络，以及手机管理的软件。能够支持多种常见编码格式的播放。[^itunes]
+- **Lame(LAME Ain't an MP3 Encoder)**是一个用于将音频转换为MP3编码格式的开源免费软件[^lame]
+- **L3enc(raunhofer l3enc)**是第一个能将PCM(.wav)编码格式转换为MP3的软件，早期的安卓系统曾采用[^l3enc]
+- **libopus**用于解编码Opus编码格式的音频[^codec]
+- **libvobis**用于解编码viobs(.ogg)格式[^libvorbis]
+- **WME(Windows Media Encoder)**不解释（
 
 ---
 
 ## 编码格式
 
-**编码格式≠视频格式**
+==编码格式≠视频格式==
 
-**编码格式≠容器格式**
+==编码格式≠容器格式==
 
 编码格式是指一个多媒体流文件的编码方式，根据其编码的算法不同，其性能以及使用场景也不同。
 
 ### 视频编码格式
 
-- `H.264/MPEG-4 AVC`[^h264]
+- **H.264/MPEG-4 AVC**[^h264]
 
-  **H.264**，又称为**MPEG-4 Part10, Advanced Video Coding(AVC)**。是一种面向宏块，基于运动补偿的视频编码技术，到2014年已经成为高精度录制，压缩与发布最常用的格式之一。H.264/AVC项目的目的是为了创建一个更佳的视频压缩标准，在更低的比特率的情况下依然能够提供良好视频质量的标准。H.264的另外一个目标是提供足够的灵活性，以允许该标准能够应用于各种各样的网络和系统的各应用上，包括低和高比特率，低和高分辨率视频。H.264标准可以被视为由多个不同的应用框架 / 配置文件（profiles）组成的“标准系列”。
+  **H.264**，又称为**MPEG-4 Part10, Advanced Video Coding(AVC)**。是一种面向宏块，基于运动补偿的视频编码技术，到2014年已经成为高精度录制，压缩与发布最常用的格式之一。**H.264/AVC**项目的目的是为了创建一个更佳的视频压缩标准，在更低的比特率的情况下依然能够提供良好视频质量的标准。**H.264**的另外一个目标是提供足够的灵活性，以允许该标准能够应用于各种各样的网络和系统的各应用上，包括低和高比特率，低和高分辨率视频。H.264标准可以被视为由多个不同的应用框架 / 配置文件（profiles）组成的“标准系列”。
 
-  H.264由ITU-T视频编码专家组(ITU-T SG16 Q.6)与ISO/IEC联合工作组(动态图像专家组 Moving Picture Experts Group/MPEG)共同组成的联合视频组(JVT，Joint Video Team)开发。因此因ITU-T H.264标准和ISO/IEC MPEG-4/AVC标准（正式名称是ISO/IEC 14496-10—MPEG-4 Part 10，Advanced Video Coding）有相同的技术内容，故被共同管理
+  **H.264**由**ITU-T**视频编码专家组(**ITU-T SG16 Q.6**)与**ISO/IEC**联合工作组(动态图像专家组 **Moving Picture Experts Group/MPEG**)共同组成的联合视频组**(JVT，Joint Video Team)**开发。因此因**ITU-T H.264**标准和**ISO/IEC MPEG-4/AVC**标准（正式名称是**ISO/IEC 14496-10—MPEG-4 Part 10，Advanced Video Coding**）有相同的技术内容，故被共同管理
 
-  H.264的命名遵循了ITU-T的命名约定，它是VCEG视频编码标准H.26x线中的一员，MPEG-4 AVC的命名来自ISO/IEC MPEG的命名约定，它是ISO/IEC 14496的第10部分，该协议族被称为MPEG-4。该标准是作为VCEG和MPEG的一部分开发的，此前在ITU-T作为VCEG的项目，叫做H.26L。一些软件的内部标识此标准为AVC1
+  **H.264**的命名遵循了**ITU-T**的命名约定，它是VCEG视频编码标准H.26x线中的一员，**MPEG-4 AVC**的命名来自**ISO/IEC** MPEG的命名约定，它是ISO/IEC 14496的第10部分，该协议族被称为MPEG-4。该标准是作为VCEG和MPEG的一部分开发的，此前在ITU-T作为VCEG的项目，叫做H.26L。一些软件的内部标识此标准为**AVC1**
 
   其最大的分辨率达到`8192×4320`通常以`.264`为后缀名
 
-- `H.265/HEVC(High Efficiency Video Coding)` 又被称为`H.265/MPEG-H Part2 HEVC` 是一种视频压缩标准，其被视为是H.264的继任者。和H.264为同一专家组开发。其在相同的视频质量下提供更高的压缩率，或者在相同的比特率下有更好的视频质量。H.265正在与IETC开发的AV-1编码竞争标准化。现在被各大压片组所采用。通常以`.265`为后缀名。
+- **H.265/HEVC(High Efficiency Video Coding)** 又被称为**H.265/MPEG-H Part2 HEVC** 是一种视频压缩标准，其被视为是**H.264**的继任者。和**H.264**为同一专家组开发。其在相同的视频质量下提供更高的压缩率，或者在相同的比特率下有更好的视频质量。**H.265**正在与**IETC**开发的[**AV-1**](EX_words#AV1)编码竞争标准化。现在被各大压片组所采用。通常以`.265`为后缀名。
 
-- `vp8`是由On2 Technologies开发后由Google放出的开源编译格式，其与H.264相比，需要约213%的体积才能达到同样的质量。通常被封装于`webm`容器中。[^vp8]
+- **vp8**是由On2 Technologies开发后由Google放出的开源编译格式，其与H.264相比，需要约213%的体积才能达到同样的质量。通常被封装于`webm`容器中。[^vp8]
 
-- `vp9`是Google开发的与H.265竞争的免费开源编码格式。最大可达8192x4352@120，与HEVC相比更适合用于网络传输，因为几乎所有浏览器都支持解码VP9，而在压缩比上，在相同质量下比H.264少40%~45%的体积，比HEVC少20%的体积。主要被用于Youtube上，通常与Opus音频格式一起被封装于`webm`容器中[^vp9]
+- **vp9**是Google开发的与H.265竞争的免费开源编码格式。最大可达8192x4352@120，与HEVC相比更适合用于网络传输，因为几乎所有浏览器都支持解码VP9，而在压缩比上，在相同质量下比H.264少40%~45%的体积，比HEVC少20%的体积。主要被用于Youtube上，通常与Opus音频格式一起被封装于`webm`容器中[^vp9]
 
-- `AV1(AOMedia Video 1)`是由AOMedia开发的免费开源编码格式，是一种基于宏块但也同时加入频率变换格式的编码技术。其主要使用的技术来源于Google下一代视频压缩格式VP10，但同时包含了Mozilla的Daala视频压缩格式以及由Cisco开发的Thor视频压缩格式中的编码技术。Google决定将其并入AOMedia开发标准。到目前为止，在相同质量下比HEVC少20%的体积，比AVC少50%的体积，目前在Youtube上进行小规模测试中，其最大可支持7680x4320@120，通常被封装于`webm`容器中[^AV1]。是HEVC AVS2的竞争对象。
+- <span id="AV1"></span>**AV1(AOMedia Video 1)**是由**AOMedia**开发的免费开源编码格式，是一种基于宏块但也同时加入频率变换格式的编码技术。其主要使用的技术来源于**Google**下一代视频压缩格式**VP10**，但同时包含了**Mozilla**的**Daala**视频压缩格式以及由**Cisco**开发的**Thor**视频压缩格式中的编码技术。**Google**决定将其并入**AOMedia**开发标准。到目前为止，在相同质量下比**HEVC**少20%的体积，比**AVC**少50%的体积，目前在Youtube上进行小规模测试中，其最大可支持`7680x4320@120`，通常被封装于`webm`容器中[^AV1]。是**HEVC** **AVS2**的竞争对象。
 
-- `AVS(Audio Video coding Standard)`，数码音视频编码技术标准，是由中国开发的视频压缩技术，目前在中央电视台，安徽卫视，湖南卫视上使用。AVS2即第二代，支持分辨率，高动态范围的高效压缩，压缩效率比AVC提升一倍，超过HEVC。AVS2还支持三维视频、多视角和虚拟现实视频的高效编码；立体声、多声道音频的高效有损及无损编码；监控视频的高效编码。但是缺少可用的软件编解码器，普及性低（因为不开源，你又不开源，又不免费，除了国家电视台谁用）。[^AVS]
+- **AVS(Audio Video coding Standard)**，数码音视频编码技术标准，是由中国开发的视频压缩技术，目前在中央电视台，安徽卫视，湖南卫视上使用。AVS2即第二代，支持分辨率，高动态范围的高效压缩，压缩效率比**AVC**提升一倍，超过**HEVC**。AVS2还支持三维视频、多视角和虚拟现实视频的高效编码；立体声、多声道音频的高效有损及无损编码；监控视频的高效编码。但是缺少可用的软件编解码器，普及性低（因为不开源，你又不开源，又不免费，除了国家电视台谁用）。[^AVS]
 
-- `Daala`是一种由Xpih,Mozilla,IETF开发的开源视频编码格式，目前其技术被用于AV-1的开发
+- **Daala**是一种由Xpih,Mozilla,IETF开发的开源视频编码格式，目前其技术被用于AV-1的开发
 
-- `Thor`是一种由Cisco开发的免费视频编码格式，目前其技术被用于AV-1的开发
+- **Thor**是一种由Cisco开发的免费视频编码格式，目前其技术被用于AV-1的开发
 
 ### 音频编码格式
 
-- `WAV(Waveform Audio File Format)`是一个由微软及IBM开发的无压缩数字音频编码格式。注意，**无压缩≠无损**。就像你把棉被塞到仓库里面，如果棉被本来就是坏的那拿出来还是坏的。通常以`.wav`为后缀名
-- `ALAC(Apple Lossless Audio Codec)`是一个由苹果公司开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]通常以`.alac`为后缀名
-- `Monkey's Audio(APE)`，是一种由Matthew T. Ashland开发的免费开源编码格式，是常见的无损音讯压缩编码格式，通常以`.ape`为后缀名。
-- `AAC(Advance Audio Codec)`是一种由MPEG开发的免费开源的破坏性音频压缩编码格式。通常以`.m4a`为后缀名[^aac]
-  - `AAC(MPEG-2 Part 7)`使用MPEG-2 Audio Transport Stream容器封装，常见后缀为`.aac`
-  - `AAC(MPEG-4 Part3 shubpart4)`
-    - `HE-AAC(High-Efficiency AAC)`即高效AAC，适用于低码率的情况下，在低码率的情况下其能取得更好的音质，其宣称在48kbps的音质可以比128kbps的MP3还好
-    - `AAC-LD(AAC-Low Delay)`主要被用于网络传输
-    - `AAC-LC(AAC-Low Complexity)`比较简单，没有了增益控制，但提高了编码效率
-- `Opus`是一种由IETF编码工作组开发的开源免费有损音频编码格式，目标是希望用单一格式包含声音和语音，取代Speex和Vorbis，且适用于网路上低延迟的即时声音传输。比MP3 AAC有更低的延迟和更好的声音压缩率。通常以`.opus`为后缀名，通常被封装在`webm`容器中[^opus]
-- `Vorbis`是一种由Xiph.Org基金会开发的免费开源的有损音频编码，目前Xiph.Org基金会建议使用延迟更低、音质更好的Opus编码来取代Vorbis，通常被封装在`ogg`容器中[^vorbis]
-- `WMA(Windows Media Audio)`由Mircosoft开发的无损音频编码格式,WMA 7之后的WMA支持证书加密，未经许可（即未获得许可证书），即使是非法拷贝到本地，也是无法收听的。由于其有专利版权，所以……嗯……。通常以`.wma`为后缀名[^wma]
-- `PCM(Pulse-code modulation)`即脉冲编码调变。以数字信息记录模拟信号，这样的到的音频信号会清楚且能用于分时多工系统(如现代的公共电话)，但是体积较大。通常以`.pcm`为后缀名[^pcm]
-- `FLAC(Free Lossless Audio Codec)`是一个免费开源的无损压缩数字音频编码格式。通常以`.flac`为后缀名[^flac]
-- `AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式])`是指杜比数字编码(Dolby Digital 或称AC-3)。通常被封装在`VOB`或`MPEG-TS`容器中[^ac3]
-- `MP3(formally MPEG-1 Audio Layer III, MPEG-2 Audio Layer III)`是一种有损压缩数字音频编码格式。通过舍弃对人类听觉不重要的数据通常以降低体积，`.mp3`为后缀名[^mp3]
+- **WAV(Waveform Audio File Format)**是一个由微软及IBM开发的无压缩数字音频编码格式。注意，**无压缩≠无损**。就像你把棉被塞到仓库里面，如果棉被本来就是坏的那拿出来还是坏的。通常以`.wav`为后缀名
+- <span id='ALAC'></span>**ALAC(Apple Lossless Audio Codec)**是一个由苹果公司开发的无损压缩数字音频解编码格式，其能将`FLAC` `WAV`等的无压缩格式转换成无损压缩格式。[^alac]通常以`.alac`为后缀名
+- **Monkey's Audio(APE)**，是一种由Matthew T. Ashland开发的免费开源编码格式，是常见的无损音讯压缩编码格式，通常以`.ape`为后缀名。
+- **AAC(Advance Audio Codec)**是一种由MPEG开发的免费开源的破坏性音频压缩编码格式。有庞大的分支，这里介绍几个常见的。通常以`.m4a`为后缀名[^aac]
+  - **AAC(MPEG-2 Part 7)**使用MPEG-2 Audio Transport Stream容器封装，常见后缀为`.aac`
+  - **AAC(MPEG-4 Part3 shubpart4)**
+    - **HE-AAC(High-Efficiency AAC)**即高效AAC，适用于低码率的情况下，在低码率的情况下其能取得更好的音质，其宣称在48kbps的音质可以比128kbps的MP3还好
+    - **AAC-LD(AAC-Low Delay)**主要被用于网络传输
+    - **AAC-LC(AAC-Low Complexity)**比较简单，没有了增益控制，但提高了编码效率
+- **Opus**是一种由IETF编码工作组开发的开源免费有损音频编码格式，目标是希望用单一格式包含声音和语音，取代Speex和Vorbis，且适用于网路上低延迟的即时声音传输。比MP3 AAC有更低的延迟和更好的声音压缩率。通常以`.opus`为后缀名，通常被封装在`webm`容器中[^opus]
+- **Vorbis**是一种由Xiph.Org基金会开发的免费开源的有损音频编码，目前Xiph.Org基金会建议使用延迟更低、音质更好的**Opus**编码来取代**Vorbis**，通常被封装在`ogg`容器中[^vorbis]
+- **WMA(Windows Media Audio)**由Mircosoft开发的无损音频编码格式,WMA 7之后的WMA支持证书加密，未经许可（即未获得许可证书），即使是非法拷贝到本地，也是无法收听的。由于其有专利版权，所以……嗯……。通常以`.wma`为后缀名[^wma]
+- **PCM(Pulse-code modulation)**即脉冲编码调变。以数字信息记录模拟信号，这样的到的音频信号会清楚且能用于分时多工系统(如现代的公共电话)，但是体积较大。通常以`.pcm`为后缀名[^pcm]
+- <span id="flac"></span>**FLAC(Free Lossless Audio Codec)**是一个免费开源的无损压缩数字音频编码格式。通常以`.flac`为后缀名[^flac]
+- <span id='AC3'></span>**AC3(Audio Codec 3,Advanced Codec 3,Acoustic Coder 3** *[这里区分一下， Adaptive Transform Acoustic Coding 3 是一种由索尼开发的格式]*)**是指杜比数字编码(Dolby Digital 或称AC-3)**。通常被封装在`VOB`或`MPEG-TS`容器中[^ac3]
+- **MP3(formally MPEG-1 Audio Layer III, MPEG-2 Audio Layer III)**是一种有损压缩数字音频编码格式。通过舍弃对人类听觉不重要的数据通常以降低体积，`.mp3`为后缀名[^mp3]
 
 ---
 
@@ -172,29 +172,29 @@
 
 > 理解难度从上往下递增
 
-- `帧率(Frame per Second(FPS))`由于视觉暂留尚未研究透彻，目前学术界广泛接受的一个观点是帧率高于10~12帧的时候就会认为是连贯的画面[^fsp]
+- **帧率(Frame per Second(FPS))**由于视觉暂留尚未研究透彻，目前学术界广泛接受的一个观点是帧率高于10~12帧的时候就会认为是连贯的画面[^fsp]
 
-- `逐行扫描(Progressive scan)`1080p中的p就是逐行扫描的意思，顾名思义。[^P]
+- **逐行扫描(Progressive scan)**1080p中的p就是逐行扫描的意思，顾名思义。[^P]
 
-- `隔行扫描(Interlaced scan)`顾名思义[^I]
+- **隔行扫描(Interlaced scan)**顾名思义[^I]
 
   引用wiki上的图来解释，先扫描的叫上(奇)场，后扫描的叫下(偶)场，在这里就不解释什么交错鬼影，四比三下位变换之类的了。
 
   ![](https://upload.wikimedia.org/wikipedia/commons/a/ab/Interlace_zoom.gif)
 
-- `像素长宽比(Aspect ratio)`用来描述画面的长宽比的。传统电视为4:3（1.33:1）。HDTV为16:9（1.78:1）。35mm胶片为1.37:1。 电脑上的显示屏幕多为1:1，但是数字视频不是。[^video]
+- **像素长宽比(Aspect ratio)**用来描述画面的长宽比的。传统电视为4:3（1.33:1）。HDTV为16:9（1.78:1）。35mm胶片为1.37:1。 电脑上的显示屏幕多为1:1，但是数字视频不是。[^video]
 
-- `色彩空间(Color Space)`规定了色彩的显现区域。在视频中常用的为ITU BT.601 ITU BT.709 IEC 619966-2-4 YCbCr YUV。其中各种定义，色彩构成解释起来很复杂，这里只能简单地说一下，展开来说又是一章(吐血.gif)。现在主要使用的为YUV 4:2:0以及BT.709，除了有个别远古视频。[^color]
+- **色彩空间(Color Space)**规定了色彩的显现区域。在视频中常用的为ITU BT.601 ITU BT.709 IEC 619966-2-4 YCbCr YUV。其中各种定义，色彩构成解释起来很复杂，这里只能简单地说一下，展开来说又是一章(吐血.gif)。现在主要使用的为YUV 4:2:0以及BT.709，除了有个别远古视频。[^color]
 
-- <span id="CBR"></span>`CBR(Constant Bit Rate)`即固定码率。在早期的低带宽的情况下适用，因为需要节省带宽，所以强行把高码率压低。CBR也被用于蓝光DVD中，因为那么大空间，不用白不用，所以就把它用CBR调个很高的数值填满就是了。这种编码方式缺乏变化，不太适用于现在的网络传输。[^cbr]
+- <span id="CBR"></span>**CBR(Constant Bit Rate)**即固定码率。在早期的低带宽的情况下适用，因为需要节省带宽，所以强行把高码率压低。CBR也被用于蓝光DVD中，因为那么大空间，不用白不用，所以就把它用CBR调个很高的数值填满就是了。这种编码方式缺乏变化，不太适用于现在的网络传输。[^cbr]
 
-- <span id="VBR"></span>`VBR(Variable bitrate)`即可变码率。在较高带宽的网络下适用，画面变动不大时码率低，画面变动大时码率高。目前被广泛用于媒体流传输服务。[^vbr]
+- <span id="VBR"></span>**VBR(Variable bitrate)**即可变码率。在较高带宽的网络下适用，画面变动不大时码率低，画面变动大时码率高。目前被广泛用于媒体流传输服务。[^vbr]
 
-- <span id="ABR"></span>`ABR(Average bitrate)`即平均码率，用于计算文件大小，同时作为一个衡量视频质量的指标
+- <span id="ABR"></span>**ABR(Average bitrate)**即平均码率，用于计算文件大小，同时作为一个衡量视频质量的指标
 
-- <span id="CVBR"></span>`CVBR(Constrained Variable Bitrate)`，这个不好翻译。是一种将CBR和VBR结合起来的技术，在一段时间内维持在设定的码率不变，但在变动大的时候可以超过这个设定的码率。[^cvbr]
+- <span id="CVBR"></span>**CVBR(Constrained Variable Bitrate)**，这个不好翻译。是一种将CBR和VBR结合起来的技术，在一段时间内维持在设定的码率不变，但在变动大的时候可以超过这个设定的码率。[^cvbr]
 
-- <span id="2pass"></span>`2pass`即编码两次，第一次不进行实际压缩，只收集视频的统计信息，第二次根据第一次收集到的信息进行压缩，为压制中比较常用的一种压制方法。在此之上还有3pass
+- <span id="2pass"></span>**2pass**即编码两次，第一次不进行实际压缩，只收集视频的统计信息，第二次根据第一次收集到的信息进行压缩，为压制中比较常用的一种压制方法。在此之上还有3pass
 
 - **tbn** = the **T**ime **B**ase in AVStream that has come from the co**n**tainer(来自视频容器所描述的视频时基)
 
@@ -202,7 +202,7 @@
 
 - **tbr** = tbr is guessed from the video stream and is the value users want to see when they look for the video frame rate(tbr是从视频流本身进行猜测，他是视频的在观看时候的实际帧率)
 
-- `H.264 profile`即配置文件，其针对不同的应用程序定义了不同的配置，这些被声明为配置文件代码(`profile_idc`)和在编码器种应用的一系列约束。这允许解码器识别解码该特定流的要求。一般来说有以下这些[^profile]
+- **H.264 profile**即配置文件，其针对不同的应用程序定义了不同的配置，这些被声明为配置文件代码(`profile_idc`)和在编码器种应用的一系列约束。这允许解码器识别解码该特定流的要求。一般来说有以下这些[^profile]
 
   > constraint 约束
   >
@@ -212,72 +212,72 @@
 
   *对非可适性视频编码而言，H.264有以下这些标准*
 
-  - Constrained Baseline Profile (CBP, 66 with constraint set 1)
+  - **Constrained Baseline Profile** (CBP, 66 with constraint set 1)
 
     主要被用于低开销的应用场景，这种等级的profile通常被用于视频会议以及一些手机应用。他是BP MP HP之间的共有特征子集
 
-  - Baseline Profile (BP, 66, 基线)
+  - **Baseline Profile** (BP, 66, 基线)
 
     主要被用于需要额外数据以保持数据传输[鲁棒性](#鲁棒性)的低开销应用场景，有时候在一些视频会议和手机应用中使用。该等级的配置在CBP的基础上增加了三个功能以保证传输稳定(或是用于其他目的例如低延迟多点的视频流合成)。自从2009年CBP被定义以来，该配置文件的重要性逐渐消失，所有CBP流也被视为BP流，所以共享相同的标识码(66)
 
-  - Extended Profile (XP, 88, 额外)
+  - **Extended Profile** (XP, 88, 额外)
 
     被用于视频流文件，这个配置文件有相对较高的压缩能力以及一些额外的功能来确保对数据丢失和服务器媒体流切换的鲁棒性
 
-  - Main Profile (MP, 77, 主要)**常用**
+  - **Main Profile** (MP, 77, 主要)**常用**
 
     被用于使用DVB标准中定义的MPEG-4格式的标清数字电视广播。然而它并不用于高清电视广播，因为在2004年针对高清电视广播开发HiP之后，该配置文件的重要性已经消失。
 
-  - High Profile (HiP, 100, 高)**常用**
+  - **High Profile** (HiP, 100, 高)**常用**
 
     主要用于广播以及储存的配置文件，尤其是高清电视以及蓝光DVD
 
-  - Progressive High Profile (PHiP, 100 with constraint set 4)
+  - **Progressive High Profile** (PHiP, 100 with constraint set 4)
 
     同上，但不支持字段编码
 
-  - Constrained High Profile (100 with constraint set 4 and 5)
+  - **Constrained High Profile** (100 with constraint set 4 and 5)
 
     同上，但不支持B帧切片
 
-  - High 10 Profile (Hi10P, 110)
+  - **High 10 Profile** (Hi10P, 110)
 
     基于HiP，并支持10bit采样精度
 
-  - High 4:2:2 Profile (Hi422P, 122)
+  - **High 4:2:2 Profile** (Hi422P, 122)
 
     主要针对隔行扫描的配置文件，建立在Hi10P之上，增加对4:2:2色度的支持，同时每个解码图像的采样精度最多10bit
 
-  - High 4:4:4 Predictive Profile (Hi444PP, 244)
+  - **High 4:4:4 Predictive Profile** (Hi444PP, 244)
 
     在上一个基础之上建立，支持4:4:4的色度采样，每个采样升到14bit，并且增加对高效快编码的支持以及可以将每个图像编码为三个独立的色彩平面(Y U V)
 
   > 下面这四个配置文件主要被用于录像以及专业的编辑程序，包含四个额外的仅节点配置文件。
 
-  - High 10 Intra Profile (110 with constraint set 3)
-  - High 4:2:2 Intra Profile (122 with constraint set 3)
-  - High 4:4:4 Intra Profile (244 with constraint set 3)
-  - CAVLC 4:4:4 Intra Profile (44)
+  - **High 10 Intra Profile** (110 with constraint set 3)
+  - **High 4:2:2 Intra Profile** (122 with constraint set 3)
+  - **High 4:4:4 Intra Profile** (244 with constraint set 3)
+  - **CAVLC 4:4:4 Intra Profile** (44)
 
   > 对适应性视频编码( Scalable Video Coding, SVC)而言，包含了五个额外的额外的可适应性配置文件，被定义为与普通配置文件的组合，由标识码中的第二个字标识
 
-  - Scalable Baseline Profile (83)
+  - **Scalable Baseline Profile** (83)
 
     在BP上增加可适应性功能
 
-  - Scalable Constrained Baseline Profile (83 with constraint set 5)
+  - **Scalable Constrained Baseline Profile** (83 with constraint set 5)
 
     主要用于实时通讯
 
-  - Scalable High Profile (86)**常用**
+  - **Scalable High Profile** (86)**常用**
 
     主要用于广播以及流媒体传输应用
 
-  - Scalable Constrained High Profile (86 with constraint set 5)
+  - **Scalable Constrained High Profile** (86 with constraint set 5)
 
     对上一个增加了对实时通讯应用的功能
 
-  - Scalable High Intra Profile (86 with constraint set 3)
+  - **Scalable High Intra Profile** (86 with constraint set 3)
 
     同上，限节点使用
 
@@ -302,7 +302,7 @@
 | 分离色彩平面                                       | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 | 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 
-- `H.264 等级(level)`
+- **H.264 等级(level)**
 
   规定了一系列的约束以及告诉解码器所需要的配置等级
 
@@ -329,9 +329,9 @@
 |  6.1  | 8,35,840              | 139,264              | 480,000                                                      | 3,840×2,160@257.9 (16) 7,680×4,320@64.5 (5)<br/>8,192×4,320@60.4 (5) | 696320       |
 |  6.2  | 16,711,680            | 139,264              | 800,000                                                      | 3,840×2,160@300.0 (16)<br/>7,680×4,320@128.9 (5)<br/>8,192×4,320@120.9 (5) | 696320       |
 
-- `解码图像缓存器（Decoded picture buffering, DPB）`
+- **解码图像缓存器（Decoded picture buffering, DPB）**
 
-    H.264/AVC编码器采用之前已编码的帧画面来提供给其他帧画面进行样本值预测。这可以使得编码器对编码给定帧画面的最佳方式做出有效决策。同时，参考帧(Ref Frames)也来自于这个缓存在解码器中这些帧被储存在DPB中，DPB的最大容量(单位：帧)，如上一个表中的括号，可以按照下面的方式来计算
+    **H.264/AVC**编码器采用之前已编码的帧画面来提供给其他帧画面进行样本值预测。这可以使得编码器对编码给定帧画面的最佳方式做出有效决策。同时，参考帧(Ref Frames)也来自于这个缓存在解码器中这些帧被储存在DPB中，DPB的最大容量(单位：帧)，如上一个表中的括号，可以按照下面的方式来计算
 
     $$DpbCapacity=\lfloor \frac {最大帧缓存量(Mb/s)} {(帧画面宽度(Mb/s)))*(帧画面高度(Mb/s))})\rfloor $$
 
@@ -345,25 +345,25 @@
 
     ![1555891080320](images/1555891080320.png)
 
-- `B帧 I帧 P帧`[^vcpt] **相邻在这里表示在编码关系上相邻，在播放顺序上两帧未必相邻**
+- **B帧 I帧 P帧**[^vcpt] **相邻在这里表示在编码关系上相邻，在播放顺序上两帧未必相邻**
 
-    - `I帧(I-frames, Intra-coded picture)` 是压缩最弱体积最大的一种帧，但是其解码不需要依靠其他帧，所以被叫做关键帧，快进的时候会用到。通常是一幅完整的图片。
-    - `B帧(B-frames, Bidirectional predicted picture)`是双向预测帧，能够根据前后两帧的数据来进行重建，是压缩最高体积最小的一种帧，但是需要依赖其他帧的信息进行解码。因为只记录相邻前后两帧之间的差异，所以可以节省更多空间
-    - `P帧(P-frames, Predicted Picture)`是后向预测帧，能够根据上一帧的信息来进行解码，压缩能力比I帧强比B帧弱。只记录与前一帧之间的差别。
+    - **I帧(I-frames, Intra-coded picture)** 是压缩最弱体积最大的一种帧，但是其解码不需要依靠其他帧，所以被叫做关键帧，快进的时候会用到。通常是一幅完整的图片。
+    - **B帧(B-frames, Bidirectional predicted picture)**是双向预测帧，能够根据前后两帧的数据来进行重建，是压缩最高体积最小的一种帧，但是需要依赖其他帧的信息进行解码。因为只记录相邻前后两帧之间的差异，所以可以节省更多空间
+    - **P帧(P-frames, Predicted Picture)**是后向预测帧，能够根据上一帧的信息来进行解码，压缩能力比I帧强比B帧弱。只记录与前一帧之间的差别。
 
-- `运动补偿(Motion compensation)`是一种描述相邻帧差别的方法，具体来说是描述前面一帧（相邻在这里表示在编码关系上的前面，在播放顺序上未必在当前帧前面）的每个小块怎样移动到当前帧中的某个位置去。可被用于去交错以及运动插值。又分为全局运动补偿，分块运动补偿，可变分块运动补偿以及重叠分块运动补偿。[^motion]
+- **运动补偿(Motion compensation)**是一种描述相邻帧差别的方法，具体来说是描述前面一帧（相邻在这里表示在编码关系上的前面，在播放顺序上未必在当前帧前面）的每个小块怎样移动到当前帧中的某个位置去。可被用于去交错以及运动插值。又分为全局运动补偿，分块运动补偿，可变分块运动补偿以及重叠分块运动补偿。[^motion]
 
-- `宏块(Macroblock)`是运动预测的基本单位，一张完整的帧画面通常会被切割成几个大区快[^marco]
+- **宏块(Macroblock)**是运动预测的基本单位，一张完整的帧画面通常会被切割成几个大区快[^marco]
 
-- `熵编码(entropy encoding)`在信息学上来说是一种不依赖媒介具体特征的接近无损的数据压缩方式，熵编码通常与其他编码方式结合使用。[^entropyEnc]一种主要类型的熵编码方式是在输入的时候创建并分配一个唯一的无首位代码(prefix-free code)
+- **熵编码(entropy encoding)**在信息学上来说是一种不依赖媒介具体特征的接近无损的数据压缩方式，熵编码通常与其他编码方式结合使用。[^entropyEnc]一种主要类型的熵编码方式是在输入的时候创建并分配一个唯一的**无首位代码(prefix-free code)**
 
-- `前缀码(Prefix code)`是一种编码系统，通常为长度可变的，在其中的每一个前缀码都具备前置性质(prefix property)。也就是说，该编码是独立唯一且不能被其他编码所作为前置部分的，举个例子，编码集合`{1,32,75}`具备前置性质，但`{1,3,7,32,75}`不具备，因为`3`和`7`可以分别作为`32`与`75`的前置编码。这种被叫做无首位编码(PFC, prefix-free codes)。
+- **前缀码(Prefix code)**是一种编码系统，通常为长度可变的，在其中的每一个前缀码都具备前置性质(prefix property)。也就是说，该编码是独立唯一且不能被其他编码所作为前置部分的，举个例子，编码集合`{1,32,75}`具备前置性质，但`{1,3,7,32,75}`不具备，因为`3`和`7`可以分别作为`32`与`75`的前置编码。这种被叫做无首位编码(PFC, prefix-free codes)。
 
   每一个前置码都是解码结果唯一的：给定完整准确的序列，接收方可以识别每个单词而不需要编码与单词之间做特殊标记。但是有解码结果唯一的代码不是前缀码; 例如，将前缀码进行逆转操作`(45->54)`仍然是解码结果唯一的（它是后缀代码），但它不一定是前缀代码。
 
   霍夫曼编码是该编码系统中的一种算法。[^prefixcode]
 
-- `算术编码(Arithmetic Coding)`是一种无损数据压缩方式，同时也是一种熵编码的算法。[^算术编码]这个是一个完整的算法，可以单独开一章，这里就简单的说一下。算术编码是不同于其他熵编码的编码算法，其他的熵编码方法通常是把输入的消息分割为符号，然后对每个符号进行编码，而算术编码是直接把整个输入的消息编码为一个数，一个满足（0.0 ≤ *n* < 1.0）的小数n。举个简单的例子
+- **算术编码(Arithmetic Coding)**是一种无损数据压缩方式，同时也是一种熵编码的算法。[^算术编码]这个是一个完整的算法，可以单独开一章，这里就简单的说一下。算术编码是不同于其他熵编码的编码算法，其他的熵编码方法通常是把输入的消息分割为符号，然后对每个符号进行编码，而算术编码是直接把整个输入的消息编码为一个数，一个满足（0.0 ≤ *n* < 1.0）的小数n。举个简单的例子
 
   以`wiki`这一个字符串为例，一共有四个字符，使用二进制区间表示(00,01,10,11)
 
@@ -377,11 +377,11 @@
 
   ![img](images/640px-Arithmetic_coding_visualisation_circle.svg.png)
 
-- `CABAC(Context-based Adaptive Binary Arithmetic Coding)`[^cabbc]，即前文参考性自适应二元算术编码，是一种基于算术编码的在HEVC以及AVC编码中使用的熵编码方式。其分为三部分`Binarizer(二值化算法)` `Context Modeler(上下文模型)` `Arithmetic Coding Engine(算术编码引擎)` 。他首先将所有非二进制符号转换为二进制，编码器遍历每个比特来选择使用哪个概率模型，然后根据上下文信息来优化概率估计。最后用算术编码来压缩数据。[^cabbc]通常比CAVLC性能更佳。但不支持Baseline以及Extended profiles。
+- **CABAC(Context-based Adaptive Binary Arithmetic Coding)**[^cabbc]，即前文参考性自适应二元算术编码，是一种基于算术编码的在HEVC以及AVC编码中使用的熵编码方式。其分为三部分`Binarizer(二值化算法)` `Context Modeler(上下文模型)` `Arithmetic Coding Engine(算术编码引擎)` 。他首先将所有非二进制符号转换为二进制，编码器遍历每个比特来选择使用哪个概率模型，然后根据上下文信息来优化概率估计。最后用算术编码来压缩数据。[^cabbc]通常比CAVLC性能更佳。但不支持Baseline以及Extended profiles。
 
-- `CAVLC(Context-based Adaptive Variable-Length code)`，适应性可变长度编码法，又被称为`UVLC`。是h.264的演算法机制，其对传统的霍夫曼编码进行了改进，因此在压缩效率上取得了相当大的进步。其支持所有的H.264 peofile。过程解释有点复杂（[^cavlc]
+- **CAVLC(Context-based Adaptive Variable-Length code)**，适应性可变长度编码法，又被称为`UVLC`。是h.264的演算法机制，其对传统的霍夫曼编码进行了改进，因此在压缩效率上取得了相当大的进步。其支持所有的H.264 peofile。过程解释有点复杂（[^cavlc]
 
-- `适应性视频编码(Scalable Video Coding, SVC)`是传统H.264编码的延伸，是H.264视频压缩标准附录G的名称，可以提升更大的编码弹性，并且有时间(帧速率)可适性(Temporal Scalability),空间(图片大小)可适性（Spatial Scalability）及信噪比/质量/品质可适性（SNR Scalability）[^ensvc][^cnsvc]三大特性，使得视频传输能在不同的网络带宽中使用。
+- **适应性视频编码(Scalable Video Coding, SVC)**是传统H.264编码的延伸，是H.264视频压缩标准附录G的名称，可以提升更大的编码弹性，并且有时间(帧速率)可适性(Temporal Scalability),空间(图片大小)可适性（Spatial Scalability）及信噪比/质量/品质可适性（SNR Scalability）[^ensvc][^cnsvc]三大特性，使得视频传输能在不同的网络带宽中使用。
 
 ## 音频名词
 
@@ -389,17 +389,17 @@
 
 ## 其他名词
 
-- `ISO(International Organization for Standardization)`即国际化标准组织。其制定了一系列标准，包括但不限于电影播放，视频播放，文字，食品。
+- **ISO(International Organization for Standardization)**即国际化标准组织。其制定了一系列标准，包括但不限于电影播放，视频播放，文字，食品。
 
   ![1555759999551](images/1555759999551.png)
 
   这里的ISO表示的是遵循着`ISO/IEC 14496`标准
 
-- `IEC(International Electrotechnical Commission)`国际电工协会，主要负责电气工程以及电子工程的国际标准制定
+- **IEC(International Electrotechnical Commission)**国际电工协会，主要负责电气工程以及电子工程的国际标准制定
 
-- `ITU-T(ITU Telecommunication Standardization Sector)`即国际电信联盟电信标准化部门。其制定了一系列用于远程通讯传输的多媒体标准，其中包括`ITU-T H.264`等
+- **ITU-T(ITU Telecommunication Standardization Sector)**即国际电信联盟电信标准化部门。其制定了一系列用于远程通讯传输的多媒体标准，其中包括`ITU-T H.264`等
 
-- `ITU-R(ITU Radiocommunication Sector)`国际电信联盟无线电通信部门
+- **ITU-R(ITU Radiocommunication Sector)**国际电信联盟无线电通信部门
 
 - <span id="鲁棒性"></span>`鲁棒性(robustness)`，是指==控制系统在一定(结构，大小)的**参数扰动下**，仍能够维持其他某些性能的特性==，也就是系统的健壮性。鲁棒控制方法适用于稳定性和可靠性作为首要目标的应用，同时过程的动态特征已知，且不确定因素的变化范围可以预估。**鲁棒性不同于稳定性**，稳定性是指==控制系统在使它偏离平衡状态的**扰动消失之后** ，返回原来平衡状态的能力==。举个例子，鲁棒性就像你种菜(物理)的时候，不会因为某一天浇水多了抑或少了，某一天出太阳了或下雨了而长不出来。稳定性就你给弹簧一个压力，你放手之后弹簧能回到原来的状态
 
@@ -487,7 +487,11 @@
 [^opus]: [Wiki-Opus](https://www.wikiwand.com/en/Opus_(audio_format)): **Opus** is a [lossy](https://www.wikiwand.com/en/Lossy_audio_compression)[audio coding format](https://www.wikiwand.com/en/Audio_coding_format) developed by the [Xiph.Org Foundation](https://www.wikiwand.com/en/Xiph.Org_Foundation) and standardized by the [Internet Engineering Task Force](https://www.wikiwand.com/en/Internet_Engineering_Task_Force), designed to efficiently code speech and general audio in a single format, while remaining [low-latency](https://www.wikiwand.com/en/Latency_(audio)) enough for real-time interactive communication and low-complexity enough for low-end embedded processors.[[4\]](https://www.wikiwand.com/en/Opus_(audio_format)#citenotehomepage4)[[5\]](https://www.wikiwand.com/en/Opus_(audio_format)#citenotearsrole5) Opus replaces both [Vorbis](https://www.wikiwand.com/en/Vorbis) and [Speex](https://www.wikiwand.com/en/Speex)  for new applications, and several blind listening tests have ranked it  higher-quality than any other standard audio format at any given bitrate  until [transparency](https://www.wikiwand.com/en/Transparency_(data_compression)) is reached, including [MP3](https://www.wikiwand.com/en/MP3), [AAC](https://www.wikiwand.com/en/Advanced_Audio_Coding), and [HE-AAC](https://www.wikiwand.com/en/High-Efficiency_Advanced_Audio_Coding).
 [^wma]: [Wiki-WMA](https://www.wikiwand.com/zh-hans/Windows_Media_Audio): **WMA**（**Windows Media Audio**）是[微软](https://www.wikiwand.com/zh-hans/微软)公司开发的一系列[音频编解码器](https://www.wikiwand.com/zh-hans/音频编解码器)，也指相应的[数位](https://www.wikiwand.com/zh-hans/數位)[音频](https://www.wikiwand.com/zh-hans/音频)编码格式。WMA包括四种不同的编解码器：（1） *WMA*，原始的WMA编解码器，作为[MP3](https://www.wikiwand.com/zh-hans/MP3)和[RealAudio](https://www.wikiwand.com/zh-hans/RealAudio)编解码器的竞争者；（2） *WMA Pro*，支持更多声道和更高质量的音频；（3） *WMA Lossless*，[无损](https://www.wikiwand.com/zh-hans/无损压缩)编解码器；（4）*WMA Voice*，用于储存语音，使用的是低码率压缩。一些使用Windows Media Audio编码格式编码其所有内容的纯音频[ASF](https://www.wikiwand.com/zh-hans/ASF)文件也使用WMA作为扩展名。 
 [^ac3]: [Wiki-DTS](https://www.wikiwand.com/en/DTS_(sound_system)): DTS and Dolby Digital (AC-3), DTS's chief competitor in the [cinema theatre](https://www.wikiwand.com/en/Movie_theater)  and home theatre markets, are often compared because of their  similarity in product goals, though Dolby believed that the surround  channels should be diffused and DTS said they should be directional.
-[^flac]: [Wiki-FLAC]:(https://www.wikiwand.com/en/flac): **FLAC** ([/flæk/](https://www.wikiwand.com/en/Help:IPA/English); **Free Lossless Audio Codec**) is an [audio coding format](https://www.wikiwand.com/en/Audio_coding_format) for [lossless compression](https://www.wikiwand.com/en/Lossless_compression) of [digital audio](https://www.wikiwand.com/en/Digital_audio), and is also the name of the free software project producing the FLAC tools, the reference software package that includes a [codec](https://www.wikiwand.com/en/Codec) implementation. 
+[^flac]: [Wiki-FLAC]:(https://www.wikiwand.com/en/flac): **FLAC** ([/flæk/](https://www.wikiwand.com/en/Help:IPA/English); **Free Lossless Audio Codec**) is an [audio coding format](https://www.wikiwand.com/en/Audio_coding_format) for [lossless compression](https://www.wikiwand.com/en/Lossless_compression) of [digital audio](https://www.wikiwand.com/en/Digital_audio), and is also the name of the free software project producing the FLAC tools, the reference software package that includes a [codec](https://www.wikiwand.com/en/Codec) impl
+[^qaac]: [Wiki-QAAC](https://sites.google.com/site/qaacpage/) :qaac is a command line AAC/ALAC encoder frontend based on Apple encoder
+[^neroaac]: [Wiki-Neroaac](https://www.wikiwand.com/en/Nero_AAC_Codec): **Nero AAC Codec** is a set of software tools for [encoding and decoding](https://www.wikiwand.com/en/Codec)[Advanced Audio Coding](https://www.wikiwand.com/en/Advanced_Audio_Coding) (AAC) format audio, and editing [MPEG-4](https://www.wikiwand.com/en/MPEG-4) metadata. 
+
+[^divx]: [Wiki-DivX](https://www.wikiwand.com/en/DivX): **DivX** is a brand of [video codec](https://www.wikiwand.com/en/Video_codec) products developed by DivX, LLC. The DivX codec gained fame for its ability to [compress](https://www.wikiwand.com/en/Video_compression) lengthy video segments into small sizes while maintaining relatively high visual quality. 
 
 ---
 

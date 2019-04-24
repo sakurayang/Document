@@ -290,12 +290,13 @@
 <!-- toc -->
 <ul>
 <li><a href="#10&#x51C6;&#x5907;">1.0&#x51C6;&#x5907;</a></li>
-<li><a href="#11-&#x89C6;&#x9891;">1.1 &#x89C6;&#x9891;</a></li>
-<li><a href="#12-&#x5C01;&#x88C5;">1.2 &#x5C01;&#x88C5;</a></li>
-<li><a href="#13-&#x62BD;&#x53D6;">1.3 &#x62BD;&#x53D6;</a></li>
-<li><a href="#14-avs&#x754C;&#x9762;">1.4 AVS&#x754C;&#x9762;</a></li>
-<li><a href="#15-&#x8BBE;&#x7F6E;">1.5 &#x8BBE;&#x7F6E;</a></li>
-<li><a href="#16-&#x603B;&#x7ED3;">1.6 &#x603B;&#x7ED3;</a></li>
+<li><a href="#11-&#x5C0F;&#x4E38;">1.1 &#x5C0F;&#x4E38;</a></li>
+<li><a href="#12-&#x89C6;&#x9891;">1.2 &#x89C6;&#x9891;</a></li>
+<li><a href="#13-&#x5C01;&#x88C5;">1.3 &#x5C01;&#x88C5;</a></li>
+<li><a href="#14-&#x62BD;&#x53D6;">1.4 &#x62BD;&#x53D6;</a></li>
+<li><a href="#15-avs&#x754C;&#x9762;">1.5 AVS&#x754C;&#x9762;</a></li>
+<li><a href="#16-&#x8BBE;&#x7F6E;">1.6 &#x8BBE;&#x7F6E;</a></li>
+<li><a href="#17-&#x603B;&#x7ED3;">1.7 &#x603B;&#x7ED3;</a></li>
 </ul>
 <!-- toc stop -->
 <h2 id="10&#x51C6;&#x5907;">1.0&#x51C6;&#x5907;</h2>
@@ -306,7 +307,112 @@
 </ul>
 <p>&#x63D0;&#x793A;&#xFF1A;64&#x4F4D;&#x7684;&#x6EE4;&#x955C;<strong>&#x4E0D;&#x7A33;&#x5B9A;</strong>&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4F60;32&#x4F4D;&#x80FD;&#x538B;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x6362;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6362;&#xFF0C;&#x5C31;&#x7528;megui64&#x4F4D;&#x538B;&#xFF0C;&#x5C0F;&#x4E38;&#x8001;&#x4E86;</p>
 <hr>
-<h2 id="11-&#x89C6;&#x9891;">1.1 &#x89C6;&#x9891;</h2>
+<h2 id="11-&#x5C0F;&#x4E38;">1.1 &#x5C0F;&#x4E38;</h2>
+<p>&#x5C0F;&#x4E38;&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x7684;&#x56FE;&#x5F62;&#x5316;&#x64CD;&#x4F5C;&#x754C;&#x9762;&#xFF0C;&#x5B83;&#x6574;&#x5408;&#x4E86;&#x8BB8;&#x591A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x5E76;&#x4E14;&#x628A;&#x5B83;&#x4EEC;&#x7684;&#x4F7F;&#x7528;&#x53D8;&#x5F97;&#x65B9;&#x4FBF;&#x8D77;&#x6765;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7528;&#x9014;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>avs4x26x</td>
+<td>&#x52A0;&#x8F7D;AVS&#x811A;&#x672C;&#x8FDB;&#x884C;&#x538B;&#x5236;</td>
+</tr>
+<tr>
+<td>cl.exe</td>
+<td>&#x4E0D;&#x660E;&#xFF0C;&#x63A8;&#x6D4B;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;</td>
+</tr>
+<tr>
+<td>fdkaac</td>
+<td><a href="EX_Words.html#fdk">fdkaac</a>&#x7F16;&#x7801;&#x5668;</td>
+</tr>
+<tr>
+<td>ffmpeg</td>
+<td>&#x7528;&#x4E8E;&#x5206;&#x79BB;&#xFF0C;&#x5408;&#x5E76;&#xFF0C;&#x8F6C;&#x7801;</td>
+</tr>
+<tr>
+<td>flac</td>
+<td><a href="EX_Words.html#flac">flac&#x7F16;&#x7801;&#x5668;</a></td>
+</tr>
+<tr>
+<td>FlvBind</td>
+<td>&#x5C06;&#x591A;&#x4E2A;Flv&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;&#x53EF;&#x7528;ffmpeg&#x4EE3;&#x66FF;</td>
+</tr>
+<tr>
+<td>FlvExtraCL</td>
+<td>&#x62BD;&#x53D6;Flv&#x4E2D;&#x7684;&#x97F3;&#x89C6;&#x9891;&#xFF0C;&#x53EF;&#x7528;ffmpeg&#x4EE3;&#x66FF;</td>
+</tr>
+<tr>
+<td>Flvlib</td>
+<td>&#x7F16;&#x7801;&#x5E93;</td>
+</tr>
+<tr>
+<td>gMKVExtractGUI</td>
+<td>&#x5C06;MKV&#x4E2D;&#x5404;&#x4E2A;&#x8F68;&#x9053;&#x62BD;&#x51FA;&#x7684;&#x56FE;&#x5F62;&#x5316;&#x754C;&#x9762;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>Lame</td>
+<td>MP3&#x7F16;&#x7801;&#x5668;</td>
+</tr>
+<tr>
+<td>MediaInfo</td>
+<td>&#x67E5;&#x770B;&#x591A;&#x5A92;&#x4F53;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>mkvextract</td>
+<td>&#x5C06;MKV&#x4E2D;&#x5404;&#x4E2A;&#x8F68;&#x9053;&#x62BD;&#x51FA;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>mkvinfo</td>
+<td>&#x67E5;&#x770B;MKV&#x4FE1;&#x606F;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>mkvmerge</td>
+<td>&#x5408;&#x5E76;MKV&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>mmg</td>
+<td>&#x4E0A;&#x9762;&#x4E09;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x7684;&#x56FE;&#x5F62;&#x5316;&#x754C;&#x9762;</td>
+</tr>
+<tr>
+<td>MP4Box</td>
+<td>&#x4E13;&#x95E8;&#x5C01;&#x88C5;mp4&#x683C;&#x5F0F;&#x7684;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>neroAacEnc</td>
+<td>AAC&#x7F16;&#x7801;&#x5668;</td>
+</tr>
+<tr>
+<td>qaac</td>
+<td><a href="EX_Words.html#qaac">qaac</a>&#x7F16;&#x7801;&#x5668;</td>
+</tr>
+<tr>
+<td>refalac</td>
+<td><a href="EX_Words.html#ALAC">ALAC</a>&#x89E3;&#x7801;&#x5668;</td>
+</tr>
+<tr>
+<td>shntool</td>
+<td>&#x591A;&#x7528;&#x9014;&#x7684;&#x97F3;&#x9891;&#x5904;&#x7406;&#xFF0C;&#x4FE1;&#x606F;&#x67E5;&#x770B;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>VSFilter</td>
+<td>&#x63D0;&#x4F9B;&#x89C6;&#x9891;&#x6EE4;&#x955C;</td>
+</tr>
+<tr>
+<td>x264</td>
+<td><a href="EX_Words.html#x264">H.264/MPEG4-AVC</a>&#x7F16;&#x7801;&#x5668;</td>
+</tr>
+<tr>
+<td>x265</td>
+<td><a href="EX_Words.html#x265">H.265/HEVC</a>&#x7F16;&#x7801;&#x5668;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="12-&#x89C6;&#x9891;">1.2 &#x89C6;&#x9891;</h2>
 <p><img src="images/xiaowan_2019-04-18_23-41-37-1555602341502.png" alt=""></p>
 <p>&#x6765;&#xFF0C;&#x4E00;&#x5757;&#x4E00;&#x5757;&#x8BB2;</p>
 <ol>
@@ -340,7 +446,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="12-&#x5C01;&#x88C5;">1.2 &#x5C01;&#x88C5;</h2>
+<h2 id="13-&#x5C01;&#x88C5;">1.3 &#x5C01;&#x88C5;</h2>
 <blockquote>
 <p>&#x97F3;&#x9891;&#x521A;&#x521A;&#x8BB2;&#x8FC7;&#x4E86;&#x6240;&#x4EE5;&#x8DF3;&#x8FC7;&#xFF08;</p>
 <p>&#x5E38;&#x7528;&#x90A3;&#x4E9B;&#x5DF2;&#x7ECF;&#x8FC7;&#x65F6;&#x4E86;&#x6240;&#x4EE5;&#x8DF3;&#x8FC7;</p>
@@ -352,7 +458,7 @@
 <li>&#x8FD9;&#x91CC;&#x7684;MKV&#x5C01;&#x88C5;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x3002;MKV(Matroska Multimedia Container)&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x5185;&#x5C01;&#x88C5;&#x591A;&#x4E2A;&#x5B57;&#x5E55;&#xFF0C;&#x591A;&#x4E2A;&#x97F3;&#x9891;&#x7684;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x5BB9;&#x5668;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x53D1;&#x5E03;&#x591A;&#x8BED;&#x8A00;&#x89C6;&#x9891;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x62FF;&#x540C;&#x4E00;&#x4E2A;MKV&#x53CD;&#x590D;&#x5C01;&#x88C5;&#x800C;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x539F;&#x6709;&#x6570;&#x636E;&#x3002;</li>
 <li>&#x8FD9;&#x4E2A;&#x5C01;&#x88C5;&#x8F6C;&#x6362;&#x4E5F;&#x57FA;&#x672C;&#x4E0D;&#x5E38;&#x7528;&#xFF0C;&#x4F1A;&#x5728;&#x8FDB;&#x9636;&#x64CD;&#x4F5C;&#x4E2D;&#x7A0D;&#x5FAE;&#x63D0;&#x5230;&#x4E00;&#x70B9;</li>
 </ol>
-<h2 id="13-&#x62BD;&#x53D6;">1.3 &#x62BD;&#x53D6;</h2>
+<h2 id="14-&#x62BD;&#x53D6;">1.4 &#x62BD;&#x53D6;</h2>
 <p>&#x62BD;&#x53D6;&#xFF0C;&#x5373;Demux&#x3002;&#x5373;&#x5C06;&#x5C01;&#x88C5;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x97F3;&#x89C6;&#x9891;&#x5206;&#x79BB;&#x3002;</p>
 <p><img src="images/Typora_2019-04-19_14-54-22.png" alt=""></p>
 <ol>
@@ -416,7 +522,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="14-avs&#x754C;&#x9762;">1.4 AVS&#x754C;&#x9762;</h2>
+<h2 id="15-avs&#x754C;&#x9762;">1.5 AVS&#x754C;&#x9762;</h2>
 <p>   <code>AVS</code>&#x5373;<code>AviSynth</code>&#xFF0C;&#x662F;&#x7531;&#x5FAE;&#x8F6F;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x5E27;&#x670D;&#x52A1;&#x3002;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x9010;&#x5E27;&#x5904;&#x7406;&#x540E;&#x8FD4;&#x56DE;&#x7ED9;&#x7F16;&#x7801;&#x5668;&#x8FDB;&#x884C;&#x6C47;&#x5408;&#x3002;</p>
 <p>&#x65E0;&#x7279;&#x6B8A;&#x9700;&#x6C42;&#x662F;&#x4E0D;&#x7528;AVS&#x7684;&#xFF0C;&#x5F53;&#x540E;&#x671F;man&#x5BF9;&#x4F60;&#x8BF4;&#x201C;&#x9700;&#x8981;&#x6302;Mod&#x201D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x7528;&#x5230;&#x8FD9;&#x4E2A;&#x754C;&#x9762;&#x4E86;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x901A;&#x5E38;&#x662F;&#x540E;&#x671F;man&#x7528;&#x4E86;<code>VSFilterMod</code>&#x91CC;&#x9762;&#x7684;&#x4E00;&#x4E9B;&#x8FDB;&#x9636;&#x4EE3;&#x7801;&#x3002;</p>
 <p>   <img src="images/1555669078578.png" alt="1555669078578"></p>
@@ -428,23 +534,24 @@
 <li>&#x52FE;&#x9009;&#x6216;&#x4E0D;&#x52FE;&#x9009;&#x538B;&#x5236;&#x97F3;&#x9891;&#x968F;&#x4F60;&#xFF0C;&#x4FDD;&#x5B58;AVS&#x53EF;&#x4EE5;&#x7528;&#x4E8E;Megui&#x538B;&#x5236;&#x3002;</li>
 </ol>
 <hr>
-<h2 id="15-&#x8BBE;&#x7F6E;">1.5 &#x8BBE;&#x7F6E;</h2>
+<h2 id="16-&#x8BBE;&#x7F6E;">1.6 &#x8BBE;&#x7F6E;</h2>
 <p><img src="images/1555679896867.png" alt="1555679896867"></p>
 <p>&#x8FD9;&#x662F;&#x5C0F;&#x4E38;&#x7684;&#x8BBE;&#x7F6E;&#x754C;&#x9762;</p>
 <p>&#x5982;&#x679C;&#x4F60;&#x5728;&#x538B;&#x5236;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x7528;&#x7535;&#x8111;&#x7684;&#x8BDD;&#xFF0C;<strong>&#x5EFA;&#x8BAE;</strong>X264&#x4F18;&#x5148;&#x7EA7;&#x4E3A;&#x5B9E;&#x65F6;&#xFF0C;&#x7136;&#x540E;&#x7EBF;&#x7A0B;&#x8C03;&#x4E3A;16&#x3002;</p>
 <p>&#x5982;&#x679C;&#x4F60;&#x8981;&#x5728;&#x538B;&#x5236;&#x7684;&#x65F6;&#x5019;&#x7528;&#x7535;&#x8111;&#x7684;&#x8BDD;&#xFF0C;<strong>&#x5EFA;&#x8BAE;</strong>X264&#x4F18;&#x5148;&#x7EA7;&#x4E3A;&#x9AD8;&#x4E8E;&#x666E;&#x901A;&#xFF0C;&#x7136;&#x540E;&#x7EBF;&#x7A0B;&#x4E3A;4&#x3002;</p>
 <p>&#x5176;&#x4ED6;&#x7684;&#x5C31;&#x4E0D;&#x89E3;&#x91CA;&#x4E86;&#x3002;</p>
 <hr>
-<h2 id="16-&#x603B;&#x7ED3;">1.6 &#x603B;&#x7ED3;</h2>
+<h2 id="17-&#x603B;&#x7ED3;">1.7 &#x603B;&#x7ED3;</h2>
 <p>&#x672C;&#x7AE0;&#x4E3B;&#x8981;&#x8BB2;&#x4E86;&#x5C0F;&#x4E38;&#x7684;&#x57FA;&#x672C;&#x754C;&#x9762;&#x4EE5;&#x53CA;&#x5176;&#x7528;&#x6CD5;&#xFF0C;&#x6587;&#x4E2D;&#x63D0;&#x5230;&#x4E00;&#x4E9B;&#x4E13;&#x6709;&#x540D;&#x8BCD;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x5728;&#x540D;&#x8BCD;&#x8865;&#x5145;&#x4E00;&#x7AE0;&#x4E2D;&#x627E;&#x5230;&#xFF08;&#x5495;&#xFF09;</p>
 <p>&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x4E0B;&#x6B21;&#x518D;&#x78B0;&#x5230;&#x9700;&#x8981;&#x6302;Mod&#x538B;&#x5236;&#x7684;&#x89C6;&#x9891;&#x4E0D;&#x4F1A;&#x4E00;&#x8138;&#x61F5;&#x903C;&#x4E86;&#xFF08;&#x7B11;&#xFF09;</p>
 <hr>
 <p>&#x6700;&#x540E;&#x4FEE;&#x6539;</p>
 <p>Gerardyang</p>
-<p>2019.04.20</p>
+<p>2019.04.24</p>
 <p>&#x672C;&#x6587;&#x65E0;&#x6CD5;&#x9075;&#x5B88;996 License</p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png"></a></p>
-<p>&#x672C;&#x4F5C;&#x54C1;&#x91C7;&#x7528;<a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 3.0 &#x672A;&#x672C;&#x5730;&#x5316;&#x7248;&#x672C;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;</p>
+<p>190424 &#x5347;&#x7EA7;CC-BY-SA&#x534F;&#x8BAE; &#x589E;&#x52A0;&#x529F;&#x80FD;&#x8868;</p>
+<p>190420 &#x5F00;&#x59CB;&#x52A8;&#x7B14;</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br>&#x672C;&#x4F5C;&#x54C1;&#x91C7;&#x7528;<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0 &#x56FD;&#x9645;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a>&#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;</p>
 
                                 
                                 </section>
@@ -488,7 +595,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一章_小丸","level":"1.3.3","depth":2,"next":{"title":"名词补充","level":"1.3.4","depth":2,"path":"Video_Compression/EX_Words.md","ref":"./Video_Compression/EX_Words.md","articles":[]},"previous":{"title":"第零章_在你打开之前","level":"1.3.2","depth":2,"path":"Video_Compression/0_Before_Turn_On.md","ref":"./Video_Compression/0_Before_Turn_On.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","toc2","todo","text-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"todo":{},"search":{},"toc2":{"addClass":true,"className":"toc"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"text-highlight":{},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gerardyang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"后期教学文档","language":"zh-hans","gitbook":"*"},"file":{"path":"Video_Compression/1_Xiaowan.md","mtime":"2019-04-19T20:58:45.534Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-23T04:20:27.567Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第一章_小丸","level":"1.3.3","depth":2,"next":{"title":"名词补充","level":"1.3.4","depth":2,"path":"Video_Compression/EX_Words.md","ref":"./Video_Compression/EX_Words.md","articles":[]},"previous":{"title":"第零章_在你打开之前","level":"1.3.2","depth":2,"path":"Video_Compression/0_Before_Turn_On.md","ref":"./Video_Compression/0_Before_Turn_On.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","toc2","todo","text-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"todo":{},"search":{},"toc2":{"addClass":true,"className":"toc"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"text-highlight":{},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gerardyang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"后期教学文档","language":"zh-hans","gitbook":"*"},"file":{"path":"Video_Compression/1_Xiaowan.md","mtime":"2019-04-24T11:44:24.938Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T12:37:36.655Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

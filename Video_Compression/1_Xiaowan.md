@@ -20,7 +20,41 @@
 
 ---
 
-## 1.1 视频
+## 1.1 小丸
+
+小丸是一个命令行工具的图形化操作界面，它整合了许多命令行工具并且把它们的使用变得方便起来。
+
+| 名称           | 用途                                      |
+| -------------- | ----------------------------------------- |
+| avs4x26x       | 加载AVS脚本进行压制                       |
+| cl.exe         | 不明，推测为编译器                        |
+| fdkaac         | [fdkaac](EX_Words.md#fdk)编码器           |
+| ffmpeg         | 用于分离，合并，转码                      |
+| flac           | [flac编码器](EX_Words.md#flac)            |
+| FlvBind        | 将多个Flv合并成一个，可用ffmpeg代替       |
+| FlvExtraCL     | 抽取Flv中的音视频，可用ffmpeg代替         |
+| Flvlib         | 编码库                                    |
+| gMKVExtractGUI | 将MKV中各个轨道抽出的图形化界面工具       |
+| Lame           | MP3编码器                                 |
+| MediaInfo      | 查看多媒体信息                            |
+| mkvextract     | 将MKV中各个轨道抽出的命令行工具           |
+| mkvinfo        | 查看MKV信息的命令行工具                   |
+| mkvmerge       | 合并MKV的命令行工具                       |
+| mmg            | 上面三个工具的的图形化界面                |
+| MP4Box         | 专门封装mp4格式的工具                     |
+| neroAacEnc     | AAC编码器                                 |
+| qaac           | [qaac](EX_Words.md#qaac)编码器            |
+| refalac        | [ALAC](EX_Words.md#ALAC)解码器            |
+| shntool        | 多用途的音频处理，信息查看工具            |
+| VSFilter       | 提供视频滤镜                              |
+| x264           | [H.264/MPEG4-AVC](EX_Words.md#x264)编码器 |
+| x265           | [H.265/HEVC](EX_Words.md#x265)编码器      |
+
+
+
+---
+
+## 1.2 视频
 
 ![](images/xiaowan_2019-04-18_23-41-37-1555602341502.png)
 
@@ -56,7 +90,7 @@
 
 ---
 
-## 1.2 封装
+## 1.3 封装
 
 > 音频刚刚讲过了所以跳过（
 >
@@ -72,7 +106,7 @@
 2. 这里的MKV封装比较特殊。MKV(Matroska Multimedia Container)是一种能在一个视频内封装多个字幕，多个音频的一个视频容器，常用于发布多语言视频。你可以拿同一个MKV反复封装而不会覆盖原有数据。
 3. 这个封装转换也基本不常用，会在进阶操作中稍微提到一点
 
-## 1.3 抽取
+## 1.4 抽取
 
 抽取，即Demux。即将封装容器中的音视频分离。
 
@@ -142,7 +176,7 @@
 
 ---
 
-## 1.4 AVS界面
+## 1.5 AVS界面
 
    `AVS`即`AviSynth`，是由微软开发的一个视频帧服务。可以理解为逐帧处理后返回给编码器进行汇合。
 
@@ -159,7 +193,7 @@
 
 ---
 
-## 1.5 设置
+## 1.6 设置
 
 ![1555679896867](images/1555679896867.png)
 
@@ -173,7 +207,7 @@
 
 ---
 
-## 1.6 总结
+## 1.7 总结
 
 本章主要讲了小丸的基本界面以及其用法，文中提到一些专有名词，大家可以在名词补充一章中找到（咕）
 
@@ -185,10 +219,12 @@
 
 Gerardyang
 
-2019.04.20
+2019.04.24
 
 本文无法遵守996 License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+190424 升级CC-BY-SA协议 增加功能表
 
-本作品采用[知识共享署名-相同方式共享 3.0 未本地化版本许可协议](http://creativecommons.org/licenses/by-sa/3.0/)进行许可。
+190420 开始动笔
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
