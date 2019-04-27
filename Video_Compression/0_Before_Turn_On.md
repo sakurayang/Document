@@ -83,8 +83,8 @@
 
 - [ ] [小丸工具箱](https://maruko.appinn.me/index.html)
 - [ ] [32位的MEGUI](https://sourceforge.net/projects/megui/files/megui-stable/2896/MeGUI-2896-32.zip/download)
-- [ ] *可选*[64位的MEGUI](http://gerardyang.hk.ufileos.com/megui.tar.xz)
-- [ ] *可选*[64位的AviSynth滤镜](http://gerardyang.hk.ufileos.com/64%E4%BD%8D%E6%BB%A4%E9%95%9C.tar.xz)
+- [ ] *可选* [64位的MEGUI](http://gerardyang.hk.ufileos.com/megui.tar.xz)
+- [ ] *可选* [64位的AviSynth滤镜](http://gerardyang.hk.ufileos.com/64%E4%BD%8D%E6%BB%A4%E9%95%9C.tar.xz)
 
 ---
 

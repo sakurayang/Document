@@ -1,4 +1,4 @@
-第二章 Megui的界面
+# 第二章 到认识Megui
 
 > 本章主要介绍Megui的界面以及其用法
 >
@@ -55,3 +55,11 @@ Megui是一个带有图形化界面的命令行工具集。其功能比小丸强
 ## 2.2 Megui的界面
 
 ![1556059299567](images/1556059299567.png)
+
+emmmm……
+
+要说的东西有点多
+
+<center><big>要 素 过 多</big></center>
+
+<span style="color:red;font-size:100px;text-align:center">咕</span>
