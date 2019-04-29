@@ -12,21 +12,19 @@
 
 ## 4.0准备
 
-> **请尊重字幕原作者**
+> **请尊重视频与字幕原作者**
 
-- [ ] 视频：【MMD】VTubers ドラマツルギー
-- [ ] 视频：【TDA・MMD】MMD悠々杯『Oxalis』第弐幕【1440p-60fps or WQHD】TDA China Dress 洛天依
-- [ ] 视频：【ルキがロキをルキにして】ロキ_みきとP【歌ってみた】
-- [ ] 字幕：【ルキがロキをルキにして】ロキ_みきとP【歌ってみた】**(Effects By 黑兔)**
+- [ ] 视频：[MMD] LUVORATORRRRRY!(Miku)『4K』 [国内] [[u2b](http://youtube.com/watch?v=qU6lIArty7E)].
+- [ ] 视频：【ＭＭＤ】弱音ハクで「寄明月 Send to the Bright Moon 」 4K [国内] [[u2b](http://youtube.com/watch?v=8lYrJZjtH1k)]
+- [ ] 视频：【ルキがロキをルキにして】ロキ_みきとP【歌ってみた】 [国内] [[u2b](http://youtube.com/watch?v=DdqEdO4EOuU)]
+- [ ] 字幕：【ルキがロキをルキにして】ロキ_みきとP【歌ってみた】**(Effects By 黑兔)** []
 - [ ] 小丸或Megui
+
+**建议使用Megui进行压制**
 
 ---
 
-## 3.1 压制参数说明
-
-- `CRF(Constant Rate Factor)` 即恒定量化参数，从0-51，数值越低质量越高。
-- 自定义 自定义命令行参数，这个……适合比较熟练，需要微调的。不知道讲不讲。
-- `2pass` 即第一次不进行实际压制，只是收集视频统计数据，然后用在第二遍的压制中，比直接crf要好。
+## 4.1 压制参数说明
 
 在实际的压制过程中，要根据实际需求来选择模式。
 
