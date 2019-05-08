@@ -168,7 +168,7 @@
 
 ## 视频名词
 
-![](images/20150704142456669.jpg)
+<span id="gop"></span>![](images/20150704142456669.jpg)
 
 > 理解难度从上往下递增
 
@@ -302,7 +302,7 @@
 | 分离色彩平面                                       | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 | 预测性无损编码                                     | No    | No    | No    | No    | No     | No    | No      | No             | Yes                     |
 
-- **H.264 等级(level)**
+- <span id="level"></span>**H.264 等级(level)**
 
   规定了一系列的约束以及告诉解码器所需要的配置等级
 
@@ -377,7 +377,7 @@
 
   ![img](images/640px-Arithmetic_coding_visualisation_circle.svg.png)
 
-- **CABAC(Context-based Adaptive Binary Arithmetic Coding)**[^cabbc]，即前文参考性自适应二元算术编码，是一种基于算术编码的在HEVC以及AVC编码中使用的熵编码方式。其分为三部分`Binarizer(二值化算法)` `Context Modeler(上下文模型)` `Arithmetic Coding Engine(算术编码引擎)` 。他首先将所有非二进制符号转换为二进制，编码器遍历每个比特来选择使用哪个概率模型，然后根据上下文信息来优化概率估计。最后用算术编码来压缩数据。[^cabbc]通常比CAVLC性能更佳。但不支持Baseline以及Extended profiles。
+- <span id="cabac"></span>**CABAC(Context-based Adaptive Binary Arithmetic Coding)**[^cabbc]，即前文参考性自适应二元算术编码，是一种基于算术编码的在HEVC以及AVC编码中使用的熵编码方式。其分为三部分`Binarizer(二值化算法)` `Context Modeler(上下文模型)` `Arithmetic Coding Engine(算术编码引擎)` 。他首先将所有非二进制符号转换为二进制，编码器遍历每个比特来选择使用哪个概率模型，然后根据上下文信息来优化概率估计。最后用算术编码来压缩数据。[^cabbc]通常比CAVLC性能更佳。但不支持Baseline以及Extended profiles。
 
 - **CAVLC(Context-based Adaptive Variable-Length code)**，适应性可变长度编码法，又被称为`UVLC`。是h.264的演算法机制，其对传统的霍夫曼编码进行了改进，因此在压缩效率上取得了相当大的进步。其支持所有的H.264 peofile。过程解释有点复杂（[^cavlc]
 
