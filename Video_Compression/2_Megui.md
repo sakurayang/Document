@@ -286,7 +286,7 @@ neroaac fdk aac 都是要自己下载的
 
 除非你想把歌回的歌 单独抽出来
 
-### 2.4.2 Auto Encode
+### 2.4.2 Auto Encoder
 
 这个和下面的AutoEncode的按钮是一样的，你需要先载入一个视频，然后点auto encode
 
