@@ -3,7 +3,7 @@ name: default
 
 steps:
   - name: test   
-    image: node:latest
+    image: node
     commands:     
       - npm install gitbook -g
       - gitbook install
