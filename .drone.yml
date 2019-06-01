@@ -19,5 +19,5 @@ steps:
   - name: publish
     image: plugins/github-release
     settings:
-      api_key: a0cad4a3fb8896010452222017c350dad183e9e8
+      api_key:a0cad4a3fb8896010452222017c350dad183e9e8
       files: *
