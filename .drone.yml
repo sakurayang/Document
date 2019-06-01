@@ -1,0 +1,30 @@
+kind: pipeline
+name: default
+
+steps:
+  - name:test   
+    image: node:latest
+    commands:     
+      - npm install gitbook -g
+      - gitbook install
+      - gitbook serve .
+   
+  - name:build
+    image: node:latest
+    commands:     
+      - npm install gitbook -g
+      - gitbook install
+      - gitbook build . ./docs
+ 
+  - name:publish
+    environment:
+      USERNAME:
+        from_secret: git_username
+      PASSWORD:
+        from_secret: git_password
+    commands:
+      - git remote add github https://github.com/sakurayang/Document.git
+      - git add .
+      - git commit -a -m "drone push"
+      - git push -u origin master
+      - git push -u github master
