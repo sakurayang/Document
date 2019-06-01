@@ -2,9 +2,9 @@
 
 > 本章主要介绍Megui的界面以及其用法
 >
-> 本章共 字
+> 本章共3674字
 >
-> 预计阅读时间 min
+> 预计阅读时间>15 min
 
 ---
 
@@ -454,5 +454,20 @@ One Click Encoder的界面类似于Adaptive Muxer，但是多了一些选项
 
 ## 2.5 Megui的使用
 
+如果你有现成的AVS脚本，把它拖到主界面的输入框，然后点视频编码的queue就好
 
+如果你没有，点击 Tool - AVS Script Create 
 
+然后拖入视频文件，按照上方说明来使用就好
+
+---
+
+最后修改
+
+Gerardyang
+
+2019.05.08
+
+本文无法遵守996 License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
