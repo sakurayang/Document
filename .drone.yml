@@ -14,7 +14,7 @@ steps:
     commands:     
       - npm install gitbook -g
       - gitbook install
-      - gitbook build . ./docs
+      - gitbook buil . ./docs
  
   - name: publish
     image: plugins/github-release
