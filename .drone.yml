@@ -22,9 +22,9 @@ steps:
         from_secret: git_username
       PASSWORD:
         from_secret: git_password
-    commands:
-      - git remote add github https://github.com/sakurayang/Document.git
+    commands: 
       - git add .
       - git commit -a -m "drone push"
+      - git remote add github https://github.com/sakurayang/Document.git
       - git push -u origin master
       - git push -u github master
