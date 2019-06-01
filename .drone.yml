@@ -1,6 +1,10 @@
 kind: pipeline
 name: default
 
+services:
+  node:
+    image: node
+
 steps:
   - name: test   
     image: node
