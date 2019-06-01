@@ -2,21 +2,21 @@ kind: pipeline
 name: default
 
 steps:
-  - name:test   
+  - name: test   
     image: node:latest
     commands:     
       - npm install gitbook -g
       - gitbook install
       - gitbook serve .
    
-  - name:build
+  - name: build
     image: node:latest
     commands:     
       - npm install gitbook -g
       - gitbook install
       - gitbook build . ./docs
  
-  - name:publish
+  - name: publish
     environment:
       USERNAME:
         from_secret: git_username
