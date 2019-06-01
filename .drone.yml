@@ -3,21 +3,21 @@ name: gitbook
 
 steps:
   - name: test   
-    image: centos-node-8-12-0
+    image: node
     commands:     
       - npm install gitbook -g
       - gitbook install
       - gitbook serve .
    
   - name: build
-    image: centos-node-8-12-0
+    image: node
     commands:     
       - npm install gitbook -g
       - gitbook install
       - gitbook build . ./docs
  
   - name: publish
-    image: centos-node-8-12-0
+    image: node
     environment:
       USERNAME:
         from_secret: git_username
