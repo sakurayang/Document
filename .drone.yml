@@ -31,6 +31,6 @@ steps:
 #      - git push -u origin master
 #      - git push -u github master
   - name: fuck
-    image: node
+    image: slitaz/slitaz-base
     commands:
       - echo 123
