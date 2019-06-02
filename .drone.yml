@@ -9,24 +9,28 @@ steps:
       - gitbook install
       - gitbook serve .
    
-  - name: build
-    image: node
-    commands:     
-      - npm install gitbook -g
-      - gitbook install
-      - gitbook build . ./docs
+#  - name: build
+#    image: node
+#    commands:     
+#      - npm install gitbook -g
+#      - gitbook install
+#      - gitbook build . ./docs
  
-  - name: publish
+#  - name: publish
+#    image: node
+#    environment:
+#      USERNAME:
+#        from_secret: git_username
+#      PASSWORD:
+#        from_secret: git_password
+#    commands: 
+#      - yum install git -y
+#      - git add .
+#      - git commit -a -m "drone push"
+#      - git remote add github https://github.com/sakurayang/Document.git
+#      - git push -u origin master
+#      - git push -u github master
+  - name: fuck
     image: node
-    environment:
-      USERNAME:
-        from_secret: git_username
-      PASSWORD:
-        from_secret: git_password
-    commands: 
-      - yum install git -y
-      - git add .
-      - git commit -a -m "drone push"
-      - git remote add github https://github.com/sakurayang/Document.git
-      - git push -u origin master
-      - git push -u github master
+    commands:
+      - echo 123
