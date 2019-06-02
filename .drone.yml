@@ -2,12 +2,12 @@ kind: pipeline
 name: gitbook
 
 steps:
-  - name: test   
-    image: node
-    commands:     
-      - npm install gitbook -g
-      - gitbook install
-      - gitbook serve .
+#  - name: test   
+#    image: node
+#    commands:     
+#      - npm install gitbook -g
+#      - gitbook install
+#      - gitbook serve .
    
 #  - name: build
 #    image: node
