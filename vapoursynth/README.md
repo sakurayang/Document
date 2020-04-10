@@ -2,7 +2,7 @@
 
 emmmmmmm
 
-简单地介绍下AVSynth以及VapourSynth的一些用法
+简单地介绍下VapourSynth的一些用法
 
 [目录](SUMMARY.md)
 

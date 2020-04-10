@@ -15,4 +15,6 @@
     * [第五章 最后入土为安](./Video_Compression/5_Advanced.md)
     * [名词补充](./Video_Compression/EX_Words.md)
     * [AviSynth滤镜列表](./Video_Compression/EX_AVSFilter.md)
-
+* [Vapoursynth](./vapoursynth/README.md)
+  * [目录](./vapoursynth/SUMMARY.md)
+  * [第零章 零之入门](./vapoursynth/0_zero.md)
