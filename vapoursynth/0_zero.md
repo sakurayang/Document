@@ -96,7 +96,8 @@ unuse里面的一些滤镜例如waifu2x等可能有人会用到，嘛……Do It
 
 然后新建一个py文件，假设文件名是`test.py`，在其中写下
 
-```python 3
+
+```python
 # -*- coding:utf8 -*-
 # ↑上面这一行必须写，而且必须写在开头，其他注释不用
 import vapoursynth as vs
